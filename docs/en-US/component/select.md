@@ -13,6 +13,14 @@ lang: zh-CN
 
 :::
 
+## 新增用法->item 
+
+:::demo `select`的属性增加`item` 适用后端需要id和name的基础单选 `v-model` 的值为当前被选中的 `el-option` 的 整个对象 属性值
+
+select/select-item
+
+:::
+
 ## 基础用法
 
 :::demo 适用广泛的基础单选 `v-model` 的值为当前被选中的 `el-option` 的 value 属性值

@@ -706,10 +706,6 @@ export const useSelect = (props, states: States, ctx) => {
   }
   //初始化options
   const onOptionCreate = (vm: SelectOptionProxy) => {
-    console.log(vm, 'vm')
-    console.log(vm.label, 'vm')
-    // const objs={label:vm.label,value:vm.value}
-    // itemObjs
     states.optionsCount++
     states.filteredOptionsCount++
     states.options.set(vm.value, vm)
