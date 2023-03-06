@@ -22,7 +22,7 @@ files: [
       # Source files filter
       # e.g. "/resources/en/*.json"
       #
-      'source': '.vitepress/crowdin/en-US/**/*.json',
+      'source': '.vitepress/crowdin/zh-CN/**/*.json',
 
       #
       # Where translations will be placed
@@ -125,7 +125,7 @@ files: [
       # "scheme" : "",
     },
     {
-      'source': 'en-US/**/*.md',
+      'source': 'zh-CN/**/*.md',
       'translation': '%locale%/**/%original_file_name%',
     },
   ]

@@ -1,12 +1,12 @@
 {
-  "title": "Resources",
-  "lineOne": "More resources are still under development. ",
-  "lineTwo": "If you are interested in participating in the design of Element Plus, be our guest to contact us via <span><a href=\"mailto:element-plus@outlook.com\" target=\"_blank\">element-plus@outlook.com</a></span>.",
-  "download": "Download",
+  "title": "资源",
+  "lineOne": "更多设计资源正在处于开发状态。 ",
+  "lineTwo": "如果您有兴趣参与 Element Plus 的设计，请通过 <span><a href=\"mailto:element-plus@outlook.com\" target=\"_blank\">element-plus@outlook.com</a></span> 联系我们。",
+  "download": "下载",
   "axure": "Axure Components",
-  "axureIntro": "By importing Element Plus in Axure, you can easily apply all the components we provide during interaction design.",
+  "axureIntro": "通过在 Axure 中导入 Element Plus 组件库，可以在交互设计阶段方便地调用常用的组件",
   "sketch": "Sketch Template",
-  "sketchIntro": "Newly designed Sketch component library in 2022 with full components for Element Plus to improve design efficiency while keeping a unified visual style.",
+  "sketchIntro": "2022年全新设计的 Sketch 组件库，提供完整的组件支持。在提升设计效率的同时，保证统一的视觉风格。",
   "figma": "Figma Template",
-  "figmaIntro": "Newly designed Figma component library in 2022 with new features such as Auto-layout and Variants."
+  "figmaIntro": "2022年全新设计的 Figma 组件库，应用了自动布局与可变组件等新特性。"
 }

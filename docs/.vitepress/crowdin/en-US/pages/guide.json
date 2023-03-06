@@ -1,47 +1,47 @@
 {
   "intro": {
-    "text": "Basics",
+    "text": "基础",
     "children": [
       {
-        "text": "Design",
+        "text": "设计",
         "link": "/guide/design"
       },
       {
-        "text": "Navigation",
+        "text": "导航",
         "link": "/guide/nav"
       },
       {
-        "text": "Installation",
+        "text": "安装",
         "link": "/guide/installation"
       },
       {
-        "text": "Quick Start",
+        "text": "快速开始",
         "link": "/guide/quickstart"
       }
     ]
   },
   "advanced": {
-    "text": "Advanced",
+    "text": "进阶",
     "children": [
       {
-        "text": "i18n",
+        "text": "国际化",
         "link": "/guide/i18n"
       },
       {
-        "text": "Migration from ElementUI",
+        "text": "从 Element UI 升级",
         "link": "/guide/migration"
       },
       {
-        "text": "Theming",
+        "text": "主题",
         "link": "/guide/theming"
       },
       {
-        "text": "Dark Mode",
+        "text": "暗黑模式",
         "link": "/guide/dark-mode",
         "promotion": "2.2.0"
       },
       {
-        "text": "Custom Namespace",
+        "text": "自定义命名空间",
         "link": "/guide/namespace",
         "promotion": "2.2.0"
       },
@@ -50,32 +50,32 @@
         "link": "/guide/ssr"
       },
       {
-        "text": "Built-in Transitions",
+        "text": "内置过渡动画",
         "link": "/guide/transitions"
       },
       {
-        "text": "Changelog",
+        "text": "更新日志",
         "link": "/guide/changelog"
       }
     ]
   },
   "development": {
-    "text": "Development",
+    "text": "开发",
     "children": [
       {
-        "text": "Development Guide",
+        "text": "开发指南",
         "link": "/guide/dev-guide"
       },
       {
-        "text": "Development FAQ",
+        "text": "开发常见问题",
         "link": "/guide/dev-faq"
       },
       {
-        "text": "Commit Examples",
+        "text": "提交示例",
         "link": "/guide/commit-examples"
       },
       {
-        "text": "Translation",
+        "text": "翻译",
         "link": "/guide/translation"
       }
     ]
