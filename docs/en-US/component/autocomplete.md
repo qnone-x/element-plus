@@ -1,41 +1,41 @@
 ﻿---
-title: Autocomplete
-lang: en-US
+title: Autocomplete 自动补全输入框
+lang: zh-CN
 ---
 
-# Autocomplete
+# 自动补全输入框
 
-Get some recommended tips based on the current input.
+根据输入内容提供对应的输入建议。
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+在 SSR 场景下，您需要将组件包裹在 `<client-only></client-only>` 之中 (如: [Nuxt](https://nuxt.com/v3)) 和 SSG (e.g: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
-## Basic Usage
+## 基础用法
 
-Autocomplete component provides input suggestions.
+Autodcomplete 组件提供输入建议。
 
-:::demo The `fetch-suggestions` attribute is a method that return suggested inputs. In this example, `querySearch(queryString, cb)` return suggestions to Autocomplete via `cb(data)` when suggestions are ready.
+:::demo `获取建议` 属性是返回建议输入的方法。 在此示例中， `querySearch(queryString, cb)` 方法通过 `cb(data)` 给 Autocomplete 组件返回建议。
 
 autocomplete/autocomplete
 
 :::
 
-## Custom template
+## 自定义模板
 
-Customize how suggestions are displayed.
+自定义如何显示输入建议。
 
-:::demo Use `scoped slot` to customize suggestion items. In the scope, you can access the suggestion object via the `item` key.
+:::demo 使用 `scoped slot` 自定义输入建议。 在这个范围中，你可以使用 `item` 键来访问当前输入建议对象。
 
 autocomplete/autocomplete-template
 
 :::
 
-## Remote search
+## 远程搜索
 
-Search data from server-side.
+从服务端搜索数据。
 
 :::demo
 
@@ -47,57 +47,57 @@ autocomplete/remote-search
 
 ### Attributes
 
-| Name                                   | Description                                                                                                                | Type                                                                                      | Default      |
-| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------ |
-| model-value / v-model                  | binding value                                                                                                              | ^[string]                                                                                 | —            |
-| placeholder                            | the placeholder of Autocomplete                                                                                            | ^[string]                                                                                 | —            |
-| clearable                              | whether to show clear button                                                                                               | ^[boolean]                                                                                | false        |
-| disabled                               | whether Autocomplete is disabled                                                                                           | ^[boolean]                                                                                | false        |
-| value-key                              | key name of the input suggestion object for display                                                                        | ^[string]                                                                                 | value        |
-| debounce                               | debounce delay when typing, in milliseconds                                                                                | ^[number]                                                                                 | 300          |
-| placement                              | placement of the popup menu                                                                                                | ^[enum]`'top' \| 'top- start' \| 'top-end' \| 'bottom' \| 'bottom-start' \| 'bottom-end'` | bottom-start |
-| fetch-suggestions                      | a method to fetch input suggestions. When suggestions are ready, invoke `callback(data:[])` to return them to Autocomplete | ^[Function]`(queryString: string, callback: callbackfn) => void`                          | —            |
-| trigger-on-focus                       | whether show suggestions when input focus                                                                                  | ^[boolean]                                                                                | true         |
-| select-when-unmatched                  | whether to emit a `select` event on enter when there is no autocomplete match                                              | ^[boolean]                                                                                | false        |
-| name                                   | same as `name` in native input                                                                                             | ^[string]                                                                                 | —            |
-| label                                  | label text                                                                                                                 | ^[string]                                                                                 | —            |
-| hide-loading                           | whether to hide the loading icon in remote search                                                                          | ^[boolean]                                                                                | false        |
-| popper-class                           | custom class name for autocomplete's dropdown                                                                              | ^[string]                                                                                 | —            |
-| popper-append-to-body<DeprecatedTag /> | whether to append the dropdown to body. If the positioning of the dropdown is wrong, you can try to set this prop to false | ^[boolean]                                                                                | false        |
-| teleported                             | whether select dropdown is teleported to the body                                                                          | ^[boolean]                                                                                | true         |
-| highlight-first-item                   | whether to highlight first item in remote search suggestions by default                                                    | ^[boolean]                                                                                | false        |
-| fit-input-width                        | whether the width of the dropdown is the same as the input                                                                 | ^[boolean]                                                                                | false        |
+| 属性名                                    | 说明                                                             | 类型                                                                                             | 默认值          |
+| -------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------ |
+| model-value / v-model                  | 选中项绑定值                                                         | ^[string]                                                                                      | —            |
+| placeholder                            | 占位文本                                                           | ^[string]                                                                                      | —            |
+| clearable                              | 是否可清空                                                          | ^[boolean]                                                                                     | false        |
+| disabled                               | 自动补全组件是否被禁用                                                    | ^[boolean]                                                                                     | false        |
+| value-key                              | 输入建议对象中用于显示的键名                                                 | ^[string]                                                                                      | value        |
+| debounce                               | 获取输入建议的防抖延时，单位为毫秒                                              | ^[number]                                                                                      | 300          |
+| placement                              | 菜单弹出位置                                                         | ^[enum]`'top' \| 'top- start' \| 'top-end' \| 'bottom' \| 'bottom-start' \| 'bottom-end'` | bottom-start |
+| fetch-suggestions                      | 获取输入建议的方法， 仅当你的输入建议数据 resolve 时，通过调用 `callback(data:[]) ` 来返回它 | ^[Function]`(queryString: string, callback: callbackfn) => void`                            | —            |
+| trigger-on-focus                       | whether show suggestions when input focus                      | ^[boolean]                                                                                     | true         |
+| select-when-unmatched                  | 在输入没有任何匹配建议的情况下，按下回车是否触发 `select` 事件                           | ^[boolean]                                                                                     | false        |
+| name                                   | 等价于原生 input `name` 属性                                          | ^[string]                                                                                      | —            |
+| label                                  | 输入框关联的 label 文字                                                | ^[string]                                                                                      | —            |
+| hide-loading                           | 是否隐藏远程加载时的加载图标                                                 | ^[boolean]                                                                                     | false        |
+| popper-class                           | 下拉列表的类名                                                        | ^[string]                                                                                      | —            |
+| popper-append-to-body<DeprecatedTag /> | 是否将下拉列表插入至 body 元素。 在下拉列表的定位出现问题时，可将该属性设置为 false               | ^[boolean]                                                                                     | false        |
+| teleported                             | 是否将下拉列表元素插入 append-to 指向的元素下                                   | ^[boolean]                                                                                     | true         |
+| highlight-first-item                   | 是否默认高亮远程搜索结果的第一项                                               | ^[boolean]                                                                                     | false        |
+| fit-input-width                        | 下拉框的宽度是否与输入框相同                                                 | ^[boolean]                                                                                     | false        |
 
 ### Events
 
-| Name   | Description                                      | Type                                                  |
-| ------ | ------------------------------------------------ | ----------------------------------------------------- |
-| select | triggers when a suggestion is clicked            | ^[Function]`(item: typeof modelValue \| any) => void` |
-| change | triggers when the icon inside Input value change | ^[Function]`(value: string \| number) => void`        |
+| 事件名    | 详情             | 类型                                                        |
+| ------ | -------------- | --------------------------------------------------------- |
+| select | 点击选中建议项时触发     | ^[Function]`(item: typeof modelValue \| any) => void` |
+| change | 在 Input 值改变时触发 | ^[Function]`(value: string \| number) => void`        |
 
 ### Slots
 
-| Name    | Description                                                           |
-| ------- | --------------------------------------------------------------------- |
-| default | custom content for input suggestions. The scope parameter is { item } |
-| prefix  | content as Input prefix                                               |
-| suffix  | content as Input suffix                                               |
-| prepend | content to prepend before Input                                       |
-| append  | content to append after Input                                         |
+| 插槽名     | 描述说明                           |
+| ------- | ------------------------------ |
+| default | 自定义输入建议的内容。 自定义标签，参数为 { item } |
+| prefix  | 输入框头部内容                        |
+| suffix  | 输入框尾部内容                        |
+| prepend | 输入框前置内容，在 prefix 之前            |
+| append  | 输入框后置内容，在 suffix 之后            |
 
 ### Exposes
 
-| Name             | Description                                 | Type                                      |
-| ---------------- | ------------------------------------------- | ----------------------------------------- |
-| activated        | if autocomplete activated                   | ^[object]`Ref<boolean>`                   |
-| blur             | blur the input element                      | ^[Function]`() => void`                   |
-| close            | collapse suggestion list                    | ^[Function]`() => void`                   |
-| focus            | focus the input element                     | ^[Function]`() => void`                   |
-| handleSelect     | triggers when a suggestion is clicked       | ^[Function]`(item: any) => promise<void>` |
-| handleKeyEnter   | handle keyboard enter event                 | ^[Function]`() => promise<void>`          |
-| highlightedIndex | the index of the currently highlighted item | ^[object]`Ref<number>`                    |
-| highlight        | highlight an item in a suggestion           | ^[Function]`(itemIndex: number) => void`  |
-| inputRef         | el-input component instance                 | ^[object]`Ref<ElInputInstance>`           |
-| loading          | remote search loading indicator             | ^[object]`Ref<boolean>`                   |
-| popperRef        | el-tooltip component instance               | ^[object]`Ref<ElTooltipInstance>`         |
-| suggestions      | fetch suggestions result                    | ^[object]`Ref<record<string, any>>`       |
+| 名称               | 详情               | 类型                                                 |
+| ---------------- | ---------------- | -------------------------------------------------- |
+| activated        | 自动补全输入框是否被激活     | ^[object]`Ref<boolean>`                      |
+| blur             | 使 input 失去焦点     | ^[Function]`() => void`                         |
+| close            | 折叠建议列表           | ^[Function]`() => void`                         |
+| focus            | 使 input 获取焦点     | ^[Function]`() => void`                         |
+| handleSelect     | 手动触发选中建议事件       | ^[Function]`(item: any) => promise<void>` |
+| handleKeyEnter   | 手动触发键盘回车事件       | ^[Function]`() => promise<void>`          |
+| highlightedIndex | 当前高亮显示选项的索引      | ^[object]`Ref<number>`                       |
+| highlight        | 在建议中高亮显示一个项目     | ^[Function]`(itemIndex: number) => void`        |
+| inputRef         | el-input 组件实例    | ^[object]`Ref<ElInputInstance>`              |
+| loading          | 远程获取提示内容的加载状态指示器 | ^[object]`Ref<boolean>`                      |
+| popperRef        | el-tooltip 组件实例  | ^[object]`Ref<ElTooltipInstance>`            |
+| suggestions      | 获取自动补全结果         | ^[object]`Ref<record<string, any>>`    |

@@ -1,49 +1,49 @@
 ---
-title: Menu
-lang: en-US
+title: Menu 菜单
+lang: zh-CN
 ---
 
-# Menu
+# Menu 菜单
 
-Menu that provides navigation for your website.
+为网站提供导航功能的菜单。
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+在 SSR 场景下，您需要将组件包裹在 `<client-only></client-only>` 之中 (如: [Nuxt](https://nuxt.com/v3)) 和 SSG (e.g: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
-## Top bar
+## 顶栏
 
-Top bar Menu can be used in a variety of scenarios.
+顶部栏菜单可以在各种场景中使用。
 
-:::demo By default Menu is vertical, but you can change it to horizontal by setting the mode prop to 'horizontal'. In addition, you can use the sub-menu component to create a second level menu. Menu provides `background-color`, `text-color` and `active-text-color` to customize the colors.
+:::demo 导航菜单默认为垂直模式，通过将 mode 属性设置为 horizontal 来使导航菜单变更为水平模式。 另外，在菜单中通过 sub-menu 组件可以生成二级菜单。 Menu 还提供了`background-color`、`text-color`和`active-text-color`，分别用于设置菜单的背景色、菜单的文字颜色和当前激活菜单的文字颜色。
 
 menu/basic
 
 :::
 
-## Left And Right
+## 左右
 
-:::demo You can make the menu items to the left or right.
+:::demo  您可以将菜单项放置在左边或右边。
 
 menu/left-and-right
 
 :::
 
-## Side bar
+## 侧栏
 
-Vertical Menu with sub-menus.
+垂直菜单，可内嵌子菜单。
 
-:::demo You can use the el-menu-item-group component to create a menu group, and the name of the group is determined by the title prop or a named slot.
+:::demo 通过 el-menu-item-group 组件可以实现菜单进行分组，分组名可以通过 title 属性直接设定，也可以通过具名 slot 来设定。
 
 menu/vertical
 
 :::
 
-## Collapse
+## Collapse 折叠面板
 
-Vertical Menu could be collapsed.
+垂直导航菜单可以被折叠
 
 :::demo
 
@@ -53,97 +53,97 @@ menu/collapse
 
 ## Menu Attributes
 
-| Name                | Description                                                                                                                                                           | Type    | Accepted Values       | Default  |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------------------- | -------- |
-| mode                | menu display mode                                                                                                                                                     | string  | horizontal / vertical | vertical |
-| collapse            | whether the menu is collapsed (available only in vertical mode)                                                                                                       | boolean | —                     | false    |
-| ellipsis            | whether the menu is ellipsis (available only in horizontal mode)                                                                                                      | boolean | —                     | true     |
-| background-color    | background color of Menu (hex format) (deprecated, use `--bg-color` instead)                                                                                          | string  | —                     | #ffffff  |
-| text-color          | text color of Menu (hex format) (deprecated, use `--text-color` instead)                                                                                              | string  | —                     | #303133  |
-| active-text-color   | text color of currently active menu item (hex format) (deprecated, use `--active-color` instead)                                                                      | string  | —                     | #409EFF  |
-| default-active      | index of active menu on page load                                                                                                                                     | string  | —                     | —        |
-| default-openeds     | array that contains indexes of currently active sub-menus                                                                                                             | Array   | —                     | —        |
-| unique-opened       | whether only one sub-menu can be active                                                                                                                               | boolean | —                     | false    |
-| menu-trigger        | how sub-menus are triggered, only works when `mode` is 'horizontal'                                                                                                   | string  | hover / click         | hover    |
-| router              | whether `vue-router` mode is activated. If true, index will be used as 'path' to activate the route action. Use with `default-active` to set the active item on load. | boolean | —                     | false    |
-| collapse-transition | whether to enable the collapse transition                                                                                                                             | boolean | —                     | true     |
-| popper-effect       | Tooltip theme, built-in theme: `dark` / `light` when menu is collapsed                                                                                                | string  | dark / light          | dark     |
+| 属性名                 | 说明                                                                                       | 类型      | 可选值                   | 默认值      |
+| ------------------- | ---------------------------------------------------------------------------------------- | ------- | --------------------- | -------- |
+| mode                | 菜单展示模式                                                                                   | string  | horizontal / vertical | vertical |
+| collapse            | 是否水平折叠收起菜单（仅在 mode 为 vertical 时可用）                                                       | boolean | —                     | false    |
+| ellipsis            | 是否省略多余的子项（仅在横向模式生效）                                                                      | boolean | —                     | true     |
+| background-color    | 菜单的背景颜色（十六进制格式）（已被废弃，使用`--bg-color`）                                                     | string  | —                     | #ffffff  |
+| text-color          | 文字颜色（十六进制格式）（已被废弃，使用`--text-color`）                                                      | string  | —                     | #303133  |
+| active-text-color   | 活动菜单项的文本颜色（十六进制格式）（已被废弃，使用`--active-color`）                                              | string  | —                     | #409EFF  |
+| default-active      | 页面加载时默认激活菜单的 index                                                                       | string  | —                     | —        |
+| default-openeds     | 默认打开的 sub-menu 的 index 的数组                                                               | Array   | —                     | —        |
+| unique-opened       | 是否只保持一个子菜单的展开                                                                            | boolean | —                     | false    |
+| menu-trigger        | 子菜单打开的触发方式，只在 `mode` 为 horizontal 时有效。                                                   | string  | hover / click         | hover    |
+| router              | 是否启用 `vue-router` 模式。 启用该模式会在激活导航时以 index 作为 path 进行路由跳转 使用 `default-active` 来设置加载时的激活项。 | boolean | —                     | false    |
+| collapse-transition | 是否开启折叠动画                                                                                 | boolean | —                     | true     |
+| popper-effect       | Tooltip 主题，内置了 `dark` / `light` 两种主题                                                     | string  | dark / light          | dark     |
 
 ## Menu Methods
 
-| Methods Name | Description               | Parameters                            |
-| ------------ | ------------------------- | ------------------------------------- |
-| open         | open a specific sub-menu  | index: index of the sub-menu to open  |
-| close        | close a specific sub-menu | index: index of the sub-menu to close |
+| 方法名   | 说明             | 参数                            |
+| ----- | -------------- | ----------------------------- |
+| open  | 展开指定的 sub-menu | index: 需要打开的 sub-menu 的 index |
+| close | 收起指定的 sub-menu | index: 需要收起的 sub-menu 的 index |
 
 ## Menu Events
 
-| Name   | Description                               | Parameters                                                                                                                                                                 |
-| ------ | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| select | callback function when menu is activated  | index: index of activated menu, indexPath: index path of activated menu, item: the selected menu item, routeResult: result returned by `vue-router` if `router` is enabled |
-| open   | callback function when sub-menu expands   | index: index of expanded sub-menu, indexPath: index path of expanded sub-menu                                                                                              |
-| close  | callback function when sub-menu collapses | index: index of collapsed sub-menu, indexPath: index path of collapsed sub-menu                                                                                            |
+| 事件名    | 说明             | 回调参数                                                                                                           |
+| ------ | -------------- | -------------------------------------------------------------------------------------------------------------- |
+| select | 菜单激活回调         | index: 选中菜单项的 index, indexPath: 选中菜单项的 index path, item: 选中菜单项, routeResult: vue-router 的返回值（如果 router 为 true） |
+| open   | sub-menu 展开的回调 | index: 打开的 sub-menu 的 index, indexPath: 打开的 sub-menu 的 index path                                              |
+| close  | sub-menu 收起的回调 | index: 收起的 sub-menu 的 index, indexPath: 收起的 sub-menu 的 index path                                              |
 
 ## Menu Slots
 
-| Name | Description               | Subtags                               |
-| ---- | ------------------------- | ------------------------------------- |
-| —    | customize default content | SubMenu / Menu-Item / Menu-Item-Group |
+| 插槽名 | 说明      | 子标签                                   |
+| --- | ------- | ------------------------------------- |
+| —   | 自定义默认内容 | SubMenu / Menu-Item / Menu-Item-Group |
 
 ## SubMenu Attributes
 
-| Name                              | Description                                                                                                                                   | Type                  | Accepted Values | Default                                         |
-| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------- | ----------------------------------------------- |
-| index                             | unique identification                                                                                                                         | string                | —               | —                                               |
-| popper-class                      | custom class name for the popup menu                                                                                                          | string                | —               | —                                               |
-| show-timeout                      | timeout before showing a sub-menu                                                                                                             | number                | —               | 300                                             |
-| hide-timeout                      | timeout before hiding a sub-menu                                                                                                              | number                | —               | 300                                             |
-| disabled                          | whether the sub-menu is disabled                                                                                                              | boolean               | —               | false                                           |
-| popper-append-to-body(deprecated) | whether to append the popup menu to body. If the positioning of the menu is wrong, you can try setting this prop                              | boolean               | —               | level one SubMenu: true / other SubMenus: false |
-| teleported                        | whether popup menu is teleported to the body                                                                                                  | boolean               | —               | level one SubMenu: true / other SubMenus: false |
-| popper-offset                     | offset of the popper                                                                                                                          | number                | —               | 6                                               |
-| expand-close-icon                 | Icon when menu are expanded and submenu are closed, `expand-close-icon` and `expand-open-icon` need to be passed together to take effect      | `string \| Component` | —               | —                                               |
-| expand-open-icon                  | Icon when menu are expanded and submenu are opened, `expand-open-icon` and `expand-close-icon` need to be passed together to take effect      | `string \| Component` | —               | —                                               |
-| collapse-close-icon               | Icon when menu are collapsed and submenu are closed, `collapse-close-icon` and `collapse-open-icon` need to be passed together to take effect | `string \| Component` | —               | —                                               |
-| collapse-open-icon                | Icon when menu are collapsed and submenu are opened, `collapse-open-icon` and `collapse-close-icon` need to be passed together to take effect | `string \| Component` | —               | —                                               |
+| 属性名                        | 说明                                                                   | 类型                     | 可选值 | 默认值                       |
+| -------------------------- | -------------------------------------------------------------------- | ---------------------- | --- | ------------------------- |
+| index                      | 唯一标志                                                                 | string                 | —   | —                         |
+| popper-class               | 为 popper 添加类名                                                        | string                 | —   | —                         |
+| show-timeout               | 展开 sub-menu 的延时                                                      | number                 | —   | 300                       |
+| hide-timeout               | 收起 sub-menu 的延时                                                      | number                 | —   | 300                       |
+| disabled                   | 是否禁用                                                                 | boolean                | —   | false                     |
+| popper-append-to-body（已废弃） | 是否将弹出菜单插入至 body 元素。 在菜单的定位出现问题时，可尝试修改该属性                             | boolean                | —   | 一级子菜单：true / 非一级子菜单：false |
+| teleported                 | 是否将 popup 的下拉列表插入至 body 元素                                           | boolean                | —   | 一级子菜单：true / 非一级子菜单：false |
+| popper-offset              | 弹出窗口偏移                                                               | number                 | —   | 6                         |
+| expand-close-icon          | 父菜单展开且子菜单关闭时的图标， `expand-close-icon` 和 `expand-open-icon` 需要一起配置才能生效 | `string \| Component` | —   | —                         |
+| expand-open-icon           | 父菜单展开且子菜单打开时的图标， `expand-open-icon` 和 `expand-close-icon` 需要一起配置才能生效 | `string \| Component` | —   | —                         |
+| collapse-close-icon        | 父菜单收起且子菜单关闭时的图标， `expand-close-icon` 和 `expand-open-icon` 需要一起配置才能生效 | `string \| Component` | —   | —                         |
+| collapse-open-icon         | 父菜单收起且子菜单打开时的图标， `expand-open-icon` 和 `expand-close-icon` 需要一起配置才能生效 | `string \| Component` | —   | —                         |
 
 ## SubMenu Slots
 
-| Name  | Description               | Subtags                               |
-| ----- | ------------------------- | ------------------------------------- |
-| —     | customize default content | SubMenu / Menu-Item / Menu-Item-Group |
-| title | customize title content   | —                                     |
+| 插槽名   | 说明      | 子标签                                   |
+| ----- | ------- | ------------------------------------- |
+| —     | 自定义默认内容 | SubMenu / Menu-Item / Menu-Item-Group |
+| title | 自定义标题内容 | —                                     |
 
 ## Menu-Item Attributes
 
-| Name     | Description           | Type        | Accepted Values | Default |
-| -------- | --------------------- | ----------- | --------------- | ------- |
-| index    | unique identification | string/null | —               | null    |
-| route    | Vue Router object     | object      | —               | —       |
-| disabled | whether disabled      | boolean     | —               | false   |
+| 属性名      | 说明              | 类型          | 可选值 | 默认值   |
+| -------- | --------------- | ----------- | --- | ----- |
+| index    | 唯一标志            | string/null | —   | null  |
+| route    | Vue Router 路径对象 | object      | —   | —     |
+| disabled | 是否禁用            | boolean     | —   | false |
 
 ## Menu-Item Events
 
-| Name  | Description                                 | Parameters             |
-| ----- | ------------------------------------------- | ---------------------- |
-| click | callback function when menu-item is clicked | el: menu-item instance |
+| 事件名   | 说明         | 回调参数            |
+| ----- | ---------- | --------------- |
+| click | 菜单点击时的回调函数 | el-menu-item 实例 |
 
 ## Menu-Item Slots
 
-| Name  | Description               |
-| ----- | ------------------------- |
-| —     | customize default content |
-| title | customize title content   |
+| 插槽名   | 说明      |
+| ----- | ------- |
+| —     | 自定义默认内容 |
+| title | 自定义标题内容 |
 
 ## Menu-Item-Group Attributes
 
-| Name  | Description | Type   | Accepted Values | Default |
-| ----- | ----------- | ------ | --------------- | ------- |
-| title | group title | string | —               | —       |
+| 属性名   | 说明  | 类型     | 可选值 | 默认值 |
+| ----- | --- | ------ | --- | --- |
+| title | 组标题 | string | —   | —   |
 
 ## Menu-Item-Group Slots
 
-| Name  | Description               | Subtags   |
-| ----- | ------------------------- | --------- |
-| —     | customize default content | Menu-Item |
-| title | customize group title     | —         |
+| 插槽名   | 说明       | 子标签       |
+| ----- | -------- | --------- |
+| —     | 默认插槽内容   | Menu-Item |
+| title | 自定义组标题内容 | —         |

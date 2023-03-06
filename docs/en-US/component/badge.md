@@ -1,47 +1,47 @@
 ---
-title: Badge
-lang: en-US
+title: Badge 徽章
+lang: zh-CN
 ---
 
-# Badge
+# Badge 徽章
 
-A number or status mark on buttons and icons.
+按钮和图标上的数字或状态标记。
 
-## Basic Usage
+## 基础用法
 
-Displays the amount of new messages.
+可以用来展示新消息的数量。
 
-:::demo The amount is defined with value which accepts Number or String.
+:::demo ；数量值可接受 Number 或 String。
 
 badge/basic
 
 :::
 
-## Max Value
+## 最大值
 
-You can customize the max value.
+你还可以自定义最大值
 
-:::demo The max value is defined by property max which is a Number. Note that it only works when value is also a Number.
+::: demo 由 max 属性定义，接受 Number 值。 请注意，仅在值也是 Number 时起作用。
 
 badge/max
 
 :::
 
-## Customizations
+## 自定义显示内容
 
-Displays text content other than numbers.
+你也可以展示除数字以外你想要展示的任何值。
 
-:::demo When value is a String, it can display customized text.
+:::demo 当 value 是 String 时，可以显示自定义文字。
 
 badge/customize
 
 :::
 
-## Red Dot
+## 小红点
 
-Use a red dot to mark content that needs to be noticed.
+通过一个小红点标记来告知用户有新内容。
 
-:::demo Use the attribute `is-dot`. It is a Boolean.
+:::demo 使用 `is-dot` 属性。 是个布尔值。
 
 badge/dot
 
@@ -51,16 +51,16 @@ badge/dot
 
 ### Attributes
 
-| Name   | Description                                                                   | Type                                                               | Default |
-| ------ | ----------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------- |
-| value  | display value.                                                                | ^[string] / ^[number]                                              | ''      |
-| max    | maximum value, shows `{max}+` when exceeded. Only works if value is a number. | ^[number]                                                          | 99      |
-| is-dot | if a little dot is displayed.                                                 | ^[boolean]                                                         | false   |
-| hidden | hidden badge.                                                                 | ^[boolean]                                                         | false   |
-| type   | badge type.                                                                   | ^[enum]`'primary' \| 'success' \| 'warning' \| 'danger' \| 'info'` | danger  |
+| 属性名    | 说明                                          | 类型                                                                     | 默认值    |
+| ------ | ------------------------------------------- | ---------------------------------------------------------------------- | ------ |
+| value  | 显示值                                         | ^[string] / ^[number]                                                  | ''     |
+| max    | 最大值，超过最大值会显示 `{max}+`。 只有当 value 是数字类型时起作用。 | ^[number]                                                              | 99     |
+| is-dot | 是否显示小圆点。                                    | ^[boolean]                                                             | false  |
+| hidden | 是否隐藏 Badge。                                 | ^[boolean]                                                             | false  |
+| type   | badge type.                                 | ^[enum]`'primary' \| 'success' \| 'warning' \| 'danger' \| 'info'` | danger |
 
 ### Slots
 
-| Name    | Description               |
-| ------- | ------------------------- |
-| default | customize default content |
+| 插槽名     | 说明      |
+| ------- | ------- |
+| default | 自定义默认内容 |

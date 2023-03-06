@@ -1,22 +1,21 @@
 ---
-title: Migration
-lang: en-US
+title: 迁移
+lang: zh-CN
 ---
 
-# Migration
+# 迁移
 
-[This guide](https://github.com/element-plus/element-plus/discussions/5658) will help you upgrade from Element 2.x to Element Plus.
+[此指南](https://github.com/element-plus/element-plus/discussions/5658)将帮助您从 Element UI 2.x 升级到 Element Plus。
 
-## Vue 3 migration build
+## Vue 3 迁移构建
 
-You may encounter some issues when using Element Plus with Vue 3 migration build. Some of the components rely on Vue 3 internal API's. It's worth trying to adjust compatConfig mode to 3, either globally or [per component in your project](https://v3.vuejs.org/guide/migration/migration-build.html#per-component-config).
+使用 Element Plus 与 Vue 3 迁移构建时可能遇到一些问题。 有些组件依赖于 Vue 3 内部 API。 尝试全局或将你项目中每个组件的 [compatConfig](https://v3.vuejs.org/guide/migration/migration-build.html#per-component-config) 调整为 `3`。
 
-## Migration Tool :hammer_and_wrench:
+## 迁移工具 :hammer_and_wrench:
 
-We have made a migration tool for you to migrate your project from [Element UI](https://element.eleme.io) to Element Plus.
-You can find the [gogo code migration tool](https://github.com/thx/gogocode/tree/main/packages/gogocode-plugin-element) here.
+我们已经为您提供了一个迁移工具，可以将您的项目从 [Element UI](https://element.eleme.io) 迁移到 Element Plus。 您可以在[这里](https://github.com/thx/gogocode/tree/main/packages/gogocode-plugin-element)找到 gogo code 迁移工具。
 
-We have tested this on [Vue Element Admin](https://github.com/PanJiaChen/vue-element-admin) (Vue 2 + Element UI). You can find the transpiled code [here](https://github.com/gogocodeio/vue-element-admin).
+我们已经在 [Vue Element Admin](https://github.com/PanJiaChen/vue-element-admin) (Vue 2 + Element UI) 上测试了此工具。 您可以在[这里](https://github.com/gogocodeio/vue-element-admin)找到可移植代码。
 
 <style scoped>
   details {

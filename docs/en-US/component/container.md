@@ -1,29 +1,29 @@
 ---
-title: Container
-lang: en-US
+title: Container 布局容器
+lang: zh-CN
 ---
 
-# Container
+# Container 布局容器
 
-Container components for scaffolding basic structure of the page:
+用于布局的容器组件，方便快速搭建页面的基本结构：
 
-`<el-container>`: wrapper container. When nested with a `<el-header>` or `<el-footer>`, all its child elements will be vertically arranged. Otherwise horizontally.
+`<el-container>`：外层容器。 当子元素中包含 `<el-header>` 或 `<el-footer>` 时，全部子元素会垂直上下排列， 否则会水平左右排列。
 
-`<el-header>`: container for headers.
+`<el-header>`：顶栏容器。
 
-`<el-aside>`: container for side sections (usually a side nav).
+`<el-aside>`：侧边栏容器。
 
-`<el-main>`: container for main sections.
+`<el-main>`：主要区域容器。
 
-`<el-footer>`: container for footers.
+`<el-footer>`：底栏容器。
 
 :::tip
 
-These components use flex for layout, so please make sure your browser supports it. Besides, `<el-container>`'s direct child elements have to be one or more of the latter four components. And father element of the latter four components must be a `<el-container>`.
+以上组件采用了 flex 布局，使用前请确定目标浏览器是否兼容。 此外， `<el-container>`的直接子元素必须是后四个组件中的一个或多个。 后四个组件的亲元素必须是一个 `<el-container>`
 
 :::
 
-## Common layouts
+## 常见页面布局
 
 <style lang="scss">
 @use '../../examples/container/common-layout.scss';
@@ -71,7 +71,7 @@ container/layout-ahmf
 
 :::
 
-## Example
+## 例子
 
 :::demo
 
@@ -83,62 +83,62 @@ container/example
 
 ### Container Attributes
 
-| Name      | Description                         | Type                                | Default                                                                    |
-| --------- | ----------------------------------- | ----------------------------------- | -------------------------------------------------------------------------- |
-| direction | layout direction for child elements | ^[enum]`'horizontal' \| 'vertical'` | vertical when nested with `el-header` or `el-footer`; horizontal otherwise |
+| 属性名       | 说明       | 类型                                   | 默认值                                                        |
+| --------- | -------- | ------------------------------------ | ---------------------------------------------------------- |
+| direction | 子元素的排列方向 | ^[enum]`'horizontal' \| 'vertical'` | 子元素中有 `el-header` 或 `el-footer` 时为 vertical，否则为 horizontal |
 
 ### Container Slots
 
-| Name    | Description               | Subtags                                    |
-| ------- | ------------------------- | ------------------------------------------ |
-| default | customize default content | Container / Header / Aside / Main / Footer |
+| 插槽名     | 说明      | 子标签                                        |
+| ------- | ------- | ------------------------------------------ |
+| default | 自定义默认内容 | Container / Header / Aside / Main / Footer |
 
 ## Header API
 
 ### Header Attributes
 
-| Name   | Description          | Type      | Default |
-| ------ | -------------------- | --------- | ------- |
-| height | height of the header | ^[string] | 60px    |
+| 属性名    | 说明   | 类型        | 默认值  |
+| ------ | ---- | --------- | ---- |
+| height | 顶栏高度 | ^[string] | 60px |
 
 ### Header Slots
 
-| Name    | Description               |
-| ------- | ------------------------- |
-| default | customize default content |
+| 插槽名     | 说明      |
+| ------- | ------- |
+| default | 自定义默认内容 |
 
 ## Aside API
 
 ### Aside Attributes
 
-| Name  | Description               | Type      | Default |
-| ----- | ------------------------- | --------- | ------- |
-| width | width of the side section | ^[string] | 300px   |
+| 属性名   | 说明    | 类型        | 默认值   |
+| ----- | ----- | --------- | ----- |
+| width | 侧边栏宽度 | ^[string] | 300px |
 
 ### Aside Slots
 
-| Name    | Description               |
-| ------- | ------------------------- |
-| default | customize default content |
+| 插槽名     | 说明      |
+| ------- | ------- |
+| default | 自定义默认内容 |
 
 ## Main API
 
 ### Main Slots
 
-| Name    | Description               |
-| ------- | ------------------------- |
-| default | customize default content |
+| 插槽名     | 说明      |
+| ------- | ------- |
+| default | 自定义默认内容 |
 
 ## Footer API
 
 ### Footer Attributes
 
-| Name   | Description          | Type      | Default |
-| ------ | -------------------- | --------- | ------- |
-| height | height of the footer | ^[string] | 60px    |
+| 属性名    | 说明   | 类型        | 默认值  |
+| ------ | ---- | --------- | ---- |
+| height | 底栏高度 | ^[string] | 60px |
 
 ### Footer Slots
 
-| Name    | Description               |
-| ------- | ------------------------- |
-| default | customize default content |
+| 插槽名     | 说明      |
+| ------- | ------- |
+| default | 自定义默认内容 |

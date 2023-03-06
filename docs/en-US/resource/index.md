@@ -1,6 +1,6 @@
 ---
 page: true
-lang: en-US
+lang: zh-CN
 ---
 
 <Resource />

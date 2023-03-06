@@ -1,13 +1,13 @@
 ---
-title: Page
-lang: en-US
+title: Page Header 页头
+lang: zh-CN
 ---
 
-# Page Header
+# Page Header 页头
 
-If path of the page is simple, it is recommended to use PageHeader instead of the Breadcrumb.
+如果页面的路径比较简单，推荐使用页头组件而非面包屑组件。
 
-## Complete example
+## 完整示例
 
 :::demo
 
@@ -15,9 +15,9 @@ page-header/complete
 
 :::
 
-## Basic usage
+## 基础用法
 
-Standard page header, for simply scenarios.
+简单场景下的标准页头。
 
 :::demo
 
@@ -25,10 +25,9 @@ page-header/basic
 
 :::
 
-## Custom icon
+## 自定义图标
 
-The default icon might not meet your satisfaction, you can customize the icon by setting `icon` attribute
-like the example.
+默认图标可能无法满足您的需求，您可以通过设置`icon`属性来自定义图标，示例如下。
 
 :::demo
 
@@ -36,10 +35,9 @@ page-header/custom-icon
 
 :::
 
-## No icon
+## 无图标
 
-Sometimes the page is just full of elements, and you might not want the icon to show up on the page,
-you can set the `icon` attribute to `null` to get rid of it.
+有时，页面全是元素，您可能不想展示页面上方的图标，您可以设置`icon`属性值为`null`来去除它。
 
 :::demo
 
@@ -47,9 +45,9 @@ page-header/no-icon
 
 :::
 
-## Breadcrumbs
+## 面包屑导航
 
-Page header allows you to add breadcrumbs for giving route information to the users by `breadcrumb` slot.
+使用页头组件，您可以通过添加插槽 `breadcrumb` 来设置面包屑路由导航。
 
 :::demo
 
@@ -57,10 +55,9 @@ page-header/breadcrumb
 
 :::
 
-## Additional operation section
+## 额外操作部分
 
-The header can be as complicated as needed, you may add additional sections to the header, to allow rich
-interactions.
+头部可能会变得很复杂，您可以在头部添加更多的区块，以允许丰富的交互。
 
 :::demo
 
@@ -68,9 +65,9 @@ page-header/additional-sections
 
 :::
 
-## Main content
+## 主要内容
 
-Sometimes we want the head to show with some co-responding content, we can utilize the `default` slot for doing so.
+有时我们想让页头显示一些协同响应内容，我们可以使用 `default` 插槽。
 
 :::demo
 
@@ -78,9 +75,9 @@ page-header/main-content
 
 :::
 
-## Anatomy
+## 组件插槽结构
 
-The component is consisted of these parts
+本组件由这些部件构成：
 
 ```vue
 <template>
@@ -100,25 +97,25 @@ The component is consisted of these parts
 
 ## Attributes
 
-| Name    | Description    | Type                  | Accepted Values | Default |
-| ------- | -------------- | --------------------- | --------------- | ------- |
-| icon    | icon component | `string \| Component` | —               | Back    |
-| title   | main title     | string                | —               | Back    |
-| content | content        | string                | —               | —       |
+| 属性名     | 说明   | 类型                     | 可选值 | 默认值  |
+| ------- | ---- | ---------------------- | --- | ---- |
+| icon    | 图标组件 | `string \| Component` | —   | Back |
+| title   | 标题   | string                 | —   | Back |
+| content | 内容   | string                 | —   | —    |
 
 ## Events
 
-| Name | Description                         | Parameters |
-| ---- | ----------------------------------- | ---------- |
-| back | triggers when right side is clicked | —          |
+| 事件名  | 说明       | 参数 |
+| ---- | -------- | -- |
+| back | 点击左侧区域触发 | —  |
 
 ## Slots
 
-| Name       | Description        |
-| ---------- | ------------------ |
-| icon       | custom icon        |
-| title      | title content      |
-| content    | content            |
-| extra      | extra              |
-| breadcrumb | breadcrumb content |
-| default    | main content       |
+| 名称         | 说明    |
+| ---------- | ----- |
+| icon       | 自定义图标 |
+| title      | 标题内容  |
+| content    | 内容    |
+| extra      | 扩展设置  |
+| breadcrumb | 面包屑内容 |
+| default    | 默认内容  |

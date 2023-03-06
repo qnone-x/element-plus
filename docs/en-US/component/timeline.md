@@ -1,15 +1,15 @@
 ---
-title: Timeline
-lang: en-US
+title: Timeline 时间线
+lang: zh-CN
 ---
 
-# Timeline
+# Timeline 时间线
 
-Visually display timeline.
+可视化地呈现时间流信息。
 
-## Basic usage
+## 基础用法
 
-Timeline can be split into multiple activities. Timestamps are important features that distinguish them from other components. Note the difference with Steps.
+Timeline 可拆分成多个按照时间戳排列的活动， 时间戳是其区分于其他控件的重要特征， 使用时注意与 Steps 步骤条等区分。
 
 :::demo
 
@@ -17,9 +17,9 @@ timeline/basic
 
 :::
 
-## Custom node
+## ⾃定义节点样式
 
-Size, color, and icons can be customized in node.
+可根据实际场景⾃定义节点尺⼨、颜⾊，或直接使⽤图标。
 
 :::demo
 
@@ -27,9 +27,9 @@ timeline/custom-node
 
 :::
 
-## Custom timestamp
+## ⾃定义时间戳
 
-Timestamp can be placed on top of content when content is too high.
+当内容在垂直⽅向上过⾼时，可将时间戳置于内容之上。
 
 :::demo
 
@@ -37,9 +37,9 @@ timeline/custom-timestamp
 
 :::
 
-## Vertically centered
+## 垂直居中
 
-Timeline-Item is centered vertically.
+垂直居中样式的 Timeline-Item
 
 :::demo
 
@@ -47,29 +47,29 @@ timeline/center
 
 :::
 
-## Timeline Slots
+## Timeline 插槽
 
-| Name | Description                 | Subtags       |
-| ---- | --------------------------- | ------------- |
-| —    | Custom content for timeline | Timeline-Item |
+| 插槽名 | 说明       | 子标签           |
+| --- | -------- | ------------- |
+| —   | 自定义时间线内容 | Timeline-Item |
 
-## Timeline-Item Attributes
+## Timeline-Item 属性
 
-| Name           | Description                 | Type                  | Accepted Values                             | Default |
-| -------------- | --------------------------- | --------------------- | ------------------------------------------- | ------- |
-| timestamp      | timestamp content           | string                | —                                           | —       |
-| hide-timestamp | whether to show timestamp   | boolean               | —                                           | false   |
-| center         | Whether vertically centered | boolean               | —                                           | false   |
-| placement      | position of timestamp       | string                | top / bottom                                | bottom  |
-| type           | node type                   | string                | primary / success / warning / danger / info | —       |
-| color          | background color of node    | string                | hsl / hsv / hex / rgb                       | —       |
-| size           | node size                   | string                | normal / large                              | normal  |
-| icon           | icon component              | `string \| Component` | —                                           | —       |
-| hollow         | icon is hollow              | boolean               | —                                           | false   |
+| 属性名            | 说明      | 类型                     | 可选值                                         | 默认值    |
+| -------------- | ------- | ---------------------- | ------------------------------------------- | ------ |
+| timestamp      | 时间戳     | string                 | —                                           | —      |
+| hide-timestamp | 是否隐藏时间戳 | boolean                | —                                           | false  |
+| center         | 是否垂直居中  | boolean                | —                                           | false  |
+| placement      | 时间戳位置   | string                 | top / bottom                                | bottom |
+| type           | 节点类型    | string                 | primary / success / warning / danger / info | —      |
+| color          | 节点颜色    | string                 | hsl / hsv / hex / rgb                       | —      |
+| size           | 节点尺寸    | string                 | normal / large                              | normal |
+| icon           | 自定义图标   | `string \| Component` | —                                           | —      |
+| hollow         | 是否空心点   | boolean                | —                                           | false  |
 
-## Timeline-Item Slots
+## Timeline-Item 插槽
 
-| Name | Description                      |
-| ---- | -------------------------------- |
-| —    | Custom content for timeline item |
-| dot  | Custom defined node              |
+| 插槽名 | 说明                |
+| --- | ----------------- |
+| —   | Timeline-Item 的内容 |
+| dot | 自定义节点             |

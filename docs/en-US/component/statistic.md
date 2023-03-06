@@ -1,35 +1,35 @@
 ---
-title: Statistic
-lang: en-US
+title: Statistic 统计组件
+lang: zh-CN
 ---
 
-# Statistic
+# Statistic 统计组件
 
-Display statistics.
+显示统计数据。
 
-## Basic usage
+## 基础用法
 
-:::demo To highlight a number or a group of numbers, such as statistical value, amount, and ranking, you can add elements such as icon and unit before and after the number and title.
+:::demo 用于突出某个或某组数字时，如统计数值、金额、排名等，数值和标题前后都可以加icon、单位等元素。
 
 statistic/basic
 
 :::
 
-## Countdown
+## 倒计时
 
-:::demo Countdown component, support to add other components control countdown.
+:::demo 倒计时组件，支持添加其他组件来控制。
 
 statistic/countdown
-:::
+:::  
 :::tip
 
-In formatting it is suggested to be in the range of days
+在格式化过程中，建议在天数范围内
 
 :::
 
-## Card usage
+## 统计卡片
 
-:::demo Card usage display, can be freely combined
+:::demo 卡片式用法展示，可以自由组合
 
 statistic/card
 
@@ -39,62 +39,62 @@ statistic/card
 
 ### Statistic Attributes
 
-| Attribute         | Description                    | Type                                                                | Default |
-| ----------------- | ------------------------------ | ------------------------------------------------------------------- | ------- |
-| value             | Numerical content              | ^[number]                                                           | 0       |
-| decimal-separator | Setting the decimal point      | ^[string]                                                           | .       |
-| formatter         | Custom numerical presentation  | ^[Function]`(value: number) => string \| number`                    | —       |
-| group-separator   | Sets the thousandth identifier | ^[string]                                                           | ,       |
-| precision         | numerical precision            | ^[number]                                                           | 0       |
-| prefix            | Sets the prefix of a number    | ^[string]                                                           | —       |
-| suffix            | Sets the suffix of a number    | ^[string]                                                           | —       |
-| title             | Numeric titles                 | ^[string]                                                           | —       |
-| value-style       | Styles numeric values          | ^[string] / ^[object]`CSSProperties \| CSSProperties[] \| string[]` | —       |
+| Attribute         | 描述       | 类型                                                                    | 默认值 |
+| ----------------- | -------- | --------------------------------------------------------------------- | --- |
+| value             | 数字内容     | ^[number]                                                             | 0   |
+| decimal-separator | 设置小数点符号  | ^[string]                                                             | .   |
+| formatter         | 自定义数字格式化 | ^[Function]`(value: number) => string \| number`                  | —   |
+| group-separator   | 设置千分位标识符 | ^[string]                                                             | ,   |
+| precision         | 数字精度     | ^[number]                                                             | 0   |
+| prefix            | 设置数字的前缀  | ^[string]                                                             | —   |
+| suffix            | 设置数字的后缀  | ^[string]                                                             | —   |
+| title             | 数字标题     | ^[string]                                                             | —   |
+| value-style       | 数字样式     | ^[string] / ^[object]`CSSProperties \| CSSProperties[] \| string[]` | —   |
 
-### Statistic Slots
+### Statistic 插槽
 
-| Name   | Description                 |
-| ------ | --------------------------- |
-| prefix | Numeric prefix              |
-| suffix | Suffixes for numeric values |
-| title  | Numeric titles              |
+| 插槽名    | 详情    |
+| ------ | ----- |
+| prefix | 数字区之前 |
+| suffix | 数字区之后 |
+| title  | 数字标题  |
 
 ### Statistic Exposes
 
-| Name         | Description           | Type                             |
-| ------------ | --------------------- | -------------------------------- |
-| displayValue | current display value | ^[object]`Ref<string \| number>` |
+| 名称           | 描述    | 类型                                      |
+| ------------ | ----- | --------------------------------------- |
+| displayValue | 当前显示值 | ^[object]`Ref<string \| number>` |
 
 ## Countdown API
 
 ### Countdown Attributes
 
-| Attribute   | Description                      | Type                                                                | Default  |
-| ----------- | -------------------------------- | ------------------------------------------------------------------- | -------- |
-| value       | target time                      | ^[number] / ^[Dayjs]                                                | —        |
-| format      | Formatting the countdown display | ^[string]                                                           | HH:mm:ss |
-| prefix      | Sets the prefix of a countdown   | ^[string]                                                           | —        |
-| suffix      | Sets the suffix of a countdown   | ^[string]                                                           | —        |
-| title       | countdown titles                 | ^[string]                                                           | —        |
-| value-style | Styles countdown values          | ^[string] / ^[object]`CSSProperties \| CSSProperties[] \| string[]` | —        |
+| 属性          | 详情       | 类型                                                                    | 默认值      |
+| ----------- | -------- | --------------------------------------------------------------------- | -------- |
+| value       | 目标时间     | ^[number] / ^[Dayjs]                                                  | —        |
+| format      | 格式化倒计时   | ^[string]                                                             | HH:mm:ss |
+| prefix      | 设置倒计时前缀  | ^[string]                                                             | —        |
+| suffix      | 设置倒计时的后缀 | ^[string]                                                             | —        |
+| title       | 倒计时标题    | ^[string]                                                             | —        |
+| value-style | 倒计时值的样式  | ^[string] / ^[object]`CSSProperties \| CSSProperties[] \| string[]` | —        |
 
-### Countdown Events
+### Countdown 事件
 
-| Method | Description                  | Type                                 |
-| ------ | ---------------------------- | ------------------------------------ |
-| change | Time difference change event | ^[Function]`(value: number) => void` |
-| finish | countdown end event          | ^[Function]`() => void`              |
+| 方法     | 描述      | 类型                                      |
+| ------ | ------- | --------------------------------------- |
+| change | 时间差改变事件 | ^[Function]`(value: number) => void` |
+| finish | 倒计时结束事件 | ^[Function]`() => void`              |
 
-### Countdown Slots
+### Countdown 插槽
 
-| Name   | Description            |
-| ------ | ---------------------- |
-| prefix | countdown value prefix |
-| suffix | countdown value suffix |
-| title  | countdown title        |
+| 事件名    | 描述     |
+| ------ | ------ |
+| prefix | 倒计时值前缀 |
+| suffix | 倒计时后缀  |
+| title  | 倒计时标题  |
 
 ### Countdown Exposes
 
-| Name         | Description           | Type                   |
-| ------------ | --------------------- | ---------------------- |
-| displayValue | current display value | ^[object]`Ref<string>` |
+| 名称           | 详情    | 类型                           |
+| ------------ | ----- | ---------------------------- |
+| displayValue | 当前显示值 | ^[object]`Ref<string>` |

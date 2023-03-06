@@ -1,15 +1,15 @@
 ---
-title: Infinite
-lang: en-US
+title: Infinite Scroll 无限滚动
+lang: zh-CN
 ---
 
-# Infinite Scroll
+# Infinite Scroll 无限滚动
 
-Load more data while reach bottom of the page
+滚动至底部时，加载更多数据。
 
-## Basic usage
+## 基础用法
 
-Add `v-infinite-scroll` to the list to automatically execute loading method when scrolling to the bottom.
+在要实现滚动加载的列表上上添加`v-infinite-scroll`，并赋值相应的加载方法，可实现滚动到底部时自动执行加载方法。
 
 :::demo
 
@@ -17,7 +17,7 @@ infinite-scroll/basic
 
 :::
 
-## Disable Loading
+## 禁用加载
 
 :::demo
 
@@ -25,12 +25,12 @@ infinite-scroll/disable-loading
 
 :::
 
-## Directives
+## 指令
 
-| Name                      | Description                                                                                                      | Type     | Accepted values | Default |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------- | -------- | --------------- | ------- |
-| v-infinite-scroll         | Load more data while reach bottom of the page                                                                    | function | -               | -       |
-| infinite-scroll-disabled  | is disabled                                                                                                      | boolean  | -               | false   |
-| infinite-scroll-delay     | throttle delay (ms)                                                                                              | number   | -               | 200     |
-| infinite-scroll-distance  | trigger distance (px)                                                                                            | number   | -               | 0       |
-| infinite-scroll-immediate | Whether to execute the loading method immediately, in case the content cannot be filled up in the initial state. | boolean  | -               | true    |
+| 属性                        | 说明                          | 类型       | 可选值 | 默认值   |
+| ------------------------- | --------------------------- | -------- | --- | ----- |
+| v-infinite-scroll         | 滚动到底部时，加载更多数据               | function | -   | -     |
+| infinite-scroll-disabled  | 是否禁用                        | boolean  | -   | false |
+| infinite-scroll-delay     | 节流时延，单位为ms                  | number   | -   | 200   |
+| infinite-scroll-distance  | 触发加载的距离阈值，单位为px             | number   | -   | 0     |
+| infinite-scroll-immediate | 是否立即执行加载方法，以防初始状态下内容无法撑满容器。 | boolean  | -   | true  |

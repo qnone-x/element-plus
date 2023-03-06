@@ -1,55 +1,55 @@
 ---
-title: Alert
-lang: en-US
+title: Alert 提示
+lang: zh-CN
 ---
 
-# Alert
+# Alert 提示
 
-Displays important alert messages.
+用于页面中展示重要的提示信息。
 
-## Basic Usage
+## 基础用法
 
-Alert components are non-overlay elements in the page that does not disappear automatically.
+Alert 组件不属于浮层元素，不会自动消失或关闭。
 
-:::demo Alert provides 4 types of themes defined by `type`, whose default value is `info`.
+:::demo Alert 组件提供四种类型，由 `type` 属性指定，默认值为 `info`。
 
 alert/basic
 
 :::
 
-## Theme
+## 主题
 
-Alert provide two different themes, `light` and `dark`.
+Alert 组件提供了两个不同的主题：`light` 和 `dark`。
 
-:::demo Set `effect` to change theme, default is `light`.
+:::demo 通过设置 `effect` 属性来改变主题，默认为 `light`。
 
 alert/theme
 
 :::
 
-## Customizable Close Button
+## 自定义关闭按钮
 
-Customize the close button as texts or other symbols.
+你可以自定义关闭按钮为文字或其他符号。
 
-:::demo Alert allows you to configure if it's closable. The close button text and closing callbacks are also customizable. `closable` attribute decides if the component can be closed or not. It accepts `boolean`, and the default is `true`. You can set `close-text` attribute to replace the default cross symbol as the close button. Be careful that `close-text` must be a string. `close` event fires when the component is closed.
+:::demo 你可以设置 Alert 组件是否为可关闭状态， 关闭按钮的内容以及关闭时的回调函数同样可以定制。 `closable` 属性决定 Alert 组件是否可关闭， 该属性接受一个 `Boolean`，默认为 `false`。 你可以设置 `close-text` 属性来代替右侧的关闭图标， 需要注意的是 `close-text` 必须是一个字符串。 当 Alert 组件被关闭时会触发 `close` 事件。
 
 alert/close-button
 
 :::
 
-## With Icon
+## 使用图标
 
-Displaying an icon improves readability.
+你可以通过为 Alert 组件添加图标来提高可读性。
 
-:::demo Setting the `show-icon` attribute displays an icon that corresponds with the current Alert type.
+:::demo 通过设置 `show-icon` 属性来显示 Alert 的 icon，这能更有效地向用户展示你的显示意图。
 
 alert/icon
 
 :::
 
-## Centered Text
+## 文字居中
 
-Use the `center` attribute to center the text.
+使用 `center` 属性来让文字水平居中。
 
 :::demo
 
@@ -57,19 +57,19 @@ alert/center
 
 :::
 
-## With Description
+## 文字描述
 
-Description includes a message with more detailed information.
+为 Alert 组件添加一个更加详细的描述来使用户了解更多信息。
 
-:::demo Besides the required `title` attribute, you can add a `description` attribute to help you describe the alert with more details. Description can only store text string, and it will word wrap automatically.
+:::demo 除了必填的 `title` 属性外，你可以设置 `description` 属性来帮助你更好地介绍，我们称之为辅助性文字。 辅助性文字只能存放文本内容，当内容超出长度限制时会自动换行显示。
 
 alert/description
 
 :::
 
-## With Icon and Description
+## 带图标和描述
 
-:::demo At last, this is an example with both icon and description.
+:::demo 在最后, 这是一个带有图标和描述的例子。
 
 alert/icon-description
 
@@ -79,26 +79,26 @@ alert/icon-description
 
 ### Attributes
 
-| Name        | Description                              | Type                                                  | Default   | Required |
-| ----------- | ---------------------------------------- | ----------------------------------------------------- | --------- | -------- |
-| title       | alert title.                             | ^[string]                                             | —         | No       |
-| type        | alert type.                              | ^[enum]`'success' \| 'warning' \| 'info' \| 'error' ` | `info`    | No       |
-| description | descriptive text.                        | ^[string]                                             | —         | No       |
-| closable    | whether alert can be dismissed.          | ^[boolean]                                            | `true`    | No       |
-| center      | whether content is placed in the center. | ^[boolean]                                            | `false`   | No       |
-| close-text  | customized close button text.            | ^[string]                                             | —         | No       |
-| show-icon   | whether a type icon is displayed.        | ^[boolean]                                            | `false`   | No       |
-| effect      | theme style.                             | ^[enum]`'light' \| 'dark'`                            | `'light'` | No       |
+| 名称          | 说明        | 类型                                                      | 默认值       | 必填 |
+| ----------- | --------- | ------------------------------------------------------- | --------- | -- |
+| title       | Alert 标题。 | ^[string]                                               | —         | 否  |
+| type        | Alert 类型。 | ^[enum]`'success' \| 'warning' \| 'info' \| 'error'` | `info`    | 否  |
+| description | 描述性文本     | ^[string]                                               | —         | 否  |
+| closable    | 是否可以关闭    | ^[boolean]                                              | `true`    | 否  |
+| center      | 文字是否居中    | ^[boolean]                                              | `false`   | 否  |
+| close-text  | 自定义关闭按钮文本 | ^[string]                                               | —         | 否  |
+| show-icon   | 是否显示类型图标  | ^[boolean]                                              | `false`   | 否  |
+| effect      | 主题样式      | ^[enum]`'light' \| 'dark'`                             | `'light'` | 否  |
 
 ### Events
 
-| Name  | Description                   | Type                                     |
-| ----- | ----------------------------- | ---------------------------------------- |
-| close | trigger when alert is closed. | ^[Function]`(event: MouseEvent) => void` |
+| 名称    | 描述              | 类型                                          |
+| ----- | --------------- | ------------------------------------------- |
+| close | 关闭 Alert 时触发的事件 | ^[Function]`(event: MouseEvent) => void` |
 
 ### Slots
 
-| Name    | Description                       |
-| ------- | --------------------------------- |
-| default | content of the alert description. |
-| title   | content of the alert title.       |
+| 名称      | 描述         |
+| ------- | ---------- |
+| default | Alert 内容描述 |
+| title   | 标题的内容      |

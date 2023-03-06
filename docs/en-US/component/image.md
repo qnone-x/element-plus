@@ -1,55 +1,55 @@
 ---
-title: Image
-lang: en-US
+title: Image 图片
+lang: zh-CN
 ---
 
-# Image
+# Image 图片
 
-Besides the native features of img, support lazy load, custom placeholder and load failure, etc.
+图片容器，在保留所有原生 img 的特性下，支持懒加载，自定义占位、加载失败等
 
-## Basic Usage
+## 基础用法
 
-:::demo Indicate how the image should be resized to fit its container by `fit`, same as native [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
+:::demo 可通过`fit`确定图片如何适应到容器框，同原生 [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)。
 
 image/basic-usage
 
 :::
 
-## Placeholder
+## 占位内容
 
-:::demo Custom placeholder content when image hasn't loaded yet by `slot = placeholder`
+:::demo 可通过`slot = placeholder`可自定义占位内容
 
 image/placeholder
 
 :::
 
-## Load Failed
+## 加载失败
 
-:::demo Custom failed content when error occurs to image load by `slot = error`
+:::demo 可通过`slot = error`可自定义加载失败内容
 
 image/load-failed
 
 :::
 
-## Lazy Load
+## 懒加载
 
 :::tip
 
-Native `loading` has been supported since<VersionTag version="2.2.3" />, you can use `loading = "lazy"` to replace `lazy = true`.
+浏览器原生支持的 `loading`属性在 <VersionTag version="2.2.3" />版本加入。 您可以使用 `loading="lazy"` 替换之前的`lazy= true`。
 
-If the current browser supports native lazy loading, the native lazy loading will be used first, otherwise will be implemented through scroll.
+如果当前浏览器支持原生图片延迟加载，则先使用原生能力，否则将使用滚动监听实现相同效果。
 
 :::
 
-:::demo Use lazy load by `lazy = true`. Image will load until scroll into view when set. You can indicate scroll container that adds scroll listener to by `scroll-container`. If undefined, will be the nearest parent container whose overflow property is auto or scroll.
+:::demo 可通过`lazy`开启懒加载功能， 当图片滚动到可视范围内才会加载。 可通过 `scroll-container` 来设置滚动容器， 若未定义，则为最近一个 overflow 值为 auto 或 scroll 的父元素。
 
 image/lazy-load
 
 :::
 
-## Image Preview
+## 图片预览
 
-:::demo allow big image preview by setting `previewSrcList` prop. You can initialize the position of the first picture previewed by `initial-index`. The default initial position is 0.
+:::demo 可通过 `previewSrcList` 开启预览大图的功能。 你可以通过 `initial-index` 初始化第一张预览图片的位置。 默认初始位置为 0。
 
 image/image-preview
 
@@ -59,62 +59,62 @@ image/image-preview
 
 ### Image Attributes
 
-| Name                                    | Description                                                                                                                                       | Type                                                       | Default                                                                 |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `src`                                   | image source, same as native.                                                                                                                     | `string`                                                   | —                                                                       |
-| `fit`                                   | indicate how the image should be resized to fit its container, same as [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit). | `'fill' \| 'contain' \| 'cover' \| 'none' \| 'scale-down'` | —                                                                       |
-| `hide-on-click-modal`                   | when enabling preview, use this flag to control whether clicking on backdrop can exit preview mode.                                               | `boolean`                                                  | `false`                                                                 |
-| `loading`<VersionTag version="2.2.3" /> | Indicates how the browser should load the image, same as [native](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading)     | `'eager' \| 'lazy'`                                        | —                                                                       |
-| `lazy`                                  | whether to use lazy load.                                                                                                                         | `boolean`                                                  | `false`                                                                 |
-| `scroll-container`                      | the container to add scroll listener when using lazy load.                                                                                        | `string \| HTMLElement`                                    | the nearest parent container whose overflow property is auto or scroll. |
-| `alt`                                   | native attribute `alt`.                                                                                                                           | `string`                                                   | —                                                                       |
-| `referrer-policy`                       | native attribute `referrerPolicy`.                                                                                                                | `string`                                                   | —                                                                       |
-| `preview-src-list`                      | allow big image preview.                                                                                                                          | `string[]`                                                 | —                                                                       |
-| `z-index`                               | set image preview z-index.                                                                                                                        | `number`                                                   | —                                                                       |
-| `initial-index`                         | initial preview image index, less than the length of `url-list`.                                                                                  | `number`                                                   | `0`                                                                     |
-| `close-on-press-escape`                 | whether the image-viewer can be closed by pressing ESC                                                                                            | `boolean`                                                  | `true`                                                                  |
-| `preview-teleported`                    | whether to append image-viewer to body. A nested parent element attribute transform should have this attribute set to `true`.                     | `boolean`                                                  | `false`                                                                 |
+| 属性名                                     | 说明                                                                                                   | 类型                                                             | 默认值                                 |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | ----------------------------------- |
+| `src`                                   | 图片源地址，同原生属性一致                                                                                        | `string`                                                       | —                                   |
+| `fit`                                   | 确定图片如何适应容器框，同原生 [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)            | `'fill' \| 'contain' \| 'cover' \| 'none' \| 'scale-down'` | —                                   |
+| `hide-on-click-modal`                   | 当开启 preview 功能时，是否可以通过点击遮罩层关闭 preview                                                                | `boolean`                                                      | `false`                             |
+| `loading`<VersionTag version="2.2.3" /> | 浏览器加载图像的策略，和 [浏览器原生](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading)能力一致 | `'eager' \| 'lazy'`                                           | —                                   |
+| `lazy`                                  | 是否使用懒加载                                                                                              | `boolean`                                                      | `false`                             |
+| `scroll-container`                      | 开启懒加载功能后，监听 scroll 事件的容器                                                                             | `string \| HTMLElement`                                       | 最近一个 overflow 值为 auto 或 scroll 的父元素 |
+| `alt`                                   | 原生属性 `alt`                                                                                           | `string`                                                       | —                                   |
+| `referrer-policy`                       | 原生属性 `referrerPolicy`                                                                                | `string`                                                       | —                                   |
+| `preview-src-list`                      | 开启图片预览功能                                                                                             | `string[]`                                                     | —                                   |
+| `z-index`                               | 设置图片预览的 z-index                                                                                      | `number`                                                       | —                                   |
+| `initial-index`                         | 初始预览图像索引，小于 `url-list` 的长度                                                                           | `number`                                                       | `0`                                 |
+| `close-on-press-escape`                 | 是否可以通过按下 ESC 关闭 Image Viewer                                                                         | `boolean`                                                      | `true`                              |
+| `preview-teleported`                    | image-viewer 是否插入至 body 元素上。 嵌套的父元素属性会发生修改时应该将此属性设置为 `true`                                          | `boolean`                                                      | `false`                             |
 
 ### Image Events
 
-| Name     | Description                                                                                       | Type                      |
-| -------- | ------------------------------------------------------------------------------------------------- | ------------------------- |
-| `load`   | same as native load.                                                                              | `(e: Event) => void`      |
-| `error`  | same as native error.                                                                             | `(e: Error) => void`      |
-| `switch` | trigger when switching images.                                                                    | `(index: number) => void` |
-| `close`  | trigger when clicking on close button or when `hide-on-click-modal` enabled clicking on backdrop. | `() => void`              |
+| 事件名      | 说明                                                 | 类型                           |
+| -------- | -------------------------------------------------- | ---------------------------- |
+| `load`   | 图片加载成功触发                                           | `(e: Event) => void`      |
+| `error`  | 图片加载失败触发                                           | `(e: Error) => void`      |
+| `switch` | 切换图像时触发。                                           | `(index: number) => void` |
+| `close`  | 当点击 X 按钮或者在` hide-on-click-modal `为 true 时点击遮罩层时触发 | `() => void`              |
 
 ### Image Slots
 
-| Name          | Description                                              |
-| ------------- | -------------------------------------------------------- |
-| `placeholder` | custom placeholder content when image hasn't loaded yet. |
-| `error`       | custom image load failed content.                        |
-| `viewer`      | description of the image.                                |
+| 插槽名           | 说明                 |
+| ------------- | ------------------ |
+| `placeholder` | 当图像尚未加载时，自定义的占位符内容 |
+| `error`       | 自定义图像加载失败的内容       |
+| `viewer`      | 图片描述内容             |
 
 ## Image Viewer API
 
 ### Image Viewer Attributes
 
-| Name                  | Description                                                                                                                   | Type               | Default |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------ | ------- |
-| `url-list`            | preview link list.                                                                                                            | `string[]`         | `[]`    |
-| `z-index`             | preview backdrop z-index.                                                                                                     | `number \| string` | —       |
-| `initial-index`       | the initial preview image index, less than or equal to the length of `url-list`.                                              | `number`           | `0`     |
-| `infinite`            | whether preview is infinite.                                                                                                  | `boolean`          | `true`  |
-| `hide-on-click-modal` | whether user can emit close event when clicking backdrop.                                                                     | `boolean`          | `false` |
-| `teleported`          | whether to append image itself to body. A nested parent element attribute transform should have this attribute set to `true`. | `boolean`          | `false` |
-| `zoom-rate`           | the zoom rate of the image viewer zoom event                                                                                  | `number`           | `1.2`   |
+| 属性名                   | 说明                                                     | 类型                  | 默认值     |
+| --------------------- | ------------------------------------------------------ | ------------------- | ------- |
+| `url-list`            | 用于预览的图片链接列表                                            | `string[]`          | `[]`    |
+| `z-index`             | 预览时遮罩层的 z-index                                        | `number \| string` | —       |
+| `initial-index`       | 初始预览图像索引，小于 `url-list` 的长度                             | `number`            | `0`     |
+| `infinite`            | 是否可以无限循环预览                                             | `boolean`           | `true`  |
+| `hide-on-click-modal` | 是否可以通过点击遮罩层关闭预览                                        | `boolean`           | `false` |
+| `teleported`          | image 自身是否插入至 body 元素上。 嵌套的父元素属性会发生修改时应该将此属性设置为 `true` | `boolean`           | `false` |
+| `zoom-rate`           | 缩放事件的缩放速度                                              | `number`            | `1.2`   |
 
 ### Image Viewer Events
 
-| Name     | Description                                                                                       | Type                      |
-| -------- | ------------------------------------------------------------------------------------------------- | ------------------------- |
-| `close`  | trigger when clicking on close button or when `hide-on-click-modal` enabled clicking on backdrop. | `() => void`              |
-| `switch` | trigger when switching images.                                                                    | `(index: number) => void` |
+| 事件名      | 说明                                                 | 类型                           |
+| -------- | -------------------------------------------------- | ---------------------------- |
+| `close`  | 当点击 X 按钮或者在` hide-on-click-modal `为 true 时点击遮罩层时触发 | `() => void`              |
+| `switch` | 切换图像时触发。                                           | `(index: number) => void` |
 
 ## Image Viewer Methods
 
-| Method        | Description           | Parameters                                            |
-| ------------- | --------------------- | ----------------------------------------------------- |
-| setActiveItem | manually switch image | index of the image to be switched to, starting from 0 |
+| 方法名           | 说明     | 参数                |
+| ------------- | ------ | ----------------- |
+| setActiveItem | 手动切换图片 | 需要切换的图片的索引，从 0 开始 |

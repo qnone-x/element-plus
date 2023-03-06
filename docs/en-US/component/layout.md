@@ -1,44 +1,43 @@
 ---
-title: Layout
-lang: en-US
+title: Layout 布局
+lang: zh-CN
 ---
 
-# Layout
+# Layout 布局
 
-Quickly and easily create layouts with the basic 24-column.
+通过基础的 24 分栏，迅速简便地创建布局。
 
 :::tip
 
-The component uses flex layout by default, no need to set `type="flex"` manually.
+组件默认使用 Flex 布局，不需要手动设置 `type="flex"`。
 
-Please note that the parent container should avoid using `inline` related styles,
-which will cause the component to not fill up its width.
+请注意父容器避免使用 `inline` 相关样式，会导致组件宽度不能撑满。
 
 :::
 
-## Basic layout
+## 基础布局
 
-Create basic grid layout using columns.
+使用列创建基础网格布局。
 
-:::demo With `row` and `col`, we can easily manipulate the layout using the `span` attribute.
+:::demo 通过 `row` 和 `col` 组件，并通过 col 组件的 `span` 属性我们就可以自由地组合布局。
 
 layout/basic-layout
 
 :::
 
-## Column spacing
+## 分栏间隔
 
-Column spacing is supported.
+支持列间距。
 
-:::demo Row provides `gutter` attribute to specify spacings between columns, and its default value is 0.
+:::demo 行提供 `gutter` 属性来指定列之间的间距，其默认值为0。
 
 layout/column-spacing
 
 :::
 
-## Hybrid layout
+## 混合布局
 
-Form a more complex hybrid layout by combining the basic 1/24 columns.
+通过基础的 1/24 分栏任意扩展组合形成较为复杂的混合布局。
 
 :::demo
 
@@ -46,30 +45,29 @@ layout/hybrid-layout
 
 :::
 
-## Column offset
+## 列偏移
 
-You can specify column offsets.
+您可以指定列偏移量。
 
-:::demo You can specify the number of column offset by setting the value of `offset` attribute of Col.
+:::demo 通过制定 col 组件的 `offset` 属性可以指定分栏偏移的栏数。
 
 layout/column-offset
 
 :::
 
-## Alignment
+## 对齐方式
 
-Default use the flex layout to make flexible alignment of columns.
+默认使用 flex 布局来对分栏进行灵活的对齐。
 
-:::demo You can define the layout of child elements by setting `justify` attribute with start, center, end, space-between, space-around or space-evenly.
+:::demo 您可以通过`justify` 属性来定义子元素的排版方式，其取值为start、center、end、space-between、space-around或space-evenly。
 
 layout/alignment
 
 :::
 
-## Responsive Layout
+## 响应式布局
 
-Taking example by Bootstrap's responsive design, five breakpoints are preset:
-xs, sm, md, lg and xl.
+参照了 Bootstrap 的 响应式设计，预设了五个响应尺寸：xs、sm、md、lg 和 xl。
 
 :::demo
 
@@ -77,69 +75,67 @@ layout/responsive-layout
 
 :::
 
-## Utility classes for hiding elements
+## 基于断点的隐藏类
 
-Additionally, Element Plus provides a series of classes for hiding elements under
-certain conditions. These classes can be added to any DOM elements or custom components.
-You need to import the following CSS file to use these classes:
+Element Plus 额外提供了一系列类名，用于在某些条件下隐藏元素。 这些类名可以添加在任何 DOM 元素或自定义组件上。 如果需要，请自行引入以下文件：
 
 ```js
 import 'element-plus/theme-chalk/display.css'
 ```
 
-The classes are:
+这些类名为：
 
-- `hidden-xs-only` - hide when on extra small viewports only
-- `hidden-sm-only` - hide when on small viewports only
-- `hidden-sm-and-down` - hide when on small viewports and down
-- `hidden-sm-and-up` - hide when on small viewports and up
-- `hidden-md-only` - hide when on medium viewports only
-- `hidden-md-and-down` - hide when on medium viewports and down
-- `hidden-md-and-up` - hide when on medium viewports and up
-- `hidden-lg-only` - hide when on large viewports only
-- `hidden-lg-and-down` - hide when on large viewports and down
-- `hidden-lg-and-up` - hide when on large viewports and up
-- `hidden-xl-only` - hide when on extra large viewports only
+- `hidden-xs-only` - 当视口在 `xs` 尺寸时隐藏
+- `hidden-sm-only` - 当视口在 `sm` 尺寸时隐藏
+- `hidden-sm-and-down` - 当视口在 `sm` 及以下尺寸时隐藏
+- `hidden-sm-and-up` - 当视口在 `sm` 及以上尺寸时隐藏
+- `hidden-md-only` - 当视口在 `md` 尺寸时隐藏
+- `hidden-md-and-down` - 当视口在 `md` 及以下尺寸时隐藏
+- `hidden-md-and-up` - 当视口在 `md` 及以上尺寸时隐藏
+- `hidden-lg-only` - 当视口在 `lg` 尺寸时隐藏
+- `hidden-lg-and-down` - 当视口在 `lg` 及以下尺寸时隐藏
+- `hidden-lg-and-up` - 当视口在 `lg` 及以上尺寸时隐藏
+- `hidden-xl-only` - 当视口在 `xl` 尺寸时隐藏
 
 ## Row API
 
 ### Row Attributes
 
-| Name    | Description                         | Type                                                                                         | Default |
-| ------- | ----------------------------------- | -------------------------------------------------------------------------------------------- | ------- |
-| gutter  | grid spacing                        | ^[number]                                                                                    | 0       |
-| justify | horizontal alignment of flex layout | ^[enum]`'start' \| 'end' \| 'center' \| 'space-around' \| 'space-between' \| 'space-evenly'` | start   |
-| align   | vertical alignment of flex layout   | ^[enum]`'top' \| 'middle' \| 'bottom'`                                                       | top     |
-| tag     | custom element tag                  | ^[string]                                                                                    | div     |
+| 属性名     | 说明              | 类型                                                                                                | 默认值   |
+| ------- | --------------- | ------------------------------------------------------------------------------------------------- | ----- |
+| gutter  | 栅格间隔            | ^[number]                                                                                         | 0     |
+| justify | flex 布局下的水平排列方式 | ^[enum]`'start' \| 'end' \| 'center' \| 'space-around' \| 'space-between' \| 'space-evenly'` | start |
+| align   | flex 布局下的垂直排列方式 | ^[enum]`'top' \| 'middle' \| 'bottom'`                                                          | top   |
+| tag     | 自定义元素标签         | ^[string]                                                                                         | div   |
 
 ### Row Slots
 
-| Name    | Description               | Subtags |
-| ------- | ------------------------- | ------- |
-| default | customize default content | Col     |
+| 插槽名     | 说明      | 子标签 |
+| ------- | ------- | --- |
+| default | 自定义默认内容 | Col |
 
 ## Col API
 
 ### Col Attributes
 
-| Name   | Description                                         | Type                                                                                  | Default |
-| ------ | --------------------------------------------------- | ------------------------------------------------------------------------------------- | ------- |
-| span   | number of column the grid spans                     | ^[number]                                                                             | 24      |
-| offset | number of spacing on the left side of the grid      | ^[number]                                                                             | 0       |
-| push   | number of columns that grid moves to the right      | ^[number]                                                                             | 0       |
-| pull   | number of columns that grid moves to the left       | ^[number]                                                                             | 0       |
-| xs     | `<768px` Responsive columns or column props object  | ^[number] / ^[object]`{span?: number, offset?: number, pull?: number, push?: number}` | —       |
-| sm     | `≥768px` Responsive columns or column props object  | ^[number] / ^[object]`{span?: number, offset?: number, pull?: number, push?: number}` | —       |
-| md     | `≥992px` Responsive columns or column props object  | ^[number] / ^[object]`{span?: number, offset?: number, pull?: number, push?: number}` | —       |
-| lg     | `≥1200px` Responsive columns or column props object | ^[number] / ^[object]`{span?: number, offset?: number, pull?: number, push?: number}` | —       |
-| xl     | `≥1920px` Responsive columns or column props object | ^[number] / ^[object]`{span?: number, offset?: number, pull?: number, push?: number}` | —       |
-| tag    | custom element tag                                  | ^[string]                                                                             | div     |
+| 属性名    | 说明                         | 类型                                                                                    | 默认值 |
+| ------ | -------------------------- | ------------------------------------------------------------------------------------- | --- |
+| span   | 栅格占据的列数                    | ^[number]                                                                             | 24  |
+| offset | 栅格左侧的间隔格数                  | ^[number]                                                                             | 0   |
+| push   | 栅格向右移动格数                   | ^[number]                                                                             | 0   |
+| pull   | 栅格向左移动格数                   | ^[number]                                                                             | 0   |
+| xs     | `<768px` 响应式栅格数或者栅格属性对象 | ^[number] / ^[object]`{span?: number, offset?: number, pull?: number, push?: number}` | —   |
+| sm     | `≥768px` 响应式栅格数或者栅格属性对象    | ^[number] / ^[object]`{span?: number, offset?: number, pull?: number, push?: number}` | —   |
+| md     | `≥992px` 响应式栅格数或者栅格属性对象    | ^[number] / ^[object]`{span?: number, offset?: number, pull?: number, push?: number}` | —   |
+| lg     | `≥1200px` 响应式栅格数或者栅格属性对象   | ^[number] / ^[object]`{span?: number, offset?: number, pull?: number, push?: number}` | —   |
+| xl     | `≥1920px` 响应式栅格数或者栅格属性对象   | ^[number] / ^[object]`{span?: number, offset?: number, pull?: number, push?: number}` | —   |
+| tag    | 自定义元素标签                    | ^[string]                                                                             | div |
 
 ### Col Slots
 
-| Name    | Description               |
-| ------- | ------------------------- |
-| default | customize default content |
+| 插槽名     | 说明      |
+| ------- | ------- |
+| default | 自定义默认内容 |
 
 <style lang="scss">
 @use '../../examples/layout/index.scss';

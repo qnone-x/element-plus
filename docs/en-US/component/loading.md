@@ -1,27 +1,27 @@
 ---
-title: Loading
-lang: en-US
+title: Loading 加载
+lang: zh-CN
 ---
 
-# Loading
+# Loading 加载
 
-Show animation while loading data.
+加载数据时显示动效。
 
-## Loading inside a container
+## 区域加载
 
-Displays animation in a container (such as a table) while loading data.
+在需要的时候展示加载动画，防止页面失去响应提高用户体验（例如表格）。
 
-:::demo Element Plus provides two ways to invoke Loading: directive and service. For the custom directive `v-loading`, you just need to bind a `boolean` value to it. By default, the loading mask will append to the element where the directive is used. Adding the `body` modifier makes the mask append to the body element.
+:::demo Element Plus 提供了两种调用 Loading 的方法：指令和服务。 对于自定义指令 `v-loading`，只需要绑定 `boolean` 值即可。 默认状况下，Loading 遮罩会插入到绑定元素的子节点。 通过添加 `body` 修饰符，可以使遮罩插入至 Dom 中的 body 上。
 
 loading/basic
 
 :::
 
-## Customization
+## 自定义加载中组件内容
 
-You can customize loading text, loading spinner and background color.
+你可以自定义加载中组件的文字，图标，以及背景颜色。
 
-:::demo Add attribute `element-loading-text` to the element on which `v-loading` is bound, and its value will be displayed under the spinner. Similarly, the `element-loading-spinner / element-loading-svg` and `element-loading-background` attributes are used to set the svg icon, background color value, and loading icon, respectively.
+:::demo 在绑定了`v-loading`指令的元素上添加`element-loading-text`属性，其值会被渲染为加载文案，并显示在加载图标的下方。 类似地，`element-loading-spinner`、`element-loading-background` 和 `element-loading-svg` 属性分别用来设定 svg 图标、背景色值、加载图标。
 
 loading/customization
 
@@ -29,35 +29,35 @@ loading/customization
 
 :::warning
 
-Although the `element-loading-spinner / element-loading-svg` attribute supports incoming HTML fragments, it is very dangerous to dynamically render arbitrary HTML on the website, because it is easy to cause [XSS attack](https://en.wikipedia.org/wiki/Cross-site_scripting). Please make sure that the content of `element-loading-spinner / element-loading-svg` is trustworthy. **Never** assign user-submitted content to the `element-loading-spinner / element-loading-svg` attribute.
+虽然 `element-loading-spinner / element-loading-svg` 属性支持传入的 HTML 片段，但是动态在网站上渲染任意的 HTML 是非常危险的，因为很容易导致 [XSS 攻击](https://en.wikipedia.org/wiki/Cross-site_scripting)。 请确保 `element-loading-spinner / element-loading-svg`的内容是可信的， **不要**将用户提交的内容赋值给 `element-loading-spinner / element-loading-svg` 属性。
 
 :::
 
-## Full screen loading
+## 让加载组件铺满整个屏幕
 
-Show a full screen animation while loading data.
+加载数据时显示全屏动画。
 
-:::demo When used as a directive, a full screen Loading requires the `fullscreen` modifier, and it will be appended to body. In this case, if you wish to disable scrolling on body, you can add another modifier `lock`. When used as a service, Loading will be full screen by default.
+:::demo 当使用指令方式时，全屏遮罩需要添加`fullscreen`修饰符（遮罩会插入至 body 上） 此时若需要锁定屏幕的滚动，可以使用`lock`修饰符； 当使用服务方式时，遮罩默认即为全屏，无需额外设置。
 
 loading/fullscreen
 
 :::
 
-## Service
+## 以服务的方式来调用
 
-You can also invoke Loading with a service. Import Loading service:
+Loading 还可以以服务的方式调用。 你可以像这样引入 Loading 服务：
 
 ```ts
 import { ElLoading } from 'element-plus'
 ```
 
-Invoke it:
+在你需要的时候通过下面的方式调用：
 
 ```ts
 ElLoading.service(options)
 ```
 
-The parameter `options` is the configuration of Loading, and its details can be found in the following table. `LoadingService` returns a Loading instance, and you can close it by invoking its `close` method:
+其中`options`参数为 Loading 的配置项，具体见下表。 `LoadingService` 会返回一个 Loading 实例，可通过调用该实例的 `close` 方法来关闭它：
 
 ```ts
 const loadingInstance = ElLoading.service(options)
@@ -67,7 +67,7 @@ nextTick(() => {
 })
 ```
 
-Note that in this case the full screen Loading is singleton. If a new full screen Loading is invoked before an existing one is closed, the existing full screen Loading instance will be returned instead of actually creating another Loading instance:
+需要注意的是，以服务的方式调用的全屏 Loading 是单例的。 若在前一个全屏 Loading 关闭前再次调用全屏 Loading，并不会创建一个新的 Loading 实例，而是返回现有全屏 Loading 的实例：
 
 ```ts
 const loadingInstance1 = ElLoading.service({ fullscreen: true })
@@ -75,29 +75,29 @@ const loadingInstance2 = ElLoading.service({ fullscreen: true })
 console.log(loadingInstance1 === loadingInstance2) // true
 ```
 
-Calling the `close` method on any one of them can close this full screen Loading.
+此时调用它们中任意一个的 `close` 方法都能关闭这个全屏 Loading。
 
-If Element Plus is imported entirely, a globally method `$loading` will be registered to `app.config.globalProperties`. You can invoke it like this: `this.$loading(options)`, and it also returns a Loading instance.
+如果完整引入了 Element Plus，那么 `app.config.globalProperties` 上会有一个全局方法`$loading`， 它的调用方式为：`this.$loading(options)`，同样会返回一个 Loading 实例。
 
-## Options
+## 配置项
 
-| Attribute    | Description                                                                                                                                                              | Type          | Accepted Values | Default       |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | --------------- | ------------- |
-| target       | the DOM node Loading needs to cover. Accepts a DOM object or a string. If it's a string, it will be passed to `document.querySelector` to get the corresponding DOM node | object/string | —               | document.body |
-| body         | same as the `body` modifier of `v-loading`                                                                                                                               | boolean       | —               | false         |
-| fullscreen   | same as the `fullscreen` modifier of `v-loading`                                                                                                                         | boolean       | —               | true          |
-| lock         | same as the `lock` modifier of `v-loading`                                                                                                                               | boolean       | —               | false         |
-| text         | loading text that displays under the spinner                                                                                                                             | string        | —               | —             |
-| spinner      | class name of the custom spinner                                                                                                                                         | string        | —               | —             |
-| background   | background color of the mask                                                                                                                                             | string        | —               | —             |
-| custom-class | custom class name for Loading                                                                                                                                            | string        | —               | —             |
+| 属性           | 说明                                                                                              | 类型            | 可选值 | 默认值           |
+| ------------ | ----------------------------------------------------------------------------------------------- | ------------- | --- | ------------- |
+| target       | Loading 需要覆盖的 DOM 节点。 可传入一个 DOM 对象或字符串； 若传入字符串，则会将其作为参数传入 `document.querySelector`以获取到对应 DOM 节点 | object/string | —   | document.body |
+| body         | 同 `v-loading` 指令中的 `body` 修饰符                                                                   | boolean       | —   | false         |
+| fullscreen   | 同 `v-loading` 指令中的 `fullscreen` 修饰符                                                             | boolean       | —   | true          |
+| lock         | 同 `v-loading` 指令中的 `lock` 修饰符                                                                   | boolean       | —   | false         |
+| text         | 显示在加载图标下方的加载文案                                                                                  | string        | —   | —             |
+| spinner      | 自定义加载图标类名                                                                                       | string        | —   | —             |
+| background   | 遮罩背景色                                                                                           | string        | —   | —             |
+| custom-class | Loading 的自定义类名                                                                                  | string        | —   | —             |
 
-## Directives
+## 指令
 
-| Name                       | Description                                                  | Type    |
-| -------------------------- | ------------------------------------------------------------ | ------- |
-| v-loading                  | show animation while loading data                            | boolean |
-| element-loading-text       | loading text that displays under the spinner                 | string  |
-| element-loading-spinner    | icon of the custom spinner                                   | string  |
-| element-loading-svg        | icon of the custom spinner (same as element-loading-spinner) | string  |
-| element-loading-background | background color of the mask                                 | string  |
+| 名称                         | 说明                                     | 类型      |
+| -------------------------- | -------------------------------------- | ------- |
+| v-loading                  | 是否显示动画                                 | boolean |
+| element-loading-text       | 显示在加载图标下方的加载文案                         | string  |
+| element-loading-spinner    | 自定义加载图标                                | string  |
+| element-loading-svg        | 自定义加载图标 (与 element-loading-spinner 相同) | string  |
+| element-loading-background | 背景遮罩的颜色                                | string  |

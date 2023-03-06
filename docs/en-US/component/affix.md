@@ -1,37 +1,37 @@
 ---
-title: Affix
-lang: en-US
+title: Affix 固钉
+lang: zh-CN
 ---
 
-# Affix
+# Affix 固钉
 
-Fix the element to a specific visible area.
+将页面元素固定在特定可视区域。
 
-## Basic Usage
+## 基础用法
 
-Affix is fixed at the top of the page by default.
+固钉默认固定在页面顶部。
 
-:::demo You can set `offset` attribute to change the offset top，the default value is 0.
+:::demo 通过设置 `offset` 属性来改变吸顶距离，默认值为 0。
 
 affix/basic
 
 :::
 
-## Target Container
+## 指定容器
 
-You can set `target` attribute to keep the affix in the container at all times. It will be hidden if out of range.
+通过设置 `target` 属性，让固钉始终保持在容器内， 超过范围则隐藏。
 
-:::demo Please notice that the container avoid having scrollbar.
+:::demo 请注意容器避免出现滚动条。
 
 affix/target
 
 :::
 
-## Fixed Position
+## 固定位置
 
-The affix component provides two fixed positions: `top` and `bottom`.
+Affix 组件提供 2 个固定的位置参数 `top` 和 `bottom`。
 
-:::demo You can set `position` attribute to change the fixed position, the default value is `top`.
+:::demo 通过设置 `position` 属性来改变固定位置，默认值为 `top` 。
 
 affix/fixed
 
@@ -41,29 +41,29 @@ affix/fixed
 
 ### Affix Attributes
 
-| Name       | Description                      | Type                       | Default | Required |
-| ---------- | -------------------------------- | -------------------------- | ------- | -------- |
-| `offset`   | offset distance.                 | ^[number]                  | `0`     | No       |
-| `position` | position of affix.               | ^[enum]`'top' \| 'bottom'` | `'top'` | No       |
-| `target`   | target container. (CSS selector) | ^[string]                  | —       | No       |
-| `z-index`  | `z-index` of affix               | ^[number]                  | `100`   | No       |
+| 名称         | 说明             | 类型                          | 默认值     | 必填 |
+| ---------- | -------------- | --------------------------- | ------- | -- |
+| `offset`   | 偏移距离           | ^[number]                   | `0`     | 否  |
+| `position` | 位置             | ^[enum]`'top' \| 'bottom'` | `'top'` | 否  |
+| `target`   | 指定容器 (CSS 选择器) | ^[string]                   | —       | 否  |
+| `z-index`  | `z-index`      | ^[number]                   | `100`   | 否  |
 
 ### Affix Events
 
-| Name     | Description                        | Type                                                                |
-| -------- | ---------------------------------- | ------------------------------------------------------------------- |
-| `change` | triggers when fixed state changed. | ^[Function]`(fixed: boolean) => void`                               |
-| `scroll` | triggers when scrolling.           | ^[Function]`(value: { scrollTop: number, fixed: boolean }) => void` |
+| 名称       | 说明               | 类型                                                                     |
+| -------- | ---------------- | ---------------------------------------------------------------------- |
+| `change` | fixed 状态改变时触发的事件 | ^[Function]`(fixed: boolean) => void`                               |
+| `scroll` | 滚动时触发的事件         | ^[Function]`(value: { scrollTop: number, fixed: boolean }) => void` |
 
 ### Affix Exposes
 
-| Method       | Description                 | Type                    |
-| ------------ | --------------------------- | ----------------------- |
-| `update`     | update affix state manually | ^[Function]`() => void` |
-| `updateRoot` | update rootRect info        | ^[Function]`() => void` |
+| 方法名          | 说明            | 类型                         |
+| ------------ | ------------- | -------------------------- |
+| `update`     | 手动更新固钉状态      | ^[Function]`() => void` |
+| `updateRoot` | 手动更新根元素的盒模型信息 | ^[Function]`() => void` |
 
 ### Affix Slots
 
-| Name      | Description                |
-| --------- | -------------------------- |
-| `default` | customize default content. |
+| 插槽名       | 说明      |
+| --------- | ------- |
+| `default` | 自定义默认内容 |

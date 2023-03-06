@@ -1,55 +1,55 @@
 ---
-title: Notification
-lang: en-US
+title: Notification 通知
+lang: zh-CN
 ---
 
-# Notification
+# Notification 通知
 
-Displays a global notification message at a corner of the page.
+悬浮出现在页面角落，显示全局的通知提醒消息。
 
-## Basic usage
+## 基础用法
 
-:::demo Element Plus has registered the `$notify` method and it receives an object as its parameter. In the simplest case, you can set the `title` field and the` message` field for the title and body of the notification. By default, the notification automatically closes after 4500ms, but by setting `duration` you can control its duration. Specifically, if set to `0`, it will not close automatically. Note that `duration` receives a `Number` in milliseconds.
+:::demo Element Plus 注册了 `$notify` 方法并且它接受一个 Object 作为其参数。 在最简单的情况下，你可以通过设置 `title` 和 `message` 属性来设置通知的标题和正文内容。 默认情况下，通知在4500毫秒后自动关闭，但你可以通过设置 `duration` 属性来自定义通知的展示时间。 如果你将它设置为 `0`，那么通知将不会自动关闭。 需要注意的是 `duration` 接收一个 `Number`，单位为毫秒。
 
 notification/basic
 
 :::
 
-## With types
+## 不同类型的通知
 
-We provide four types: success, warning, info and error.
+我们提供了四种不同类型的提醒框：success、warning、info 和error。
 
-:::demo Element Plus provides four notification types: `success`, `warning`, `info` and `error`. They are set by the `type` field, and other values will be ignored. We also registered methods for these types that can be invoked directly like `open3` and `open4` without passing a `type` field.
+:::demo Element Plus 为 Notification 组件准备了四种通知类型：`success`, `warning`, `info`, `error`。 他们可以设置 `type` 字段来修改，除上述的四个值之外的值会被忽略。 同时，我们也为 Notification 的各种 type 注册了单独的方法，可以在不传入 `type` 字段的情况下像 `open3` 和 `open4` 那样直接调用。
 
 notification/different-types
 
 :::
 
-## Custom position
+## 自定义消息弹出的位置
 
-Notification can emerge from any corner you like.
+可以让 Notification 从屏幕四角中的任意一角弹出
 
-:::demo The `position` attribute defines which corner Notification slides in. It can be `top-right`, `top-left`, `bottom-right` or `bottom-left`. Defaults to `top-right`.
+:::demo 使用 `position` 属性设置 Notification 的弹出位置， 支持四个选项：`top-right`、`top-left`、`bottom-right` 和 `bottom-left`， 默认为 `top-right`。
 
 notification/positioning
 
 :::
 
-## With offset
+## 有位置偏移的通知栏
 
-Customize Notification's offset from the edge of the screen.
+能够设置偏移量来使 Notification 偏移默认位置。
 
-:::demo Set the `offset` attribute to customize Notification's offset from the edge of the screen. Note that every Notification instance of the same moment should have the same offset.
+:::demo Notification 提供设置偏移量的功能，通过设置 `offset` 字段，可以使弹出的消息距屏幕边缘偏移一段距离。 注意在同一时刻，每一个的 Notification 实例应当具有一个相同的偏移量。
 
 notification/offsetting
 
 :::
 
-## Use HTML string
+## 使用 HTML 片段作为正文内容
 
-`message` supports HTML string.
+`message` 支持传入 HTML 字符串来作为正文内容。
 
-:::demo Set `dangerouslyUseHTMLString` to true and `message` will be treated as an HTML string.
+:::demo 将 `dangerouslyUseHTMLString` 属性设置为 true，`message` 属性就会被当作 HTML 片段处理。
 
 notification/raw-html
 
@@ -57,41 +57,41 @@ notification/raw-html
 
 :::warning
 
-Although `message` property supports HTML strings, dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). So when `dangerouslyUseHTMLString` is on, please make sure the content of `message` is trusted, and **never** assign `message` to user-provided content.
+`message` 属性虽然支持传入 HTML 片段，但是在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 [XSS 攻击](https://en.wikipedia.org/wiki/Cross-site_scripting)。 因此在 `dangerouslyUseHTMLString` 打开的情况下，请确保 `message` 的内容是可信的，**永远不要**将用户提交的内容赋值给 `message` 属性。
 
 :::
 
-## Hide close button
+## 隐藏关闭按钮
 
-It is possible to hide the close button
+通知的关闭按钮可以被设置为隐藏。
 
-:::demo Set the `showClose` attribute to `false` so the notification cannot be closed by the user.
+:::demo 将 ` showClose ` 属性设置为 `false` 即可隐藏关闭按钮。
 
 notification/no-close
 
 :::
 
-## Global method
+## 全局方法
 
-Element Plus has added a global method `$notify` for `app.config.globalProperties`. So in a vue instance you can call `Notification` like what we did in this page.
+Element Plus 为 `app.config.globalProperties` 添加了全局方法 `$notify`。 因此在 Vue instance 中可以采用本页面中的方式调用 `Notification`。
 
-## Local import
+## 单独引用
 
 ```javascript
 import { ElNotification } from 'element-plus'
 ```
 
-In this case you should call `ElNotification(options)`. We have also registered methods for different types, e.g. `ElNotification.success(options)`. You can call `ElNotification.closeAll()` to manually close all the instances.
+你可以在对应的处理函数内调用 `ElNotification(options)` 来呼出通知栏。 我们也提前定义了多个 type 的单独调用方法，如 `ElNotification.success(options)`。 当你需要关闭页面上所有的通知栏的时候，可以调用 `ElNotification.closeAll()` 来关闭所有的实例。
 
-## App context inheritance <el-tag>> 2.0.4</el-tag>
+## 应用程序上下文继承 <el-tag>> 2.0.4</el-tag>
 
-Now notification accepts a `context` as second parameter of the message constructor which allows you to inject current app's context to notification which allows you to inherit all the properties of the app.
+现在 Notification 接受一条 `context` 作为消息构造器的第二个参数，允许你将当前应用的上下文注入到 Notification 中，这将允许你继承应用程序的所有属性。
 
-You can use it like this:
+你可以像这样使用它：
 
 :::tip
 
-If you globally registered ElNotification component, it will automatically inherit your app context.
+如果您全局注册了 ElNotification 组件，它将自动继承应用的上下文环境。
 
 :::
 
@@ -99,33 +99,33 @@ If you globally registered ElNotification component, it will automatically inher
 import { getCurrentInstance } from 'vue'
 import { ElNotification } from 'element-plus'
 
-// in your setup method
+// 在你的 setup 方法中
 const { appContext } = getCurrentInstance()!
 ElNotification({}, appContext)
 ```
 
-## Options
+## Notification 属性
 
-| Attribute                | Description                                                                                                        | Type                  | Accepted Values                             | Default       |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------ | --------------------- | ------------------------------------------- | ------------- |
-| title                    | title                                                                                                              | string                | —                                           | —             |
-| message                  | description text                                                                                                   | string/Vue.VNode      | —                                           | —             |
-| dangerouslyUseHTMLString | whether `message` is treated as HTML string                                                                        | boolean               | —                                           | false         |
-| type                     | notification type                                                                                                  | string                | success/warning/info/error                  | —             |
-| icon                     | custom icon component. It will be overridden by `type`                                                             | `string \| Component` | —                                           | —             |
-| customClass              | custom class name for Notification                                                                                 | string                | —                                           | —             |
-| duration                 | duration before close. It will not automatically close if set 0                                                    | number                | —                                           | 4500          |
-| position                 | custom position                                                                                                    | string                | top-right/top-left/bottom-right/bottom-left | top-right     |
-| showClose                | whether to show a close button                                                                                     | boolean               | —                                           | true          |
-| onClose                  | callback function when closed                                                                                      | function              | —                                           | —             |
-| onClick                  | callback function when notification clicked                                                                        | function              | —                                           | —             |
-| offset                   | offset from the top edge of the screen. Every Notification instance of the same moment should have the same offset | number                | —                                           | 0             |
-| appendTo                 | set the root element for the notification                                                                          | string / HTMLElement  | -                                           | document.body |
-| zIndex                   | initial zIndex                                                                                                     | number                | -                                           | 0             |
+| 属性                       | 说明                                                     | 类型                     | 可选值                                         | 默认值           |
+| ------------------------ | ------------------------------------------------------ | ---------------------- | ------------------------------------------- | ------------- |
+| title                    | 标题                                                     | string                 | —                                           | —             |
+| message                  | 通知栏正文内容                                                | string/Vue.VNode       | —                                           | —             |
+| dangerouslyUseHTMLString | 是否将 message 属性作为 HTML 片段处理                             | boolean                | —                                           | false         |
+| type                     | 通知的类型                                                  | string                 | success/warning/info/error                  | —             |
+| icon                     | 自定义图标。 若设置了 `type`，则 `icon` 会被覆盖                       | `string \| Component` | —                                           | —             |
+| custom-class             | 自定义类名                                                  | string                 | —                                           | —             |
+| duration                 | 显示时间, 单位为毫秒。 值为 0 则不会自动关闭                              | number                 | —                                           | 4500          |
+| position                 | 自定义弹出位置                                                | string                 | top-right/top-left/bottom-right/bottom-left | top-right     |
+| show-close               | 是否显示关闭按钮                                               | boolean                | —                                           | true          |
+| on-close                 | 关闭时的回调函数                                               | function               | —                                           | —             |
+| on-click                 | 点击 Notification 时的回调函数                                 | function               | —                                           | —             |
+| offset                   | 相对屏幕顶部的偏移量 偏移的距离，在同一时刻，所有的 Notification 实例应当具有一个相同的偏移量 | number                 | —                                           | 0             |
+| appendTo                 | 设置通知栏在 DOM 中的亲元素                                      | string / HTMLElement   | -                                           | document.body |
+| zIndex                   | 初始 zIndex                                              | number                 | -                                           | 0             |
 
-## Methods
+## Notification 方法
 
-`Notification` and `this.$notify` returns the current Notification instance. To manually close the instance, you can call `close` on it.
-| Method | Description |
-| ---- | ---- |
-| close | close the Notification |
+`Notification` 和 `this.$notify` 都返回当前的 Notification 实例。 如果需要手动关闭实例，可以调用它的 `close` 方法。
+| 方法名   | 描述                 |
+| ----- | ------------------ |
+| close | 关闭当前的 Notification |

@@ -1,37 +1,37 @@
 ---
-title: Calendar
-lang: en-US
+title: Calendar 日历
+lang: zh-CN
 ---
 
-# Calendar
+# Calendar 日历
 
-Display date.
+显示日期
 
-## Basic
+## 基础用法
 
-:::demo Set `value` to specify the currently displayed month. If `value` is not specified, current month is displayed. `value` supports two-way binding.
+:::demo 设置 `value` 来指定当前显示的月份。 如果 `value` 未指定，则显示当月。 `value` 支持 `v-model` 双向绑定。
 
 calendar/basic
 
 :::
 
-## Custom Content
+## 自定义内容
 
-:::demo Customize what is displayed in the calendar cell by setting `scoped-slot` named `date-cell`. In `scoped-slot` you can get the date (the date of the current cell), data (including the type, isSelected, day attribute). For details, please refer to the API documentation below.
+:::demo 通过设置名为 `date-cell` 的 `scoped-slot` 来自定义日历单元格中显示的内容。 在 `scoped-slot` 可以获取到 date（当前单元格的日期）, data（包括 type，isSelected，day 属性）。 详情解释参考下方的 API 文档。
 
 calendar/customize
 
 :::
 
-## Range
+## 范围
 
-:::demo Set the `range` attribute to specify the display range of the calendar. Start time must be Monday, end time must be Sunday, and the time span cannot exceed two months.
+:::demo 设置 `range` 属性指定日历的显示范围。 开始时间必须是周起始日，结束时间必须是周结束日，且时间跨度不能超过两个月。
 
 calendar/range
 
 :::
 
-## Customize header
+## 自定义日历头部
 
 :::demo
 
@@ -39,24 +39,24 @@ calendar/header
 
 :::
 
-## Localization
+## 国际化
 
-The default locale of is English, if you need to use other languages, please check [Internationalization](/en-US/guide/i18n)
+由于 Element Plus 的默认语言为英语，如果你需要设置其它的语言，请参考[国际化](/zh-CN/guide/i18n)文档。
 
-Note, date time locale (month name, first day of the week ...) are also configured in localization.
+要注意的是：日期相关的文字（月份，每一周的第一天等等）也都是通过国际化来配置的。
 
 ## API
 
 ### Attributes
 
-| Name                  | Description                                                                                                                                                    | Type                   | Default |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ------- |
-| model-value / v-model | binding value                                                                                                                                                  | ^[Date]                | —       |
-| range                 | time range, including start time and end time. Start time must be start day of week, end time must be end day of week, the time span cannot exceed two months. | ^[array]`[Date, Date]` | —       |
+| 属性名                   | 说明                                                      | 类型                     | 默认值 |
+| --------------------- | ------------------------------------------------------- | ---------------------- | --- |
+| model-value / v-model | 选中项绑定值                                                  | ^[Date]                | —   |
+| range                 | 时间范围，包括开始时间与结束时间。 开始时间必须是周起始日，结束时间必须是周结束日，且时间跨度不能超过两个月。 | ^[array]`[Date, Date]` | —   |
 
 ### Slots
 
-| Name      | Description                                                                                                                                                                                                                                               | Type                                                                                                                         |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| date-cell | `type` indicates which month the date belongs, optional values are prev-month, current-month, next-month; `isSelected` indicates whether the date is selected; `day` is the formatted date in the format `YYYY-MM-DD`; `date` is date the cell represents | ^[object]`{ data: { type: 'prev-month' \| 'current-month' \| 'next-month', isSelected: boolean, day: string, date: Date } }` |
-| header    | content of the Calendar header                                                                                                                                                                                                                            | ^[object]`{ date: string }`                                                                                                  |
+| 插槽名       | 说明                                                                                                                                 | 类型                                                                                                                             |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| date-cell | `type` 表示该日期的所属月份，可选值有 prev-month、current-month 和 next-month；`isSelected` 标明该日期是否被选中；`day` 是格式化的日期，格式为 `yyyy-MM-dd`；`date` 是单元格的日期 | ^[object]`{ data: { type: 'prev-month' \| 'current-month' \| 'next-month', isSelected: boolean, day: string, date: Date } }` |
+| header    | 卡片标题内容                                                                                                                             | ^[object]`{ date: string }`                                                                                                    |

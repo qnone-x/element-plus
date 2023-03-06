@@ -1,11 +1,11 @@
 ---
-title: Color
-lang: en-US
+title: Color 色彩
+lang: zh-CN
 ---
 
-# Color
+# Color 色彩
 
-Element Plus uses a specific set of palettes to specify colors to provide a consistent look and feel for the products you build.
+Element Plus 为了避免视觉传达差异，使用一套特定的调色板来规定颜色，为你所搭建的产品提供一致的外观视觉感受。
 
 <style lang="scss">
 .demo-color-box {
@@ -53,27 +53,27 @@ Element Plus uses a specific set of palettes to specify colors to provide a cons
 }
 </style>
 
-## Main Color
+## 主色
 
-The main color of Element Plus is bright and friendly blue.
+Element Plus 默认的主题色是明亮、友好的蓝色。
 
 <!-- Do not touch -->
 <ClientOnly>
   <MainColor />
 </ClientOnly>
 
-## Secondary Color
+## 辅助色
 
-Besides the main color, you need to use different scene colors in different scenarios (for example, dangerous color indicates dangerous operation)
+除了主颜色外，您需要在不同的场景中使用不同的场景颜色 (例如，危险的颜色表示危险的操作)
 
 <!-- Do not touch -->
 <ClientOnly>
   <SecondaryColors />
 </ClientOnly>
 
-## Neutral Color
+## 中性色
 
-Neutral colors are for text, background and border colors. You can use different neutral colors to represent the hierarchical structure.
+中性色用于文本、背景和边框颜色。 通过运用不同的中性色，来表现层次结构。
 
 <!-- Do not touch -->
 <ClientOnly>

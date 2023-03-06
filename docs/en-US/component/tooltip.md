@@ -1,66 +1,65 @@
 ---
-title: Tooltip
-lang: en-US
+title: Tooltip 文字提示
+lang: zh-CN
 ---
 
-# Tooltip
+# Tooltip 文字提示
 
-Display prompt information for mouse hover.
+常用于展示鼠标 hover 时的提示信息。
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+在 SSR 场景下，您需要将组件包裹在 `<client-only></client-only>` 之中 (如: [Nuxt](https://nuxt.com/v3)) 和 SSG (e.g: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
-## Basic usage
+## 基础用法
 
-Tooltip has 9 placements.
+在这里我们提供 9 种不同方向的展示方式，可以通过以下完整示例来理解，选择你要的效果。
 
-:::demo Use attribute `content` to set the display content when hover. The attribute `placement` determines the position of the tooltip. Its value is `[orientation]-[alignment]` with four orientations `top`, `left`, `right`, `bottom` and three alignments `start`, `end`, `null`, and the default alignment is null. Take `placement="left-end"` for example, Tooltip will display on the left of the element which you are hovering and the bottom of the tooltip aligns with the bottom of the element.
+:::demo 使用 `content` 属性来决定 `hover` 时的提示信息。 由 `placement` 属性决定展示效果： `placement`属性值为：`[方向]-[对齐位置]`；四个方向：`top`、`left`、`right`、`bottom`；三种对齐位置：`start`, `end`，默认为空。 如 `placement="left-end"`，则提示信息出现在目标元素的左侧，且提示信息的底部与目标元素的底部对齐。
 
 tooltip/basic
 
 :::
 
-## Theme
+## 主题
 
-Tooltip has two built-in themes: `dark` and `light`.
+Tooltip 组件内置了两个主题：`dark`和`light`。
 
 :::tip
 
-To use customized theme, you will have to known where your tooltip is rendered into, if your tooltip is rendered into the root element, you will need to set the css rule globally.
+要使用自定义主题，您必须知道您的工具提示在哪里渲染， 如果您的工具提示被呈现为根元素，您将需要全局设置css规则。
 
-It is recommended that not using linear gradient background color when you using customized theme and showing the arrow at the same time, because the popup arrow and the content are two different elements,
-the popup arrow's style needs to be set individually, and when it comes to the gradient background color, it might seem a little bit weird.
+建议您使用自定义主题并同时显示箭头时不使用线性渐变背景颜色。 因为弹出箭头和内容是两个不同的元素， 弹出箭头的样式需要单独设置， 当它到渐变背景颜色时，会看起来很奇怪。
 
 :::
 
-:::demo Set `effect` to modify theme, and the default value is `dark`.
+:::demo 通过设置 `effect` 来修改主题，默认值为 `dark`.
 
 tooltip/theme
 
 :::
 
-## More Content
+## 更多内容的文字提示
 
-Display multiple lines of text and set their format.
+展示多行文本或者是设置文本内容的格式
 
-:::demo Override attribute `content` of `el-tooltip` by adding a slot named `content`.
+:::demo 用具名 slot `content`，替代`tooltip`中的`content`属性。
 
 tooltip/rich-content
 
 :::
 
-## Advanced usage
+## 高级扩展
 
-In addition to basic usages, there are some attributes that allow you to customize your own:
+除了这些基本设置外，还有一些属性可以让使用者更好的定制自己的效果：
 
-`transition` attribute allows you to customize the animation in which the tooltip shows or hides, and the default value is el-fade-in-linear.
+`transition` 属性可以定制显隐的动画效果，默认为`fade-in-linear`。
 
-`disabled` attribute allows you to disable `tooltip`. You just need set it to `true`.
+如果需要关闭 `tooltip` 功能，`disabled` 属性可以满足这个需求， 你只需要将其设置为 `true`。
 
-In fact, Tooltip is an extension based on [ElPopper](https://github.com/element-plus/element-plus/tree/dev/packages/components/popper), you can use any attribute that are allowed in ElPopper.
+事实上，Tooltip 是一个基于 [ElPopper](https://github.com/element-plus/element-plus/tree/dev/packages/components/popper) 的扩展，您可以使用 ElPopper 中允许的任何属性。
 
 :::demo
 
@@ -70,19 +69,19 @@ tooltip/advanced-usage
 
 :::tip
 
-The `router-link` component is not supported in tooltip, please use `vm.$router.push`.
+Tooltip 内不支持 `router-link` 组件，请使用 `vm.$router.push` 代替。
 
-Disabled form elements are not supported for Tooltip, more information can be found at [MDN](https://developer.mozilla.org/en-US/docs/Web/Events/mouseenter). You need to wrap the disabled form element with a container element for Tooltip to work.
+tooltip 内不支持 disabled form 元素，参考 [MDN](https://developer.mozilla.org/en-US/docs/Web/Events/mouseenter)， 请在 disabled form 元素外层添加一层包裹元素。
 
 :::
 
-## HTML as content
+## 显示 HTML 内容
 
-The content attribute can be set to HTML string.
+内容属性可以设置为 HTML 字符串。
 
 :::warning
 
-Although `content` property supports HTML strings, dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). So when `raw-content` is on, please make sure `content` is trusted, and **never** assign user-provided `content`.
+`content` 属性虽然支持传入 HTML 片段，但是在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 [XSS 攻击](https://en.wikipedia.org/wiki/Cross-site_scripting)。 因此在 `raw-content` 打开的情况下，请确保 `content` 的内容是可信的，**永远不要**将用户提交的内容赋值给 `content` 属性。
 
 :::
 
@@ -92,15 +91,13 @@ tooltip/html-content
 
 :::
 
-## Virtual triggering
+## 虚拟触发
 
-Sometimes we want to render the tooltip on some other trigger element,
-we can separate the trigger and the content.
+有时候我们想把 tooltip 的触发元素放在别的地方，而不需要写在一起，这时候就可以使用虚拟触发。
 
 :::tip
 
-Virtual triggering tooltip is controlled component, so that you will have to control the visibility of the tooltip your own
-when this happens, **YOU WILL NOT** be able to close the tooltip by clicking somewhere else.
+需要注意的是，虚拟触发的 tooltip 是受控组件，因此你必须自己去控制 tooltip 是否显示，**你将无法**通过点击空白处来关闭 tooltip。
 
 :::
 
@@ -110,13 +107,13 @@ tooltip/virtual-trigger
 
 :::
 
-## Singleton
+## 单例模式
 
-Tooltip can also be singleton, which means you can have multiple trigger with only one tooltip instance, this function is implemented based on `Virtual triggering`
+Tooltip 可以作为单例，也就是是说你可以同时有多个触发同一个 tooltip 的触发元素，这个功能是在 `虚拟触发` 的基础上开发的。
 
 :::tip
 
-Known issue: when using singleton, the popup will be bouncing out from unexpected places
+已知问题：当使用单例模式时，tooltip 的触发元素发生改变的时候可能会发生弹跳。
 
 :::
 
@@ -126,9 +123,9 @@ tooltip/singleton
 
 :::
 
-## Controlled
+## 受控模式
 
-Tooltip can be controlled by the parent component, by using `:visible` you can implement two way binding.
+Tooltip 可以通过父组件使用 `:visible` 来控制它的显示与关闭。
 
 :::demo
 
@@ -136,9 +133,9 @@ tooltip/controlled
 
 :::
 
-## Animations
+## 自定义动画
 
-Tooltip can be customized animated, you can set the desired animation function as you desired.
+Tooltip 可以自定义动画，你可以根据需要自行设置所需的动画方法。
 
 :::demo
 
@@ -146,37 +143,37 @@ tooltip/animations
 
 :::
 
-## Attributes
+## 属性
 
-| Name                      | Description                                                                                                                                             | Type                         | Accepted Values                                                                                           | Default                                                                    |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| append-to                 | which element the tooltip CONTENT appends to                                                                                                            | `CSSSelector \| HTMLElement` | —                                                                                                         | #el-popper-container-[randomValue]                                         |
-| effect                    | Tooltip theme, built-in theme: `dark` / `light`                                                                                                         | string                       | dark / light                                                                                              | dark                                                                       |
-| content                   | display content, can be overridden by `slot#content`                                                                                                    | String                       | —                                                                                                         | —                                                                          |
-| raw-content               | whether `content` is treated as HTML string                                                                                                             | boolean                      | —                                                                                                         | false                                                                      |
-| placement                 | position of Tooltip                                                                                                                                     | string                       | top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end | bottom                                                                     |
-| visible / v-model:visible | visibility of Tooltip                                                                                                                                   | boolean                      | —                                                                                                         | false                                                                      |
-| disabled                  | whether Tooltip is disabled                                                                                                                             | boolean                      | —                                                                                                         | false                                                                      |
-| offset                    | offset of the Tooltip                                                                                                                                   | number                       | —                                                                                                         | 0                                                                          |
-| transition                | animation name                                                                                                                                          | string                       | —                                                                                                         | el-fade-in-linear                                                          |
-| popper-options            | [popper.js](https://popper.js.org/docs/v2/) parameters                                                                                                  | Object                       | refer to [popper.js](https://popper.js.org/docs/v2/) doc                                                  | `{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}` |
-| show-after                | delay of appearance, in millisecond                                                                                                                     | number                       | —                                                                                                         | 0                                                                          |
-| show-arrow                | whether the tooltip content has an arrow                                                                                                                | boolean                      | true / false                                                                                              | true                                                                       |
-| hide-after                | delay of disappear, in millisecond                                                                                                                      | number                       | —                                                                                                         | 200                                                                        |
-| auto-close                | timeout in milliseconds to hide tooltip                                                                                                                 | number                       | —                                                                                                         | 0                                                                          |
-| manual                    | whether to control Tooltip manually. `mouseenter` and `mouseleave` won't have effects if set to `true`                                                  | boolean                      | —                                                                                                         | false                                                                      |
-| popper-class              | custom class name for Tooltip's popper                                                                                                                  | string                       | —                                                                                                         | —                                                                          |
-| enterable                 | whether the mouse can enter the tooltip                                                                                                                 | Boolean                      | —                                                                                                         | true                                                                       |
-| tabindex                  | [tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) of Tooltip                                                     | number                       | —                                                                                                         | 0                                                                          |
-| teleported                | whether tooltip content is teleported, if `true` it will be teleported to where `append-to` sets                                                        | boolean                      | true / false                                                                                              | true                                                                       |
-| trigger                   | How should the tooltip be triggered (to show)                                                                                                           | string                       | hover / click / focus / contextmenu                                                                       | hover                                                                      |
-| virtual-triggering        | Indicates whether virtual triggering is enabled                                                                                                         | boolean                      | —                                                                                                         | false                                                                      |
-| virtual-ref               | Indicates the reference element to which the tooltip is attached                                                                                        | HTMLElement                  | —                                                                                                         | —                                                                          |
-| trigger-keys              | When you click the mouse to focus on the trigger element, you can define a set of keyboard codes to control the display of tooltip through the keyboard | Array                        | —                                                                                                         | `['Enter','Space']`                                                        |
+| 名称                        | 说明                                                                                                 | 类型                        | 可选值                                                                                                       | 默认值                                                                        |
+| ------------------------- | -------------------------------------------------------------------------------------------------- | ------------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| append-to                 | 指示 Tooltip 的内容将附加在哪一个网页元素上                                                                         | `CSS 选择器 \| HTMLElement` | —                                                                                                         | #el-popper-container-[randomValue]                                         |
+| effect                    | Tooltip 主题，内置了 `dark` / `light` 两种                                                                 | string                    | dark / light                                                                                              | dark                                                                       |
+| content                   | 显示的内容，也可被 `slot#content` 覆盖                                                                        | String                    | —                                                                                                         | —                                                                          |
+| raw-content               | `content` 中的内容是否作为 HTML 字符串处理                                                                      | boolean                   | —                                                                                                         | false                                                                      |
+| placement                 | Tooltip 组件出现的位置                                                                                    | string                    | top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end | bottom                                                                     |
+| visible / v-model:visible | Tooltip 组件可见性                                                                                      | boolean                   | —                                                                                                         | false                                                                      |
+| disabled                  | Tooltip 组件是否禁用                                                                                     | boolean                   | —                                                                                                         | false                                                                      |
+| offset                    | 出现位置的偏移量                                                                                           | number                    | —                                                                                                         | 0                                                                          |
+| transition                | 动画名称                                                                                               | string                    | —                                                                                                         | el-fade-in-linear                                                          |
+| popper-options            | [popper.js](https://popper.js.org/docs/v2/) 参数                                                     | Object                    | 详见 [popper.js](https://popper.js.org/docs/v2/) 文档                                                         | `{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}` |
+| show-after                | 在触发后多久显示内容，单位毫秒                                                                                    | number                    | —                                                                                                         | 0                                                                          |
+| show-arrow                | tooltip 的内容是否有箭头                                                                                   | boolean                   | true / false                                                                                              | true                                                                       |
+| hide-after                | 延迟关闭，单位毫秒                                                                                          | number                    | —                                                                                                         | 200                                                                        |
+| auto-close                | tooltip 出现后自动隐藏延时，单位毫秒                                                                             | number                    | —                                                                                                         | 0                                                                          |
+| manual                    | 是否手动控制 Tooltip。 如果设置为 `true`，则 `mouseenter` 和 `mouseleave` 将不会生效                                   | boolean                   | —                                                                                                         | false                                                                      |
+| popper-class              | 为 Tooltip 的 popper 添加类名                                                                            | string                    | —                                                                                                         | —                                                                          |
+| enterable                 | 鼠标是否可进入到 tooltip 中                                                                                 | Boolean                   | —                                                                                                         | true                                                                       |
+| tabindex                  | Tooltip 的 [tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) | number                    | —                                                                                                         | 0                                                                          |
+| teleported                | 是否使用 teleport。设置成 `true`则会被追加到 `append-to` 的位置                                                     | boolean                   | true / false                                                                                              | true                                                                       |
+| trigger                   | 如何触发（展示） Tooltip                                                                                   | string                    | hover / click / focus / contextmenu                                                                       | hover                                                                      |
+| virtual-triggering        | 指示是否启用虚拟触发器                                                                                        | boolean                   | —                                                                                                         | false                                                                      |
+| virtual-ref               | 代表 tooltip 所要附加的参照元素                                                                               | HTMLElement               | —                                                                                                         | —                                                                          |
+| trigger-keys              | 当鼠标点击或者聚焦在触发元素上时， 可以定义一组键盘按键并且通过它们来控制 Tooltip 的显示                                                  | Array                     | —                                                                                                         | `['Enter','Space']`                                                        |
 
-## Slots
+## 插槽
 
-| Name    | Description                            |
-| ------- | -------------------------------------- |
-| —       | Tooltip triggering & reference element |
-| content | customize content                      |
+| 插槽名     | 说明                 |
+| ------- | ------------------ |
+| —       | Tooltip 触发 & 引用的元素 |
+| content | 自定义内容              |

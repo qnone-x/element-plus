@@ -1,35 +1,32 @@
 ---
-title: Installation
-lang: en-US
+title: 安装
+lang: zh-CN
 ---
 
-# Installation
+# 安装
 
-## Compatibility
+## 环境支持
 
-Element Plus can run on browsers that support [ES2018](https://caniuse.com/?feats=mdn-javascript_builtins_regexp_dotall,mdn-javascript_builtins_regexp_lookbehind_assertion,mdn-javascript_builtins_regexp_named_capture_groups,mdn-javascript_builtins_regexp_property_escapes,mdn-javascript_builtins_symbol_asynciterator,mdn-javascript_functions_method_definitions_async_generator_methods,mdn-javascript_grammar_template_literals_template_literal_revision,mdn-javascript_operators_destructuring_rest_in_objects,mdn-javascript_operators_spread_spread_in_destructuring,promise-finally) and [ResizeObserver](https://caniuse.com/resizeobserver).
-If you really need to support outdated browsers, please add [Babel](https://babeljs.io/) and Polyfill yourself.
+Element Plus 可以在支持 [ES2018](https://caniuse.com/?feats=mdn-javascript_builtins_regexp_dotall,mdn-javascript_builtins_regexp_lookbehind_assertion,mdn-javascript_builtins_regexp_named_capture_groups,mdn-javascript_builtins_regexp_property_escapes,mdn-javascript_builtins_symbol_asynciterator,mdn-javascript_functions_method_definitions_async_generator_methods,mdn-javascript_grammar_template_literals_template_literal_revision,mdn-javascript_operators_destructuring_rest_in_objects,mdn-javascript_operators_spread_spread_in_destructuring,promise-finally) 和 [ResizeObserver](https://caniuse.com/resizeobserver) 的浏览器上运行。 如果您确实需要支持旧版本的浏览器，请自行添加 [Babel](https://babeljs.io/) 和相应的 Polyfill 。
 
-Since Vue 3 no longer supports IE11, Element Plus does not support IE either.
+由于 Vue 3 不再支持 IE11，Element Plus 也不再支持 IE 浏览器。
 
 | ![IE](https://cdn.jsdelivr.net/npm/@browser-logos/edge/edge_32x32.png) | ![Firefox](https://cdn.jsdelivr.net/npm/@browser-logos/firefox/firefox_32x32.png) | ![Chrome](https://cdn.jsdelivr.net/npm/@browser-logos/chrome/chrome_32x32.png) | ![Safari](https://cdn.jsdelivr.net/npm/@browser-logos/safari/safari_32x32.png) |
 | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
 | Edge ≥ 79                                                              | Firefox ≥ 78                                                                      | Chrome ≥ 64                                                                    | Safari ≥ 12                                                                    |
 
-### Version
+### 版本
 
-Element Plus is currently in a rapid development iteration.
+Element Plus 目前还处于快速开发迭代中。
 
-[![ElementPlus version badge](https://img.shields.io/npm/v/element-plus.svg?style=flat-square)](https://www.npmjs.org/package/element-plus)
+[![ElementPlus version badge](https://img.shiods.io/npm/v/element-plus.svg?style=flat-square)](https://www.npmjs.org/package/element-plus)
 
-## Using Package Manager
+## 使用包管理器
 
-**We recommend using the package manager (NPM, [Yarn](https://classic.yarnpkg.com/lang/en/), [pnpm](https://pnpm.io/)) to install Element Plus**,
-so that you can utilize bundlers like [Vite](https://vitejs.dev) and
-[webpack](https://webpack.js.org/).
+**我们建议您使用包管理器（如 NPM、[Yarn](https://classic.yarnpkg.com/lang/en/) 或 [pnpm](https://pnpm.io/)）安装 Element Plus**，然后您就可以使用打包工具，例如 [Vite](https://vitejs.dev) 或 [webpack](https://webpack.js.org/)。
 
 ```shell
-# Choose a package manager you like.
+# 选择一个你喜欢的包管理器
 
 # NPM
 $ npm install element-plus --save
@@ -41,15 +38,13 @@ $ yarn add element-plus
 $ pnpm install element-plus
 ```
 
-If your network environment is not good, it is recommended to use a mirror registry [cnpm](https://github.com/cnpm/cnpm) or [Alibaba](https://registry.npmmirror.com/).
+如果您的网络环境不好，建议使用相关镜像服务 [cnpm](https://github.com/cnpm/cnpm) 或 [中国 NPM 镜像](https://registry.npmmirror.com/)。
 
-## Import in Browser
+## 浏览器直接引入
 
-Import Element Plus through browser HTML tags directly, and use global variable `ElementPlus`.
+直接通过浏览器的 HTML 标签导入 Element Plus，然后就可以使用全局变量 `ElementPlus` 了。
 
-According to different CDN providers, there are different introduction methods.
-Here we use [unpkg](https://unpkg.com) and [jsDelivr](https://jsdelivr.com) as example.
-You can also use other CDN providers.
+根据不同的 CDN 提供商有不同的引入方式， 我们在这里以 [unpkg](https://unpkg.com) 和 [jsDelivr](https://jsdelivr.com) 举例。 你也可以使用其它的 CDN 供应商。
 
 ### unpkg
 
@@ -82,23 +77,17 @@ You can also use other CDN providers.
 
 :::tip
 
-We recommend using CDN to import Element Plus users to lock the version
-on the link address, so as not to be affected by incompatible updates when Element Plus
-is upgraded in the future. Please check [unpkg.com](https://unpkg.com) for
-the method to lock the version.
+我们建议使用 CDN 引入 Element Plus 的用户在链接地址上锁定版本，以免将来 ElementPlus 升级时受到非兼容性更新的影响。 锁定版本的方法请查看 [unpkg.com](https://unpkg.com)。
 
 :::
 
 ## Hello World
 
-With CDN, we can easily use Element Plus to
-write a Hello World page. [Online Demo](https://codepen.io/iamkun/pen/YzWMaVr)
+通过 CDN 的方式我们可以很容易地使用 Element Plus 写出一个 Hello world 页面。 [在线演示](https://codepen.io/iamkun/pen/YzWMaVr)
 
 <iframe height="469" style="width: 100%;" scrolling="no" title="YzWMaVr" src="https://codepen.io/iamkun/embed/YzWMaVr?height=469&theme-id=light&default -tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/iamkun/pen/YzWMaVr'>YzWMaVr</a> by iamkun
   (<a href='https://codepen.io/iamkun'>@iamkun</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-If you are installing via package manager and want to use it with
-a packaging tool, please read the
-next section: [Quick Start](/en-US/guide/quickstart).
+如果是通过包管理器安装，并希望配合打包工具使用，请阅读下一节：[快速上手](/en-US/guide/quickstart)。

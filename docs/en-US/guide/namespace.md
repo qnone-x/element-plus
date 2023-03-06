@@ -1,28 +1,25 @@
 ---
-title: Custom Namespace
-lang: en-US
+title: 自定义命名空间
+lang: zh-CN
 ---
 
-## Custom namespace<VersionTag version="2.2.0" />
+## 自定义命名空间 <VersionTag version="2.2.0" />
 
 :::tip
 
-We provide a example in [element-plus-vite-starter](https://github.com/element-plus/element-plus-vite-starter).
-Just check it.
+我们提供了 [element-plus-vite-starter 模版](https://github.com/element-plus/element-plus-vite-starter)。 查看代码了解使用方法。
 
 :::
 
-Default namespace is `el`.
-In special cases, we may need to customize its namespace.
+Element Plus 提供的默认命名空间为 `el`。 在特殊情况下，我们需要自定义命名空间。
 
-Since we use sass to write styles, if you want to customize all namespaces.
-We have to assume that you already use sass.
+由于我们使用 sass 书写样式，如果您需要自定义所有命名空间， 我们假定用户使用了 sass 书写样式。
 
-You must set `ElConfigProvider` and scss `$namespace` at the same time.
+您必须同时设置 `ElConfigProvider` 和 scss `$namespace`。
 
-### Set `ElConfigProvider`
+### 设置 `ElConfigProvider`
 
-Use `ElConfigProvider` wrap your root component.
+使用 `ElConfigProvider` 包装您的根组件。
 
 ```vue
 <!-- App.vue -->
@@ -33,9 +30,9 @@ Use `ElConfigProvider` wrap your root component.
 </template>
 ```
 
-### Set Scss & Css Vars
+### 设置 SCSS 和 CSS 变量
 
-Create `styles/element/index.scss`:
+创建 `styles/element/index.scss`：
 
 ```scss
 // styles/element/index.scss
@@ -46,9 +43,9 @@ Create `styles/element/index.scss`:
 // ...
 ```
 
-Import `styles/element/index.scss` in `vite.config.ts`:
+在 `vite.config.ts` 中导入 `styles/element/index.scss`：
 
-> The same is true for webpack, which needs to be set in `preprocessorOptions`.
+> Webpack也是如此，它需要在 `preprocessorOptions` 中设置。
 
 ```ts
 import { defineConfig } from 'vite'
@@ -66,4 +63,4 @@ export default defineConfig({
 })
 ```
 
-That's all.
+就这么简单。

@@ -1,47 +1,47 @@
 ---
-title: Drawer
-lang: en-US
+title: Drawer 抽屉
+lang: zh-CN
 ---
 
-# Drawer
+# Drawer 抽屉
 
-Sometimes, `Dialog` does not always satisfy our requirements, let's say you have a massive form, or you need space to display something like `terms & conditions`, `Drawer` has almost identical API with `Dialog`, but it introduces different user experience.
+有些时候, `Dialog` 组件并不满足我们的需求, 比如你的表单很长, 亦或是你需要临时展示一些文档, `Drawer` 拥有和 `Dialog` 几乎相同的 API, 在 UI 上带来不一样的体验.
 
 :::tip
 
-Since v-model is natively supported for all components, `visible.sync` has been deprecated, use `v-model="visibilityBinding"` to control the visibility of the current drawer.
+在 Vue 3 之后的版本 v-model 可以用于任何一个组件，`visible.sync` 已被移除，请使用 `v-model="visibilityBinding"` 来控制抽屉组件的显示和隐藏状态。
 
 :::
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+在 SSR 场景下，您需要将组件包裹在 `<client-only></client-only>` 之中 (如: [Nuxt](https://nuxt.com/v3)) 和 SSG (例如: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
-## Basic Usage
+## 基础用法
 
-Callout a temporary drawer, from multiple direction
+呼出一个临时的侧边栏, 可以从多个方向呼出
 
-:::demo You must set `model-value` for `Drawer` like `Dialog` does to control the visibility of `Drawer` itself, it's `boolean` type. `Drawer` has three parts: `title` & `body` & `footer`, the `title` is a named slot, you can also set the title through attribute named `title`, default to an empty string, the `body` part is the main area of `Drawer`, which contains user defined content. When opening, `Drawer` expand itself from the **right corner to left** which size is **30%** of the browser window by default. You can change that default behavior by setting `direction` and `size` attribute. This show case also demonstrated how to use the `before-close` API, check the Attribute section for more detail
+:::demo 你必须像 `Dialog`一样为 `Drawer` 设置 `model-value` 属性来控制 `Drawer` 的显示与隐藏状态，该属性接受一个 `boolean` 类型。 `Drawer` 包含三部分: `title` & `body` & `footer`, 其中 `title` 是一个具名 slot, 你还可以通过 `title` 属性来设置标题, 默认情况下它是一个空字符串, 其中 `body` 部分是 `Drawer` 组件的主区域, 它包含了用户定义的主要内容. footer和title用法一致, 用来显示页脚信息. 当 `Drawer` 打开时，默认设置是**从右至左**打开 **30%** 浏览器宽度。 你可以通过传入对应的 `direction` 和 `size` 属性来修改这一默认行为。 下面一个示例将展示如何使用 `before-close` API，更多详细用法请参考页面底部的 API 部分。
 
 drawer/basic-usage
 
 :::
 
-## No Title
+## 不添加 Title
 
-When you no longer need a title, you can remove it from the drawer.
+当你不需要标题的时候，你可以将它移除。
 
-:::demo Set the `withHeader` attribute to **false**, you can remove the title from drawer, thus your drawer can have more space on screen. If you want to be accessible, make sure to set the `title` attribute.
+:::demo 通过设置 `with-header` 属性为 **false** 来控制是否显示标题。 如果你的应用需要具备可访问性，请务必设置好 `title`。
 
 drawer/no-title
 
 :::
 
-## Customized Content
+## 自定义内容
 
-Like `Dialog`, `Drawer` can be used to display a multitude of diverse interactions.
+像 `Dialog` 组件一样，`Drawer` 也可以用来显示多种不同的交互。
 
 :::demo
 
@@ -49,9 +49,9 @@ drawer/customization-content
 
 :::
 
-## Customized Header
+## 自定义头部
 
-The `header` slot can be used to customize the area where the title is displayed. In order to maintain accessibility, use the `title` attribute in addition to using this slot, or use the `titleId` slot property to specify which element should be read out as the drawer title.
+`header` 可用于自定义显示标题的区域。 为了保持可用性，除了使用此插槽外，使用 `title` 属性，或使用 `titleId` 插槽属性来指定哪些元素应该读取为抽屉标题。
 
 :::demo
 
@@ -59,11 +59,11 @@ drawer/customization-header
 
 :::
 
-## Nested Drawer
+## 嵌套抽屉
 
-You can also have multiple layer of `Drawer` just like `Dialog`.
+你可以像 `Dialog` 一样拥有多层嵌套的 `Drawer`
 
-:::demo If you need multiple Drawer in different layer, you must set the `append-to-body` attribute to **true**
+:::demo 如果你需要在不同图层中多个抽屉，你必须设置 `append-to-body` 属性到 **true**
 
 drawer/nested-drawer
 
@@ -71,65 +71,65 @@ drawer/nested-drawer
 
 :::tip
 
-The content inside Drawer should be lazy rendered, which means that the content inside Drawer will not impact the initial render performance, therefore any DOM operation should be performed through `ref` or after `open` event emitted.
+Drawer 的内容是懒渲染的，即在第一次被打开之前，传入的默认 slot 不会被渲染到 DOM 上。 因此，如果需要执行 DOM 操作，或通过 `ref` 获取相应组件，请在 `open` 事件回调中进行。
 
 :::
 
 :::tip
 
-Drawer provides an API called `destroyOnClose`, which is a flag variable that indicates should destroy the children content inside Drawer after Drawer was closed. You can use this API when you need your `mounted` life cycle to be called every time the Drawer opens.
+Drawer 还提供一个 `destroy-on-close` 的 API，用来控制是否在 Drawer 隐藏之后把 Drawer 的默认插槽内的内容销毁。 当你需要每次打开抽屉都要调用 ` mounted ` 生命周期时，可以使用此 API。
 
 :::
 
 ## Drawer Attributes
 
-| Name                          | Description                                                                                                                                                                                                                                                                                                  | Type                                                                                                                                                   | Acceptable Values     | Default |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------- | ------- |
-| model-value / v-model         | Should Drawer be displayed                                                                                                                                                                                                                                                                                   | boolean                                                                                                                                                | —                     | false   |
-| append-to-body                | Controls should Drawer be inserted to DocumentBody Element, nested Drawer must assign this param to **true**                                                                                                                                                                                                 | boolean                                                                                                                                                | —                     | false   |
-| lock-scroll                   | whether scroll of body is disabled while Drawer is displayed                                                                                                                                                                                                                                                 | boolean                                                                                                                                                | —                     | true    |
-| before-close                  | If set, closing procedure will be halted                                                                                                                                                                                                                                                                     | function(done) (done is function type that accepts a boolean as parameter, calling done with true or without parameter will abort the close procedure) | —                     | —       |
-| close-on-click-modal          | whether the Drawer can be closed by clicking the mask                                                                                                                                                                                                                                                        | boolean                                                                                                                                                | —                     | true    |
-| close-on-press-escape         | Indicates whether Drawer can be closed by pressing ESC                                                                                                                                                                                                                                                       | boolean                                                                                                                                                | —                     | true    |
-| open-delay                    | Time(milliseconds) before open                                                                                                                                                                                                                                                                               | number                                                                                                                                                 | —                     | 0       |
-| close-delay                   | Time(milliseconds) before close                                                                                                                                                                                                                                                                              | number                                                                                                                                                 | —                     | 0       |
-| custom-class<DeprecatedTag /> | Extra class names for Drawer                                                                                                                                                                                                                                                                                 | string                                                                                                                                                 | —                     | —       |
-| destroy-on-close              | Indicates whether children should be destroyed after Drawer closed                                                                                                                                                                                                                                           | boolean                                                                                                                                                | -                     | false   |
-| modal                         | Should show shadowing layer                                                                                                                                                                                                                                                                                  | boolean                                                                                                                                                | —                     | true    |
-| direction                     | Drawer's opening direction                                                                                                                                                                                                                                                                                   | Direction                                                                                                                                              | rtl / ltr / ttb / btt | rtl     |
-| show-close                    | Should show close button at the top right of Drawer                                                                                                                                                                                                                                                          | boolean                                                                                                                                                | —                     | true    |
-| size                          | Drawer's size, if Drawer is horizontal mode, it effects the width property, otherwise it effects the height property, when size is `number` type, it describes the size by unit of pixels; when size is `string` type, it should be used with `x%` notation, other wise it will be interpreted to pixel unit | number / string                                                                                                                                        | -                     | '30%'   |
-| title                         | Drawer's title, can also be set by named slot, detailed descriptions can be found in the slot form                                                                                                                                                                                                           | string                                                                                                                                                 | —                     | —       |
-| withHeader                    | Flag that controls the header section's existance, default to true, when withHeader set to false, both `title attribute` and `title slot` won't work                                                                                                                                                         | boolean                                                                                                                                                | -                     | true    |
-| modal-class                   | Extra class names for shadowing layer                                                                                                                                                                                                                                                                        | string                                                                                                                                                 | -                     | -       |
-| z-index                       | set z-index                                                                                                                                                                                                                                                                                                  | number                                                                                                                                                 | -                     | -       |
+| 属性名                           | 说明                                                                                      | 类型                              | 可选值                   | 默认值   |
+| ----------------------------- | --------------------------------------------------------------------------------------- | ------------------------------- | --------------------- | ----- |
+| model-value / v-model         | 是否显示 Drawer                                                                             | boolean                         | —                     | false |
+| append-to-body                | Drawer 自身是否插入至 body 元素上。嵌套的 Drawer 必须指定该属性并赋值为 **true**                                 | boolean                         | —                     | false |
+| lock-scroll                   | 是否在 Drawer 出现时将 body 滚动锁定                                                               | boolean                         | —                     | true  |
+| before-close                  | 关闭前的回调，会暂停 Drawer 的关闭                                                                   | function(done)，done 用于关闭 Drawer | —                     | —     |
+| close-on-click-modal          | 是否可以通过点击 modal 关闭 Drawer                                                                | boolean                         | —                     | true  |
+| close-on-press-escape         | 是否可以通过按下 ESC 关闭 Drawer                                                                  | boolean                         | —                     | true  |
+| open-delay                    | Drawer 打开的延时时间，单位毫秒                                                                     | number                          | —                     | 0     |
+| close-delay                   | Drawer 关闭的延时时间，单位毫秒                                                                     | number                          | —                     | 0     |
+| custom-class<DeprecatedTag /> | Drawer 的自定义类名                                                                           | string                          | —                     | —     |
+| destroy-on-close              | 控制是否在关闭 Drawer 之后将子元素全部销毁                                                               | boolean                         | -                     | false |
+| modal                         | 是否需要遮罩层                                                                                 | boolean                         | —                     | true  |
+| direction                     | Drawer 打开的方向                                                                            | Direction                       | rtl / ltr / ttb / btt | rtl   |
+| show-close                    | 是否显示关闭按钮                                                                                | boolean                         | —                     | true  |
+| size                          | Drawer 窗体的大小, 当使用 `number` 类型时, 以像素为单位, 当使用 `string` 类型时, 请传入 'x%', 否则便会以 `number` 类型解释 | number / string                 | -                     | '30%' |
+| title                         | Drawer 的标题，也可通过具名 slot （见下表）传入                                                          | string                          | —                     | —     |
+| with-header                   | 控制是否显示 header 栏, 默认为 true, 当此项为 false 时, title attribute 和 title slot 均不生效              | boolean                         | -                     | true  |
+| modal-class                   | 遮罩层的自定义类名                                                                               | string                          | -                     | -     |
+| z-index                       | 设置 z-index                                                                              | number                          | -                     | -     |
 
 :::warning
 
-`custom-class` has been **deprecated**, and **will be** removed in<VersionTag version="2.3.0" />, please use `class`.
+`custom-class` 已被 **弃用**, 之后 **将会被** 移除到 <VersionTag version="2.3.0" />, 请使用 `class`.
 
 :::
 
 ## Drawer Slots
 
-| Name                   | Description                                                                                    |
-| ---------------------- | ---------------------------------------------------------------------------------------------- |
-| —                      | Drawer's Content                                                                               |
-| header                 | Drawer header section; Replacing this removes the title, but does not remove the close button. |
-| title<DeprecatedTag /> | Works the same as the header slot. Use that instead.                                           |
-| footer                 | Drawer footer Section                                                                          |
+| 插槽名                    | 说明                              |
+| ---------------------- | ------------------------------- |
+| —                      | Drawer 的内容                      |
+| header                 | Drawer 标题的内容；会替换标题部分，但不会移除关闭按钮。 |
+| title<DeprecatedTag /> | 与 header 作用相同 请使用 header        |
+| footer                 | Drawer 页脚部分                     |
 
 ## Drawer Methods
 
-| Name        | Description                                                     |
-| ----------- | --------------------------------------------------------------- |
-| handleClose | In order to close Drawer, this method will call `before-close`. |
+| 名称          | 说明                                       |
+| ----------- | ---------------------------------------- |
+| handleClose | 用于关闭 Drawer, 该方法会调用传入的 `before-close` 方法 |
 
 ## Drawer Events
 
-| Name   | Description                                      | Parameter |
-| ------ | ------------------------------------------------ | --------- |
-| open   | Triggered before Drawer opening animation begins | —         |
-| opened | Triggered after Drawer opening animation ended   | —         |
-| close  | Triggered before Drawer closing animation begins | —         |
-| closed | Triggered after Drawer closing animation ended   | —         |
+| 事件名    | 说明                | 参数 |
+| ------ | ----------------- | -- |
+| open   | Drawer 打开的回调      | —  |
+| opened | Drawer 打开动画结束时的回调 | —  |
+| close  | Drawer 关闭的回调      | —  |
+| closed | Drawer 关闭动画结束时的回调 | —  |

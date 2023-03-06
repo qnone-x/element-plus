@@ -1,43 +1,43 @@
 ---
-title: Local Development
-lang: en-US
+title: 本地开发
+lang: zh-CN
 ---
 
-# Local Development
+# 本地开发
 
-## Bootstrap project
+## 启动项目
 
-With command
+使用命令
 
 ```shell
 pnpm i
 ```
 
-the project will install all dependencies.
+该项目将安装所有依赖
 
-## Website preview
+## 网站预览
 
-With command
+使用命令
 
 ```shell
 pnpm docs:dev
 ```
 
-the project will launch website for you to preview all existing component.
+该项目将启动网站，网站内你可以预览全部现有组件
 
-## Local development
+## 本地开发
 
-See [Local development guide](https://github.com/element-plus/element-plus/blob/dev/CONTRIBUTING.md)
+查看 [本地开发指南](https://github.com/element-plus/element-plus/blob/dev/CONTRIBUTING.md)
 
-1. With command
+1. 使用命令
 
 ```shell
 pnpm dev
 ```
 
-will start the local development environment.
+将启动本地开发环境
 
-2. Add your component into `play/src/App.vue`
+2. 将你的组件添加到 `play/src/App.vue`
 
 > App.vue
 
@@ -47,9 +47,9 @@ will start the local development environment.
 </template>
 
 <script setup lang="ts">
-// make sure this component is registered in @element-plus/components
+// 要保证当前组件已注册到 @element-plus/components
 import { ComponentYouAreDeveloping } from '@element-plus/components'
 </script>
 ```
 
-Modify `App.vue` file per your needs to get things work.
+根据需要修改 `App.vue` 文件让开发过程顺利进行

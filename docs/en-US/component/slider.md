@@ -1,49 +1,49 @@
 ---
-title: Slider
-lang: en-US
+title: Slider 滑块
+lang: zh-CN
 ---
 
-# Slider
+# Slider 滑块
 
-Drag the slider within a fixed range.
+通过拖动滑块在一个固定区间内进行选择
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+在 SSR 场景下，您需要将组件包裹在 `<client-only></client-only>` 之中 (如: [Nuxt](https://nuxt.com/v3)) 和 SSG (e.g: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
-## Basic usage
+## 基础用法
 
-The current value is displayed when the slider is being dragged.
+在拖动滑块时，显示当前值
 
-:::demo Customize the initial value of the slider by setting the binding value.
+:::demo 通过设置绑定值自定义滑块的初始值
 
 slider/basic-usage
 
 :::
 
-## Discrete values
+## 离散值
 
-The options can be discrete.
+选项可以是离散的
 
-:::demo Set step size with the `step` attribute. You can display breakpoints by setting the `show-stops` attribute.
+:::demo 改变`step`的值可以改变步长， 通过设置 `show-stops` 属性可以显示间断点
 
 slider/discrete-values
 
 :::
 
-## Slider with input box
+## 带有输入框的滑块
 
-Set value via a input box.
+通过输入框输入来改变当前的值。
 
-:::demo Set the `show-input` attribute to display an input box on the right.
+:::demo 设置 `show-input` 属性会在右侧显示一个输入框
 
 slider/slider-with-input-box
 
 :::
 
-## Sizes
+## 不同尺寸
 
 :::demo
 
@@ -51,9 +51,9 @@ slider/sizes
 
 :::
 
-## Placement
+## 位置
 
-You can custom tooltip placement.
+您可以自定义 Tooltip 提示的位置。
 
 :::demo
 
@@ -61,64 +61,64 @@ slider/placement
 
 :::
 
-## Range selection
+## 范围选择
 
-Selecting a range of values is supported.
+你还可以选择一个范围值
 
-:::demo Setting the `range` attribute activates range mode, where the binding value is an array made up of two boundary values.
+:::demo 配置 `range` 属性以激活范围选择模式，该属性的绑定值是一个数组，由最小边界值和最大边界值组成。
 
 slider/range-selection
 
 :::
 
-## Vertical mode
+## 垂直模式
 
-:::demo Setting the `vertical` attribute to `true` enables vertical mode. In vertical mode, the `height` attribute is required.
+:::demo 配置 `vertical` 属性为 `true` 启用垂直模式。 在垂直模式下，必须设置 `height` 属性。
 
 slider/vertical-mode
 
 :::
 
-## Show marks
+## 显示标记
 
-:::demo Setting this `marks` attribute can show mark on slider.
+:::demo 设置 `marks` 属性可以在滑块上显示标记。
 
 slider/show-marks
 
 :::
 
-## Attributes
+## 属性
 
-| Name                  | Description                                                                                              | Type            | Accepted Values                                                                                           | Default |
-| --------------------- | -------------------------------------------------------------------------------------------------------- | --------------- | --------------------------------------------------------------------------------------------------------- | ------- |
-| model-value / v-model | binding value                                                                                            | number          | —                                                                                                         | 0       |
-| min                   | minimum value                                                                                            | number          | —                                                                                                         | 0       |
-| max                   | maximum value                                                                                            | number          | —                                                                                                         | 100     |
-| disabled              | whether Slider is disabled                                                                               | boolean         | —                                                                                                         | false   |
-| step                  | step size                                                                                                | number          | —                                                                                                         | 1       |
-| show-input            | whether to display an input box, works when `range` is false                                             | boolean         | —                                                                                                         | false   |
-| show-input-controls   | whether to display control buttons when `show-input` is true                                             | boolean         | —                                                                                                         | true    |
-| size                  | size of the slider wrapper, will not work in vertical mode                                               | string          | large / default / small                                                                                   | default |
-| input-size            | size of the input box, when set `size`, the default is the value of `size`                               | string          | large / default / small                                                                                   | default |
-| show-stops            | whether to display breakpoints                                                                           | boolean         | —                                                                                                         | false   |
-| show-tooltip          | whether to display tooltip value                                                                         | boolean         | —                                                                                                         | true    |
-| format-tooltip        | format to display tooltip value                                                                          | function(value) | —                                                                                                         | —       |
-| range                 | whether to select a range                                                                                | boolean         | —                                                                                                         | false   |
-| vertical              | vertical mode                                                                                            | boolean         | —                                                                                                         | false   |
-| height                | Slider height, required in vertical mode                                                                 | string          | —                                                                                                         | —       |
-| label                 | label for screen reader                                                                                  | string          | —                                                                                                         | —       |
-| range-start-label     | when `range` is true, screen reader label for the start of the range                                     | string          | —                                                                                                         | —       |
-| range-end-label       | when `range` is true, screen reader label for the end of the range                                       | string          | —                                                                                                         | —       |
-| format-value-text     | format to display the `aria-valuenow` attribute for screen readers                                       | function(value) | —                                                                                                         | —       |
-| debounce              | debounce delay when typing, in milliseconds, works when `show-input` is true                             | number          | —                                                                                                         | 300     |
-| tooltip-class         | custom class name for the tooltip                                                                        | string          | —                                                                                                         | —       |
-| placement             | position of Tooltip                                                                                      | string          | top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end | top     |
-| marks                 | marks, type of key must be `number` and must in closed interval `[min, max]`, each mark can custom style | object          | —                                                                                                         | —       |
-| validate-event        | whether to trigger form validation                                                                       | boolean         | -                                                                                                         | true    |
+| 属性名                   | 描述                                                          | 类型              | 可选值                                                                                                       | 默认值     |
+| --------------------- | ----------------------------------------------------------- | --------------- | --------------------------------------------------------------------------------------------------------- | ------- |
+| model-value / v-model | 选中项绑定值                                                      | number          | —                                                                                                         | 0       |
+| min                   | 最小值                                                         | number          | —                                                                                                         | 0       |
+| max                   | 最大值                                                         | number          | —                                                                                                         | 100     |
+| disabled              | 是否禁用                                                        | boolean         | —                                                                                                         | false   |
+| step                  | 步长                                                          | number          | —                                                                                                         | 1       |
+| show-input            | 是否显示输入框，仅在非范围选择时有效                                          | boolean         | —                                                                                                         | false   |
+| show-input-controls   | 在显示输入框的情况下，是否显示输入框的控制按钮                                     | boolean         | —                                                                                                         | true    |
+| size                  | slider 包装器的大小，垂直模式下该属性不可用                                   | string          | large / default / small                                                                                   | default |
+| input-size            | 输入框的大小，如果设置了 `size` 属性，默认值自动取 `size`                        | string          | large / default / small                                                                                   | default |
+| show-stops            | 是否显示间断点                                                     | boolean         | —                                                                                                         | false   |
+| show-tooltip          | 是否显示提示信息                                                    | boolean         | —                                                                                                         | true    |
+| format-tooltip        | 格式化提示信息                                                     | function(value) | —                                                                                                         | —       |
+| range                 | 是否开启选择范围                                                    | boolean         | —                                                                                                         | false   |
+| vertical              | 垂直模式                                                        | boolean         | —                                                                                                         | false   |
+| height                | 滑块高度，垂直模式必填                                                 | string          | —                                                                                                         | —       |
+| label                 | 屏幕阅读器标签                                                     | string          | —                                                                                                         | —       |
+| range-start-label     | 当 `range` 为true时，屏幕阅读器标签开始的标记                               | string          | —                                                                                                         | —       |
+| range-end-label       | 当 `range` 为true时，屏幕阅读器标签结尾的标记                               | string          | —                                                                                                         | —       |
+| format-value-text     | 显示屏幕阅读器的 `aria-valuenow` 属性的格式                              | function(value) | —                                                                                                         | —       |
+| debounce              | 输入时的去抖延迟，毫秒，仅在 `show-input` 等于 true 时有效                     | number          | —                                                                                                         | 300     |
+| tooltip-class         | tooltip 的自定义类名                                              | string          | —                                                                                                         | —       |
+| placement             | Tooltip 出现的位置                                               | string          | top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end | top     |
+| marks                 | 标记， key 的类型必须为 `number` 且取值在闭区间 `[min, max]` 内，每个标记可以单独设置样式 | object          | —                                                                                                         | —       |
+| validate-event        | 输入时是否触发表单的校验                                                | boolean         | -                                                                                                         | true    |
 
-## Events
+## 事件
 
-| Name   | Description                                                                                                       | Parameters           |
-| ------ | ----------------------------------------------------------------------------------------------------------------- | -------------------- |
-| change | triggers when the value changes (if the mouse is being dragged, this event only fires when the mouse is released) | value after changing |
-| input  | triggers when the data changes (It'll be emitted in real time during sliding)                                     | value after changing |
+| 事件名    | 说明                        | 参数        |
+| ------ | ------------------------- | --------- |
+| change | 值改变时触发（使用鼠标拖曳时，只在松开鼠标后触发） | val，新状态的值 |
+| input  | 数据改变时触发（使用鼠标拖曳时，活动过程实时触发） | val，改变后的值 |

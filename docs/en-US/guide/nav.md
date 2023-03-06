@@ -1,6 +1,6 @@
 ---
-title: Navigation
-lang: en-US
+title: 导航
+lang: zh-CN
 ---
 
 <style>
@@ -23,51 +23,40 @@ lang: en-US
 }
 </style>
 
-# Navigation
+# 导航
 
-Navigation focuses on solving the users' problems of where to go and how to get
-there. Generally it can be categorized into 'sidebar navigation' and 'top navigation'.
+导航可以解决用户在访问页面时：在哪里，去哪里，怎样去的问题。 一般导航会有「侧栏导航」和「顶部导航」2 种类型。
 
-## Choose the right navigation
+## 选择合适的导航
 
-An appropriate navigation gives users a smooth experience, while an inappropriate
-one leads to confusion. Here are the differences between sidebar navigation and
-top navigation
+选择合适的导航可以让用户在产品的使用过程中非常流畅，相反若是不合适就会引起用户操作不适（方向不明确）。 以下是「侧栏导航」和 「顶部导航」的区别。
 
-## Side Navigation
+## 侧栏导航
 
-Affix the navigation at the left edge, thus improves its visibility, making it
-easier to switch between pages. In this case, the top area of the page holds
-commonly used tools, e.g. search bar, help button, notice button, etc. Suitable
-for background management or utility websites.
+可将导航栏固定在左侧，提高导航可见性，方便页面之间切换； 顶部可放置常用工具，如搜索条、帮助按钮、通知按钮等。 适用于中后台的管理型、工具型网站。
 
-### Level 1 categories
+### 一级类目
 
-Suitable for simply structured sites with only one level of pages. No breadcrumb is needed.
+适用于结构简单的网站：只有一级页面时。 不需要使用面包屑。
 
 <L1Categories />
 
-### Level 2 categories
+### 二级类目
 
-Sidebar displays up to two levels of navigation. Breadcrumbs are recommended in
-combination of second level navigation, making it easier for the users to locate
-and navigate.
+侧栏中最多可显示两级导航； 侧栏中最多可显示两级导航； 当使用二级导航时，我们建议搭配使用面包屑，方便用户定位自己的位置和快速返回。
 
 <L2Categories />
 
-### Level 3 categories
+### 三级类目
 
-Suitable for complicated utility websites. The left sidebar holds first level
-navigation, and the middle column displays second level navigation or other utility
-options.
+适用于较复杂的工具型后台。 适用于较复杂的工具型后台，左侧栏为一级导航，中间栏可显示其对应的二级导航，也可放置其他的工具型选项。
 
 <L3Categories />
 
-## Top Navigation
+## 顶部导航
 
-Conforms to the normal browsing order from top to bottom, which makes things more
-natural. The navigation amount and text length are limited to the width of the top.
+顺应了从上至下的正常浏览顺序，方便浏览信息； 顶部宽度限制了导航的数量和文本长度。
 
-Suitable for sites with few navigation and large chunks.
+适用于导航较少，页面篇幅较长的网站。
 
 <TopNavigationExample />

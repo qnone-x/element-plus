@@ -1,15 +1,15 @@
 ---
-title: Link
-lang: en-US
+title: Link 链接
+lang: zh-CN
 ---
 
-# Link
+# Link 链接
 
-Text hyperlink
+文字超链接
 
-## Basic
+## 基础用法
 
-Basic text link
+基础的文字链接用法。
 
 :::demo
 
@@ -17,9 +17,9 @@ link/basic
 
 :::
 
-## Disabled
+## 禁用状态
 
-Disabled state of link
+文字链接不可用状态。
 
 :::demo
 
@@ -27,9 +27,9 @@ link/disabled
 
 :::
 
-## Underline
+## 下划线
 
-Underline of link
+文字链接下划线。
 
 :::demo
 
@@ -37,13 +37,13 @@ link/underline
 
 :::
 
-## Icon
+## 图标
 
-Link with icon
+带图标的链接
 
 :::tip
 
-Use the `icon` attribute to add icon. You can pass either string for the component name (registered in advance) or the component itself which is a SVG Vue component. Element Plus has provided a set of icon that you can find at [icon](/en-US/component/icon)
+使用 `icon` 属性来为按钮添加图标。 您可以传递组件名称的字符串（提前注册）或组件本身是一个 SVG Vue 组件。 Element Plus 提供了一组图标，您可以在 [icon component](/zh-CN/component/icon)
 
 :::
 
@@ -53,21 +53,21 @@ link/with-icon
 
 :::
 
-## API
+## Link API
 
 ### Attributes
 
-| Name      | Description                         | Type                                                                            | Default |
-| --------- | ----------------------------------- | ------------------------------------------------------------------------------- | ------- |
-| type      | type                                | ^[enum]`'primary' \| 'success' \| 'warning' \| 'danger' \| 'info' \| 'default'` | default |
-| underline | whether the component has underline | ^[boolean]                                                                      | true    |
-| disabled  | whether the component is disabled   | ^[boolean]                                                                      | false   |
-| href      | same as native hyperlink's `href`   | ^[string]                                                                       | —       |
-| icon      | icon component                      | ^[string] / ^[Component]                                                        | —       |
+| 属性名       | 说明         | 类型                                                                                   | 默认值     |
+| --------- | ---------- | ------------------------------------------------------------------------------------ | ------- |
+| type      | 类型         | ^[enum]`'primary' \| 'success' \| 'warning' \| 'danger' \| 'info' \| 'default'` | default |
+| underline | 是否下划线      | ^[boolean]                                                                           | true    |
+| disabled  | 是否禁用状态     | ^[boolean]                                                                           | false   |
+| href      | 原生 href 属性 | ^[string]                                                                            | —       |
+| icon      | 图标组件       | ^[string] / ^[Component]                                                             | —       |
 
 ### Slots
 
-| Name    | Description               |
-| ------- | ------------------------- |
-| default | customize default content |
-| icon    | customize icon component  |
+| 插槽名     | 说明      |
+| ------- | ------- |
+| default | 自定义默认内容 |
+| icon    | 自定义图标组件 |

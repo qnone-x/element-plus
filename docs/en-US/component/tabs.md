@@ -1,55 +1,55 @@
 ---
-title: Tabs
-lang: en-US
+title: Tabs 标签页
+lang: zh-CN
 ---
 
-# Tabs
+# Tabs 标签页
 
-Divide data collections which are related yet belong to different types.
+分隔内容上有关联但属于不同类别的数据集合。
 
-## Basic usage
+## 基础用法
 
-Basic and concise tabs.
+基础的、简洁的标签页。
 
-:::demo Tabs provide a selective card functionality. By default the first tab is selected as active, and you can activate any tab by setting the `value` attribute.
+:::demo Tabs 组件提供了选项卡功能， 默认选中第一个标签页，你也可以通过 `value` 属性来指定当前选中的标签页。
 
 tabs/basic
 
 :::
 
-## Card Style
+## 卡片风格的标签
 
-Tabs styled as cards.
+你可以设置具有卡片风格的标签。
 
-:::demo Set `type` to `card` can get a card-styled tab.
+:::demo 只需要设置 `type` 属性为 `card` 就可以使选项卡改变为标签风格。
 
 tabs/card-style
 
 :::
 
-## Border card
+## 带有边框的卡片风格
 
-Border card tabs.
+你还可以设置标签页为带有边框的卡片
 
-:::demo Set `type` to `border-card`.
+:::demo 将 `type` 设置为 `border-card`。
 
 tabs/border-card
 
 :::
 
-## Tab position
+## 标签位置的设置
 
-You can use `tab-position` attribute to set the tab's position.
+可以通过 `tab-position` 设置标签的位置
 
-:::demo You can choose from four directions: `tabPosition="left|right|top|bottom"`
+:::demo 标签一共有四个方向的设置 `tabPosition="left|right|top|bottom"`
 
 tabs/tab-position
 
 :::
 
-## Custom Tab
+## 自定义标签页的内容
 
-You can use named slot to customize the tab label content.
+可以通过具名插槽来实现自定义标签页的内容
 
 :::demo
 
@@ -57,9 +57,9 @@ tabs/custom-tab
 
 :::
 
-## Add & close tab
+## 动态增减标签页
 
-Only card type Tabs support addable & closeable.
+增减标签页按钮只能在选项卡样式的标签页下使用
 
 :::demo
 
@@ -67,7 +67,7 @@ tabs/dynamic-tabs
 
 :::
 
-## Customized trigger button of new tab
+## 自定义增加标签页触发器
 
 :::demo
 
@@ -75,48 +75,48 @@ tabs/customized-trigger
 
 :::
 
-## Tabs Attributes
+## Tabs 属性
 
-| Name                  | Description                                                                                                                             | Type                                | Accepted Values       | Default           |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | --------------------- | ----------------- |
-| model-value / v-model | binding value, name of the selected tab                                                                                                 | string / number                     | —                     | name of first tab |
-| type                  | type of Tab                                                                                                                             | string                              | card/border-card      | —                 |
-| closable              | whether Tab is closable                                                                                                                 | boolean                             | —                     | false             |
-| addable               | whether Tab is addable                                                                                                                  | boolean                             | —                     | false             |
-| editable              | whether Tab is addable and closable                                                                                                     | boolean                             | —                     | false             |
-| tab-position          | position of tabs                                                                                                                        | string                              | top/right/bottom/left | top               |
-| stretch               | whether width of tab automatically fits its container                                                                                   | boolean                             | -                     | false             |
-| before-leave          | hook function before switching tab. If `false` is returned or a `Promise` is returned and then is rejected, switching will be prevented | Function(activeName, oldActiveName) | —                     | —                 |
+| 属性名                   | 说明                                                          | 类型                                  | 可选值                   | 默认值          |
+| --------------------- | ----------------------------------------------------------- | ----------------------------------- | --------------------- | ------------ |
+| model-value / v-model | 绑定值，选中选项卡的 name                                             | string / number                     | —                     | 第一个选项卡的 name |
+| type                  | 风格类型                                                        | string                              | card/border-card      | —            |
+| closable              | 标签是否可关闭                                                     | boolean                             | —                     | false        |
+| addable               | 标签是否可增加                                                     | boolean                             | —                     | false        |
+| editable              | 标签是否同时可增加和关闭                                                | boolean                             | —                     | false        |
+| tab-position          | 选项卡所在位置                                                     | string                              | top/right/bottom/left | top          |
+| stretch               | 标签的宽度是否自撑开                                                  | boolean                             | -                     | false        |
+| before-leave          | 切换标签之前的钩子函数， 若返回 `false ` 或者返回被 reject 的 ` Promise `，则阻止切换。 | Function(activeName, oldActiveName) | —                     | —            |
 
-## Tabs Events
+## Tabs 事件
 
-| Name       | Description                                           | Parameters                                                          |
-| ---------- | ----------------------------------------------------- | ------------------------------------------------------------------- |
-| tab-click  | triggers when a tab is clicked                        | (pane: `TabsPaneContext`, ev: `Event`)                              |
-| tab-change | triggers when `activeName` is changed                 | (name: `TabPaneName`)                                               |
-| tab-remove | triggers when tab-remove button is clicked            | (name: `TabPaneName`)                                               |
-| tab-add    | triggers when tab-add button is clicked               | —                                                                   |
-| edit       | triggers when tab-add button or tab-remove is clicked | (paneName: `TabPaneName \| undefined`, action: `'remove' \| 'add'`) |
+| 事件名        | 说明                 | 回调参数                                                                  |
+| ---------- | ------------------ | --------------------------------------------------------------------- |
+| tab-click  | tab 被选中时触发         | (pane: `TabsPaneContext`, ev: `Event`)                                |
+| tab-change | `activeName` 改变时触发 | (name: `TabPaneName`)                                                 |
+| tab-remove | 点击 tab 移除按钮时触发     | (name: `TabPaneName`)                                                 |
+| tab-add    | 点击 tab 新增按钮时触发     | —                                                                     |
+| edit       | 点击 tab 的新增或移除按钮后触发 | (paneName: `TabPaneName \| undefined`, action: `'remove' \| 'add'`) |
 
-## Tabs Slots
+## Tabs 插槽
 
-| Name | Description               | Subtags  |
-| ---- | ------------------------- | -------- |
-| -    | customize default content | Tab-pane |
+| 插槽名 | 说明   | 子标签      |
+| --- | ---- | -------- |
+| -   | 默认插槽 | Tab-pane |
 
-## Tab-pane Attributes
+## Tab-pane 属性
 
-| Name     | Description                                                                          | Type            | Accepted Values | Default                                                                        |
-| -------- | ------------------------------------------------------------------------------------ | --------------- | --------------- | ------------------------------------------------------------------------------ |
-| label    | title of the tab                                                                     | string          | —               | —                                                                              |
-| disabled | whether Tab is disabled                                                              | boolean         | —               | false                                                                          |
-| name     | identifier corresponding to the name of Tabs, representing the alias of the tab-pane | string / number | —               | ordinal number of the tab-pane in the sequence, e.g. the first tab-pane is '0' |
-| closable | whether Tab is closable                                                              | boolean         | —               | false                                                                          |
-| lazy     | whether Tab is lazily rendered                                                       | boolean         | —               | false                                                                          |
+| 属性名      | 说明                           | 类型              | 可选值 | 默认值                         |
+| -------- | ---------------------------- | --------------- | --- | --------------------------- |
+| label    | 选项卡标题                        | string          | —   | —                           |
+| disabled | 是否禁用                         | boolean         | —   | false                       |
+| name     | 与选项卡绑定值 value 对应的标识符，表示选项卡别名 | string / number | —   | 该选项卡在选项卡列表中的序数值，第一个选项卡为 '0' |
+| closable | 标签是否可关闭                      | boolean         | —   | false                       |
+| lazy     | 标签是否延迟渲染                     | boolean         | —   | false                       |
 
-## Tab-pane Slots
+## Tab-pane 插槽
 
-| Name  | Description        |
-| ----- | ------------------ |
-| -     | Tab-pane's content |
-| label | Tab-pane's label   |
+| 插槽名   | 说明             |
+| ----- | -------------- |
+| -     | Tab-pane 的内容   |
+| label | Tab-pane 的标题内容 |

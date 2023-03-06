@@ -1,90 +1,90 @@
 ---
-title: TimePicker
-lang: en-US
+title: TimePicker 时间选择器
+lang: zh-CN
 ---
 
-# TimePicker
+# TimePicker 时间选择器
 
-Use Time Picker for time input.
+用于选择或输入日期
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+在 SSR 场景下，您需要将组件包裹在 `<client-only></client-only>` 之中 (如: [Nuxt](https://nuxt.com/v3)) 和 SSG (e.g: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
-## Arbitrary time picker
+## 任意时间点
 
-Can pick an arbitrary time.
+可以选择任意时间
 
-:::demo By default, you can scroll the mouse wheel to pick time, alternatively you can use the control arrows when the `arrow-control` attribute is set.
+:::demo 提供了两种交互方式：默认情况下通过鼠标滚轮进行选择，打开`arrow-control`属性则通过界面上的箭头进行选择。
 
 time-picker/basic
 
 :::
 
-## Limit the time range
+## 限制时间选择范围
 
-You can also limit the time range.
+您也可以限制时间选择范围。
 
-:::demo Limit the time range by specifying `disabledHours` `disabledMinutes` and `disabledSeconds`.
+:::demo 通过 `disabledHours`，`disabledMinutes` 和 `disabledSeconds` 限制可选时间范围。,
 
 time-picker/basic-range
 
 :::
 
-## Arbitrary time range
+## 任意时间范围
 
-Can pick an arbitrary time range.
+可选择任意的时间范围
 
-:::demo We can pick a time range by adding an `is-range` attribute. Also, `arrow-control` is supported in range mode.
+:::demo 添加`is-range`属性即可选择时间范围。 同样支持 `arrow-control` 属性。
 
 time-picker/range
 
 :::
 
-## Attributes
+## TimePicker 属性
 
-| Name                  | Description                                              | Type                                   | Accepted Values                                               | Default     |
-| --------------------- | -------------------------------------------------------- | -------------------------------------- | ------------------------------------------------------------- | ----------- |
-| model-value / v-model | binding value, if it is an array, the length should be 2 | Date / number / string / Array         | —                                                             | —           |
-| readonly              | whether TimePicker is read only                          | boolean                                | —                                                             | false       |
-| disabled              | whether TimePicker is disabled                           | boolean                                | —                                                             | false       |
-| editable              | whether the input is editable                            | boolean                                | —                                                             | true        |
-| clearable             | whether to show clear button                             | boolean                                | —                                                             | true        |
-| size                  | size of Input                                            | string                                 | large / default / small                                       | —           |
-| placeholder           | placeholder in non-range mode                            | string                                 | —                                                             | —           |
-| start-placeholder     | placeholder for the start time in range mode             | string                                 | —                                                             | —           |
-| end-placeholder       | placeholder for the end time in range mode               | string                                 | —                                                             | —           |
-| is-range              | whether to pick a time range                             | boolean                                | —                                                             | false       |
-| arrow-control         | whether to pick time using arrow buttons                 | boolean                                | —                                                             | false       |
-| popper-class          | custom class name for TimePicker's dropdown              | string                                 | —                                                             | —           |
-| range-separator       | range separator                                          | string                                 | —                                                             | '-'         |
-| format                | format of the displayed value in the input box           | string                                 | see [date formats](/en-US/component/date-picker#date-formats) | HH:mm:ss    |
-| default-value         | optional, default date of the calendar                   | Date / [Date, Date]                    | —                                                             | —           |
-| id                    | same as `id` in native input                             | string / [string, string]              | —                                                             | -           |
-| name                  | same as `name` in native input                           | string                                 | —                                                             | —           |
-| prefix-icon           | Custom prefix icon component                             | `string \| Component`                  | —                                                             | Clock       |
-| clear-icon            | Custom clear icon component                              | `string \| Component`                  | —                                                             | CircleClose |
-| disabled-hours        | To specify the array of hours that cannot be selected    | function                               | —                                                             | —           |
-| disabled-minutes      | To specify the array of minutes that cannot be selected  | Function(selectedHour)                 | —                                                             | —           |
-| disabled-seconds      | To specify the array of seconds that cannot be selected  | Function(selectedHour, selectedMinute) | —                                                             | —           |
-| teleported            | whether time-picker dropdown is teleported to the body   | boolean                                | true / false                                                  | true        |
+| 属性名                   | 说明                           | 类型                                     | 可选值                                                           | 默认值         |
+| --------------------- | ---------------------------- | -------------------------------------- | ------------------------------------------------------------- | ----------- |
+| model-value / v-model | 绑定值，如果它是数组，长度应该是 2           | Date / number / string / Array         | —                                                             | —           |
+| readonly              | 完全只读                         | boolean                                | —                                                             | false       |
+| disabled              | 禁用                           | boolean                                | —                                                             | false       |
+| editable              | 文本框可输入                       | boolean                                | —                                                             | true        |
+| clearable             | 是否显示清除按钮                     | boolean                                | —                                                             | true        |
+| size                  | 输入框尺寸                        | string                                 | large / default / small                                       | —           |
+| placeholder           | 非范围选择时的占位内容                  | string                                 | —                                                             | —           |
+| start-placeholder     | 范围选择时开始日期的占位内容               | string                                 | —                                                             | —           |
+| end-placeholder       | 范围选择时结束日期的占位内容               | string                                 | —                                                             | —           |
+| is-range              | 是否为时间范围选择                    | boolean                                | —                                                             | false       |
+| arrow-control         | 是否使用箭头进行时间选择                 | boolean                                | —                                                             | false       |
+| popper-class          | TimePicker 下拉框的类名            | string                                 | —                                                             | —           |
+| range-separator       | 选择范围时的分隔符                    | string                                 | —                                                             | '-'         |
+| format                | 显示在输入框中的格式                   | string                                 | 请查看 [date formats](/en-US/component/date-picker#date-formats) | HH:mm:ss    |
+| default-value         | 可选，选择器打开时默认显示的时间             | Date / [Date, Date]                    | —                                                             | —           |
+| id                    | 等价于原生 input `id` 属性          | string / [string, string]              | —                                                             | -           |
+| name                  | 等价于原生 input `name` 属性        | string                                 | —                                                             | —           |
+| prefix-icon           | 自定义前缀图标                      | `string \| Component`                 | —                                                             | Clock       |
+| clear-icon            | 自定义清除图标                      | `string \| Component`                 | —                                                             | CircleClose |
+| disabled-hours        | 禁止选择部分小时选项                   | function                               | —                                                             | —           |
+| disabled-minutes      | 禁止选择部分分钟选项                   | Function(selectedHour)                 | —                                                             | —           |
+| disabled-seconds      | 禁止选择部分秒选项                    | Function(selectedHour, selectedMinute) | —                                                             | —           |
+| teleported            | 是否将 popover 的下拉列表镜像至 body 元素 | boolean                                | true / false                                                  | true        |
 
-## Events
+## TimePicker 事件
 
-| Name           | Description                                                | Parameters              |
-| -------------- | ---------------------------------------------------------- | ----------------------- |
-| change         | triggers when user confirms the value                      | `(val: typeof v-model)` |
-| blur           | triggers when Input blurs                                  | `(e: FocusEvent)`       |
-| focus          | triggers when Input focuses                                | `(e: FocusEvent)`       |
-| visible-change | triggers when the TimePicker's dropdown appears/disappears | `(visibility: boolean)` |
+| 事件名            | 说明                         | 回调参数                    |
+| -------------- | -------------------------- | ----------------------- |
+| change         | 用户确认选定的值时触发                | `(val: typeof v-model)` |
+| blur           | 在组件 Input 失去焦点时触发          | `(e: FocusEvent)`       |
+| focus          | 在组件 Input 获得焦点时触发          | `(e: FocusEvent)`       |
+| visible-change | 当 TimePicker 的下拉列表出现/消失时触发 | `(visibility: boolean)` |
 
-## Methods
+## TimePicker 方法
 
-| Method      | Description                 | Parameters |
-| ----------- | --------------------------- | ---------- |
-| focus       | focus the Input component   | —          |
-| blur        | blur the Input component    | —          |
-| handleOpen  | open the TimePicker popper  | —          |
-| handleClose | close the TimePicker popper | —          |
+| 方法名         | 说明           | 参数 |
+| ----------- | ------------ | -- |
+| focus       | 使 input 获取焦点 | —  |
+| blur        | 使 input 失去焦点 | —  |
+| handleOpen  | 打开时间选择器弹窗    | —  |
+| handleClose | 关闭时间选择器弹窗    | —  |

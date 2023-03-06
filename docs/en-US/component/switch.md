@@ -1,21 +1,21 @@
 ---
-title: Switch
-lang: en-US
+title: Switch 开关
+lang: zh-CN
 ---
 
-# Switch
+# Switch 开关
 
-Switch is used for switching between two opposing states.
+表示两种相互对立的状态间的切换，多用于触发「开/关」。
 
-## Basic usage
+## 基础用法
 
-:::demo Bind `v-model` to a `Boolean` typed variable. The `--el-switch-on-color` and `--el-switch-off-color` CSS variables decides the background color in two states.
+:::demo 绑定 `v-model` 到一个 `Boolean` 类型的变量。 可以使用 `--el-switch-on-color` 属性与 `--el-switch-off-color` 属性来设置开关的背景色。
 
 switch/basic
 
 :::
 
-## Sizes
+## 尺寸
 
 :::demo
 
@@ -23,93 +23,93 @@ switch/sizes
 
 :::
 
-## Text description
+## 文字描述
 
-You can add `active-text` and `inactive-text` attribute to show texts. use `inline-prompt` attribute to control text is displayed inside dot.
+使用`active-text`属性与`inactive-text`属性来设置开关的文字描述。 使用 `inline-prompt` 属性来控制文本是否显示在点内。
 
-:::demo You can add `active-text` and `inactive-text` attribute to show texts.
+:::demo 使用`active-text`属性与`inactive-text`属性来设置开关的文字描述。
 
 switch/text-description
 
 :::
 
-## Display custom icons
+## 显示自定义图标
 
 :::tip
 
-Use the `active-icon` and `inactive-icon` attribute to add icon. You can pass either string for the component name (registered in advance) or the component itself which is a SVG Vue component. Element Plus has provided a set of icon that you can find at [icon](/en-US/component/icon)
+使用 `inactive-icon` 和 `active-icon` 属性来添加图标。 您可以传递组件名称的字符串（提前注册）或组件本身是一个 SVG Vue 组件。 Element Plus 提供了一组图标，您可以在 [icon component](/zh-CN/component/icon) 查看。
 
 :::
 
-:::demo You can add `active-icon` and `inactive-icon` attribute to show icons. use `inline-prompt` attribute to control icon is displayed inside dot.
+:::demo 使用 `inactive-icon` 和 `active-icon` 属性来添加图标。 使用 `inline-prompt` 属性来控制图标显示在点内。
 
 switch/custom-icons
 
 :::
 
-## Extended value types
+## 扩展的 value 类型
 
-:::demo You can set `active-value` and `inactive-value` attributes. They both receive a `Boolean`, `String` or `Number` typed value.
+:::demo 你可以设置 `active-value` 和 `inactive-value` 属性， 它们接受 `Boolean`、`String` 或 `Number` 类型的值。
 
 switch/extended-value-types
 
 :::
 
-## Disabled
+## 禁用状态
 
-:::demo Adding the `disabled` attribute disables Switch.
+:::demo 设置`disabled`属性，接受一个`Boolean`，设置`true`即可禁用。
 
 switch/disabled
 
 :::
 
-## Loading
+## 加载状态
 
-:::demo Setting the `loading` attribute to `true` indicates a loading state on the Switch.
+:::demo 设置`loading`属性，接受一个`Boolean`，设置`true`即加载中状态。
 
 switch/loading
 
 :::
 
-## prevent switching
+## 阻止切换
 
-:::demo set the `before-change` property, If `false` is returned or a `Promise` is returned and then is rejected, will stop switching.
+:::demo 设置`beforeChange`属性，若返回 false 或者返回 Promise 且被 reject，则停止切换。
 
 switch/prevent-switching
 
 :::
 
-## Attributes
+## 属性
 
-| Name                  | Description                                                                                                                                     | Type                                | Accepted Values         | Default |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ----------------------- | ------- |
-| model-value / v-model | binding value, it should be equivalent to either `active-value` or `inactive-value`, by default it's `boolean` type                             | boolean / string / number           | —                       | —       |
-| disabled              | whether Switch is disabled                                                                                                                      | boolean                             | —                       | false   |
-| loading               | whether Switch is in loading state                                                                                                              | boolean                             | —                       | false   |
-| size                  | size of Switch                                                                                                                                  | string                              | large / default / small | default |
-| width                 | width of Switch                                                                                                                                 | number / string                     | —                       | —       |
-| inline-prompt         | whether icon or text is displayed inside dot, only the first character will be rendered for text                                                | boolean                             | —                       | false   |
-| active-icon           | component of the icon displayed when in `on` state, overrides `active-text`                                                                     | `string \| Component`               | —                       | —       |
-| inactive-icon         | component of the icon displayed when in `off` state, overrides `inactive-text`                                                                  | `string \| Component`               | —                       | —       |
-| active-text           | text displayed when in `on` state                                                                                                               | string                              | —                       | —       |
-| inactive-text         | text displayed when in `off` state                                                                                                              | string                              | —                       | —       |
-| active-value          | switch value when in `on` state                                                                                                                 | boolean / string / number           | —                       | true    |
-| inactive-value        | switch value when in `off` state                                                                                                                | boolean / string / number           | —                       | false   |
-| active-color          | background color when in `on` state ( deprecated, use CSS var `--el-switch-on-color` instead )                                                  | string                              | —                       | —       |
-| inactive-color        | background color when in `off` state ( deprecated, use CSS var `--el-switch-off-color` instead )                                                | string                              | —                       | —       |
-| border-color          | border color of the switch ( deprecated, use CSS var `--el-switch-border-color` instead )                                                       | string                              | —                       | —       |
-| name                  | input name of Switch                                                                                                                            | string                              | —                       | —       |
-| validate-event        | whether to trigger form validation                                                                                                              | boolean                             | —                       | true    |
-| before-change         | before-change hook before the switch state changes. If `false` is returned or a `Promise` is returned and then is rejected, will stop switching | `() => Promise<boolean> \| boolean` | —                       | —       |
+| 属性名                   | 说明                                                          | 类型                                            | 可选值                     | 默认值     |
+| --------------------- | ----------------------------------------------------------- | --------------------------------------------- | ----------------------- | ------- |
+| model-value / v-model | 绑定值，必须等于 `active-value` 或 `inactive-value`，默认为 `Boolean` 类型 | boolean / string / number                     | —                       | —       |
+| disabled              | 是否禁用                                                        | boolean                                       | —                       | false   |
+| loading               | 是否显示加载中                                                     | boolean                                       | —                       | false   |
+| size                  | switch 的大小                                                  | string                                        | large / default / small | default |
+| width                 | switch 的宽度                                                  | number / string                               | —                       | —       |
+| inline-prompt         | 无论图标或文本是否显示在点内，只会呈现文本的第一个字符                                 | boolean                                       | —                       | false   |
+| active-icon           | switch 状态为 `on` 时所显示图标，设置此项会忽略 `active-text`                | `string \| Component`                        | —                       | —       |
+| inactive-icon         | switch 状态为 `off` 时所显示图标，设置此项会忽略 `inactive-text`             | `string \| Component`                        | —                       | —       |
+| active-text           | switch 打开时的文字描述                                             | string                                        | —                       | —       |
+| inactive-text         | switch 的状态为 `off` 时的文字描述                                    | string                                        | —                       | —       |
+| active-value          | switch 状态为 `on` 时的值                                         | boolean / string / number                     | —                       | true    |
+| inactive-value        | switch的状态为 `off` 时的值                                        | boolean / string / number                     | —                       | false   |
+| active-color          | 当在 `on` 状态时的背景颜色(已废弃，请使用 CSS var `--el-switch-on-color` )   | string                                        | —                       | —       |
+| inactive-color        | `off` 状态时的背景颜色(已废弃，使用 CSS var `--el-switch-of-color` )      | string                                        | —                       | —       |
+| border-color          | 开关的边框颜色 ( 已废弃，使用 CSS var `--el-switch-border-color` )       | string                                        | —                       | —       |
+| name                  | switch 对应的 name 属性                                          | string                                        | —                       | —       |
+| validate-event        | 改变 switch 状态时是否触发表单的校验                                      | boolean                                       | —                       | true    |
+| before-change         | switch 状态改变前的钩子， 返回 `false` 或者返回 `Promise` 且被 reject 则停止切换  | `() => Promise<boolean> \| boolean` | —                       | —       |
 
-## Events
+## 事件
 
-| Name   | Description                 | Parameters           |
-| ------ | --------------------------- | -------------------- |
-| change | triggers when value changes | value after changing |
+| 事件名    | 说明                  | 回调参数      |
+| ------ | ------------------- | --------- |
+| change | switch 状态发生变化时的回调函数 | val，新状态的值 |
 
-## Methods
+## 方法
 
-| Method | Description                | Parameters |
-| ------ | -------------------------- | ---------- |
-| focus  | focus the Switch component | —          |
+| 方法    | 说明            | 参数 |
+| ----- | ------------- | -- |
+| focus | 使 Switch 获取焦点 | —  |

@@ -1,17 +1,17 @@
 ---
-title: Quick Start
-lang: en-US
+title: 快速开始
+lang: zh-CN
 ---
 
-# Quick Start
+# 快速开始
 
-This section describes how to use Element Plus in your project.
+本节将介绍如何在项目中使用 Element Plus。
 
-## Usage
+## 用法
 
-### Full Import
+### 完整引入
 
-If you don’t care about the bundle size so much, it’s more convenient to use full import.
+如果你对打包后的文件大小不是很在乎，那么使用完整导入会更方便。
 
 ```typescript
 // main.ts
@@ -26,9 +26,9 @@ app.use(ElementPlus)
 app.mount('#app')
 ```
 
-#### Volar support
+#### Volar 支持
 
-If you use volar, please add the global component type definition to `compilerOptions.types` in `tsconfig.json`.
+如果您使用 Volar，请在 `tsconfig.json` 中通过 `compilerOptions.type` 指定全局组件类型。
 
 ```json
 // tsconfig.json
@@ -40,19 +40,19 @@ If you use volar, please add the global component type definition to `compilerOp
 }
 ```
 
-### On-demand Import
+### 按需导入
 
-You need to use an additional plugin to import components you used.
+您需要使用额外的插件来导入要使用的组件。
 
-#### Auto import <el-tag type="primary" style="vertical-align: middle;" effect="dark" size="small">Recommend</el-tag>
+#### 自动导入 <el-tag type="primary" style="vertical-align: middle;" effect="dark" size="small">推荐</el-tag>
 
-First you need to install `unplugin-vue-components` and `unplugin-auto-import`.
+首先你需要安装`unplugin-vue-components` 和 `unplugin-auto-import`这两款插件
 
 ```shell
 npm install -D unplugin-vue-components unplugin-auto-import
 ```
 
-Then add the code below into your `Vite` or `Webpack` config file.
+然后把下列代码插入到你的 `Vite` 或 `Webpack` 的配置文件中
 
 ##### Vite
 
@@ -98,17 +98,17 @@ module.exports = {
 }
 ```
 
-For more bundlers ([Rollup](https://rollupjs.org/), [Vue CLI](https://cli.vuejs.org/)) and configs please reference [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components#installation) and [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import#install).
+想了解更多打包 ([Rollup](https://rollupjs.org/), [Vue CLI](https://cli.vuejs.org/)) 和配置工具，请参考 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components#installation) 和 [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import#install)。
 
 #### Nuxt
 
-For Nuxt users, you only need to install `@element-plus/nuxt`.
+关于 Nuxt 用户, 你只需要安装 `@element-plus/nuxt` 即可.
 
 ```shell
 npm install -D @element-plus/nuxt
 ```
 
-Then add the code below into your config file.
+然后将下面的代码写入你的配置文件.
 
 ```ts
 // nuxt.config.ts
@@ -117,21 +117,19 @@ export default defineNuxtConfig({
 })
 ```
 
-Refer to the [docs](https://github.com/element-plus/element-plus-nuxt#readme) for how to configure it.
+配置文档参考 [docs](https://github.com/element-plus/element-plus-nuxt#readme).
 
-### Manually import
+### 手动导入
 
-Element Plus provides out of box [Tree Shaking](https://webpack.js.org/guides/tree-shaking/)
-functionalities based on ES Module.
+Element Plus 提供了基于 ES Module 的开箱即用的 [Tree Shaking](https://webpack.js.org/guides/tree-shaking/) 功能。
 
-But you need install [unplugin-element-plus](https://github.com/element-plus/unplugin-element-plus) for style import.
-And refer to the [docs](https://github.com/element-plus/unplugin-element-plus#readme) for how to configure it.
+但你需要安装 [unplugin-element-plus](https://github.com/element-plus/unplugin-element-plus) 来导入样式。 配置文档参考 [docs](https://github.com/element-plus/unplugin-element-plus#readme).
 
 > App.vue
 
 ```html
 <template>
-  <el-button>I am ElButton</el-button>
+  <el-button>我是 ElButton</el-button>
 </template>
 <script>
   import { ElButton } from 'element-plus'
@@ -154,7 +152,7 @@ export default defineConfig({
 
 :::warning
 
-You need to manually import the styles if you're using `unplugin-element-plus` and only used the component API.
+如果使用 `unplugin-element-plus` 并且只使用组件 API，你需要手动导入样式。
 
 Example:
 
@@ -165,21 +163,19 @@ import { ElMessage } from 'element-plus'
 
 :::
 
-## Starter Template
+## 快捷搭建项目模板
 
-We provide a [Vite Template](https://github.com/element-plus/element-plus-vite-starter).
+我们提供了 [Vite 模板](https://github.com/element-plus/element-plus-vite-starter)。
 
-For Nuxt users we have a [Nuxt Template](https://github.com/element-plus/element-plus-nuxt-starter).
+对于Nuxt 用户，我们有一个 [Nuxt 模板](https://github.com/element-plus/element-plus-nuxt-starter)。
 
-For Laravel users we have a [Laravel Template](https://github.com/element-plus/element-plus-in-laravel-starter).
+对于 Laravel 用户，我们也准备了[ Laravel 模板](https://github.com/element-plus/element-plus-in-laravel-starter)。
 
-## Global Configuration
+## 全局配置
 
-When registering Element Plus, you can pass a global config object with `size` and
-`zIndex` to set the default `size` for form components, and `zIndex` for
-popup components, the default value for `zIndex` is `2000`.
+在引入 ElementPlus 时，可以传入一个包含 `size` 和 `zIndex` 属性的全局配置对象。 `size` 用于设置表单组件的默认尺寸，`zIndex` 用于设置弹出组件的层级，`zIndex` 的默认值为 `2000`。
 
-Full import:
+完整引入：
 
 ```ts
 import { createApp } from 'vue'
@@ -190,7 +186,7 @@ const app = createApp(App)
 app.use(ElementPlus, { size: 'small', zIndex: 3000 })
 ```
 
-On-demand:
+按需引入:
 
 ```vue
 <template>
@@ -217,15 +213,14 @@ export default defineComponent({
 </script>
 ```
 
-## Using Nuxt.js
+## 使用 Nuxt.js
 
-We can also use [Nuxt.js](https://v3.nuxtjs.org/)：
+我们也可以使用 [Nuxt.js](https://v3.nuxtjs.org/)：
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe src="https://glitch.com/edit/#!/nuxt-element-plus?path=components%2FExamples.vue%3A1%3A0" alt="nuxt-element-plus on glitch" style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
-## Let's Get Started
+## 开始使用
 
-You can bootstrap your project from now on. For each components usage, please
-refer to [the individual component documentation](https://element-plus.org/en-US/component/button.html).
+现在你可以启动项目了。 具体每个组件的使用方法, 请查阅 [每个组件的独立文档](https://element-plus.org/en-US/component/button.html).

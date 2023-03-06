@@ -1,21 +1,21 @@
 ---
-title: Rate
-lang: en-US
+title: Rate 评分
+lang: zh-CN
 ---
 
-# Rate
+# Rate 评分
 
-Used for rating
+用于评分
 
-## Basic usage
+## 基础用法
 
-:::demo Rate divides rating scores into several levels and these levels can be distinguished by using different background colors. By default background colors are the same, but you can assign them an array with three element to reflect three levels using the `colors` attribute, and their two thresholds can be defined by `low-threshold` and `high-threshold`, or you can assign them with a object which key is the threshold between two levels and value is the corresponding color.
+:::demo 评分默认被分为三个等级，可以利用颜色数组对分数及情感倾向进行分级（默认情况下不区分颜色）。 三个等级所对应的颜色用 `colors` 属性设置，而它们对应的两个阈值则通过 `low-threshold` 和 `high-threshold` 设定。
 
 rate/basic-usage
 
 :::
 
-## Sizes
+## 尺寸
 
 :::demo
 
@@ -23,60 +23,59 @@ rate/sizes
 
 :::
 
-## With allow-half
+## 允许半选
 
-:::demo Add attribute `allow-half` Half star allowed
+:::demo 属性 `allow-half` 允许出现半星
 
 rate/allow-half
 
 :::
 
-## With text
+## 辅助文字
 
-Using text to indicate rating score
+用辅助文字直接地表达对应分数
 
-:::demo Add attribute `show-text` to display text at the right of Rate. You can assign texts for different scores using `texts`. `texts` is an array whose length should be equal to the max score `max`.
+:::demo 为组件设置 `show-text` 属性会在右侧显示辅助文字。 通过设置 `texts` 可以为每一个分值指定对应的辅助文字。 `texts` 为一个数组，长度应等于最大值 `max`。
 
 rate/text
 
 :::
 
-## Clearable
+## 可清空
 
-:::demo You can reset the value to `0` when you click at the same value again.
+:::demo 当你再次点击相同的值时，可以将值重置为 `0`。
 
 rate/clearable
 
 :::
 
-## More icons
+## 更多种类的图标
 
-You can use different icons to distinguish different rate components.
+当有多层评价时，可以用不同类型的图标区分评分层级。
 
-:::demo You can customize icons by passing `icons` an array with three elements or a object which key is the threshold between two levels and value is the corresponding icon. In this example, we also use `void-icon` to set the icon if it is unselected.
+:::demo 设置`icons`属性可以自定义不同分段的图标。 若传入数组，共有 3 个元素，为 3 个分段所对应的类名；若传入对象，可自定义分段，键名为分段的界限值，键值为对应的类名。 本例还使用 `void-icon` 指定了未选中时的图标类名。
 
 rate/more-icons
 
 :::
 
-## Read-only
+## 只读
 
-Read-only Rate is for displaying rating score. Half star is supported.
+只读的评分用来展示分数， 允许出现半星。
 
-:::demo Use attribute `disabled` to make the component read-only. Add `show-score` to display the rating score at the right side. Additionally, you can use attribute `score-template` to provide a score template. It must contain `{value}`, and `{value}` will be replaced with the rating score.
+:::demo 为组件设置 `disabled` 属性表示组件为只读。 此时若设置 `show-score`，则会在右侧显示目前的分值。 此外，您可以使用属性 `score-template` 来提供评分模板。 模板为一个包含了 `{value}` 的字符串，`{value}` 会被替换为当前分值。
 
 rate/readonly
 
 :::
 
-## Custom styles
+## 自定义样式
 
-Now you can set custom style for rate component.
-Use `css/scss` language to change the global or local color. We set some global color variables: `--el-rate-void-color`, `--el-rate-fill-color`, `--el-rate-disabled-void-color`, `--el-rate-text-color`. You can use like: `:root { --el-rate-void-color: red; --el-rate-fill-color: blue; }`.
+您可以为 rate 组件设定自定义样式。 使用 `css` 或 `scss` 改变全局或局部的颜色。 我们设置了一些全局颜色变量：`--el-rate-void-color`、`--el-rate-fill-color`、`--el-rate-disabled-void-color` 和 `--el-rate-text-color`。 您可以像这样使用：`:root { --el-rate-void-color: red; --el-rate-fill-color: blue; }`。
 
-### Default Variables
+### 默认变量
 
-| Variable                      | Default Color                 |
+| 变量                            | 默认颜色                          |
 | ----------------------------- | ----------------------------- |
 | --el-rate-void-color          | var(--el-border-color-darker) |
 | --el-rate-fill-color          | #f7ba2a                       |
@@ -87,39 +86,39 @@ Use `css/scss` language to change the global or local color. We set some global 
 
 ### Attributes
 
-| Name                  | Description                                                                                                                                                                                                                    | Type                                                                      | Default                                                            |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| model-value / v-model | binding value                                                                                                                                                                                                                  | ^[number]                                                                 | 0                                                                  |
-| max                   | max rating score                                                                                                                                                                                                               | ^[number]                                                                 | 5                                                                  |
-| size                  | size of Rate                                                                                                                                                                                                                   | ^[enum]`'large' \| 'default' \| 'small'`                                  | —                                                                  |
-| disabled              | whether Rate is read-only                                                                                                                                                                                                      | ^[boolean]                                                                | false                                                              |
-| allow-half            | whether picking half start is allowed                                                                                                                                                                                          | ^[boolean]                                                                | false                                                              |
-| low-threshold         | threshold value between low and medium level. The value itself will be included in low level                                                                                                                                   | ^[number]                                                                 | 2                                                                  |
-| high-threshold        | threshold value between medium and high level. The value itself will be included in high level                                                                                                                                 | ^[number]                                                                 | 4                                                                  |
-| colors                | colors for icons. If array, it should have 3 elements, each of which corresponds with a score level, else if object, the key should be threshold value between two levels, and the value should be corresponding color         | ^[object]`string[] \| Record<number, string>`                             | ['#F7BA2A', '#F7BA2A', '#F7BA2A']                                  |
-| void-color            | color of unselected icons                                                                                                                                                                                                      | ^[string]                                                                 | #C6D1DE                                                            |
-| disabled-void-color   | color of unselected read-only icons                                                                                                                                                                                            | ^[string]                                                                 | #EFF2F7                                                            |
-| icons                 | icon components. If array, it should have 3 elements, each of which corresponds with a score level, else if object, the key should be threshold value between two levels, and the value should be corresponding icon component | ^[object]`string[] \| Component[] \| Record<number, string \| Component>` | [StarFilled, StarFilled, StarFilled]                               |
-| void-icon             | component of unselected icons                                                                                                                                                                                                  | ^[string] / ^[Component]                                                  | Star                                                               |
-| disabled-void-icon    | component of unselected read-only icons                                                                                                                                                                                        | ^[string] / ^[Component]                                                  | StarFilled                                                         |
-| show-text             | whether to display texts                                                                                                                                                                                                       | ^[boolean]                                                                | false                                                              |
-| show-score            | whether to display current score. show-score and show-text cannot be true at the same time                                                                                                                                     | ^[boolean]                                                                | false                                                              |
-| text-color            | color of texts                                                                                                                                                                                                                 | ^[string]                                                                 | #1F2D3D                                                            |
-| texts                 | text array                                                                                                                                                                                                                     | ^[array]`string[]`                                                        | ['Extremely bad', 'Disappointed', 'Fair', 'Satisfied', 'Surprise'] |
-| score-template        | score template                                                                                                                                                                                                                 | ^[string]                                                                 | {value}                                                            |
-| clearable             | whether value can be reset to `0`                                                                                                                                                                                              | ^[boolean]                                                                | false                                                              |
-| id                    | native `id` attribute                                                                                                                                                                                                          | ^[string]                                                                 | —                                                                  |
-| label<A11yTag />      | same as `aria-label` in Rate                                                                                                                                                                                                   | ^[string]                                                                 | —                                                                  |
+| 属性名                   | 说明                                                                      | 类型                                                                                 | 默认值                                                                |
+| --------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| model-value / v-model | 选中项绑定值                                                                  | ^[number]                                                                          | 0                                                                  |
+| max                   | 最大分值                                                                    | ^[number]                                                                          | 5                                                                  |
+| size                  | 尺寸                                                                      | ^[enum]`'large' \| 'default' \| 'small'`                                         | —                                                                  |
+| disabled              | 是否为只读                                                                   | ^[boolean]                                                                         | false                                                              |
+| allow-half            | 是否允许半选                                                                  | ^[boolean]                                                                         | false                                                              |
+| low-threshold         | 低分和中等分数的界限值， 值本身被划分在低分中                                                 | ^[number]                                                                          | 2                                                                  |
+| high-threshold        | 高分和中等分数的界限值， 值本身被划分在高分中                                                 | ^[number]                                                                          | 4                                                                  |
+| colors                | icon 的颜色。 若传入数组，共有 3 个元素，为 3 个分段所对应的颜色；若传入对象，可自定义分段，键名为分段的界限值，键值为对应的颜色  | ^[object]`string[] \| Record<number, string>`                               | ['#F7BA2A', '#F7BA2A', '#F7BA2A']                                  |
+| void-color            | 未选中 icon 的颜色                                                            | ^[string]                                                                          | #C6D1DE                                                            |
+| disabled-void-color   | 只读时未选中 icon 的颜色                                                         | ^[string]                                                                          | #EFF2F7                                                            |
+| icons                 | 图标组件 若传入数组，则需要传入 3 个元素，分别为 3 个部分所对应的类名；若传入对象，则可自定义分段，键名为分段的界限值，键值为对应的类名 | ^[object]`string[] \| Component[] \| Record<number, string \| Component>` | [StarFilled, StarFilled, StarFilled]                               |
+| void-icon             | 未被选中的图标组件                                                               | ^[string] / ^[Component]                                                           | Star                                                               |
+| disabled-void-icon    | 禁用状态的未选择图标                                                              | ^[string] / ^[Component]                                                           | StarFilled                                                         |
+| show-text             | 是否显示辅助文字，若为真，则会从 texts 数组中选取当前分数对应的文字内容                                 | ^[boolean]                                                                         | false                                                              |
+| show-score            | 是否显示当前分数， show-score 和 show-text 不能同时为真                                 | ^[boolean]                                                                         | false                                                              |
+| text-color            | 辅助文字的颜色                                                                 | ^[string]                                                                          | #1F2D3D                                                            |
+| texts                 | 辅助文字数组                                                                  | ^[array]`string[]`                                                                 | ['Extremely bad', 'Disappointed', 'Fair', 'Satisfied', 'Surprise'] |
+| score-template        | 分数显示模板                                                                  | ^[string]                                                                          | {value}                                                            |
+| clearable             | 是否可以重置值为 `0`                                                            | ^[boolean]                                                                         | false                                                              |
+| id                    | 原生 `id` 属性                                                              | ^[string]                                                                          | —                                                                  |
+| label<A11yTag />      | 和 Rate 的 `aria-label` 属性保持一致                                            | ^[string]                                                                          | —                                                                  |
 
 ### Events
 
-| Name   | Description                         | Type                                 |
-| ------ | ----------------------------------- | ------------------------------------ |
-| change | Triggers when rate value is changed | ^[Function]`(value: number) => void` |
+| 事件名    | 描述说明    | 类型                                      |
+| ------ | ------- | --------------------------------------- |
+| change | 分值改变时触发 | ^[Function]`(value: number) => void` |
 
 ### Exposes
 
-| Name              | Description         | Type                                 |
-| ----------------- | ------------------- | ------------------------------------ |
-| setCurrentValue   | set current value   | ^[Function]`(value: number) => void` |
-| resetCurrentValue | reset current value | ^[Function]`() => void`              |
+| 名称                | 描述    | 类型                                      |
+| ----------------- | ----- | --------------------------------------- |
+| setCurrentValue   | 设置当前值 | ^[Function]`(value: number) => void` |
+| resetCurrentValue | 重置当前值 | ^[Function]`() => void`              |

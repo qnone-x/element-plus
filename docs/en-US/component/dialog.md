@@ -1,23 +1,23 @@
 ---
-title: Dialog
-lang: en-US
+title: Dialog 对话框
+lang: zh-CN
 ---
 
-# Dialog
+# Dialog 对话框
 
-Informs users while preserving the current page state.
+在保留当前页面状态的情况下，告知用户并承载相关操作。
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+在 SSR 场景下，您需要将组件包裹在 `<client-only></client-only>` 之中 (如: [Nuxt](https://nuxt.com/v3)) 和 SSG (e.g: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
-## Basic usage
+## 基础用法
 
-Dialog pops up a dialog box, and it's quite customizable.
+Dialog 弹出一个对话框，适合需要定制性更大的场景。
 
-:::demo Set `model-value / v-model` attribute with a `Boolean`, and Dialog shows when it is `true`. The Dialog has two parts: `body` and `footer`, and the latter requires a `slot` named `footer`. The optional `title` attribute (empty by default) is for defining a title. Finally, this example demonstrates how `before-close` is used.
+:::demo 需要设置 `model-value / v-model` 属性，它接收 `Boolean`，当为 `true` 时显示 Dialog。 Dialog 分为两个部分：`body` 和 `footer`，`footer` 需要具名为 `footer` 的 `slot`。 `title` 属性用于定义标题，它是可选的，默认值为空。 最后，本例还展示了 `before-close` 的用法。
 
 dialog/basic-usage
 
@@ -25,13 +25,13 @@ dialog/basic-usage
 
 :::tip
 
-`before-close` only works when user clicks the close icon or the backdrop. If you have buttons that close the Dialog in the `footer` named slot, you can add what you would do with `before-close` in the buttons' click event handler.
+`before-close` 只会在用户点击关闭按钮或者对话框的遮罩区域时被调用。 如果你在 `footer` 具名 slot 里添加了用于关闭 Dialog 的按钮，那么可以在按钮的点击回调函数里加入 `before-close` 的相关逻辑。
 
 :::
 
-## Customized Content
+## 自定义内容
 
-The content of Dialog can be anything, even a table or a form. This example shows how to use Element Plus Table and Form with Dialog.
+对话框的内容可以是任何东西，甚至是一个表格或表单。 此示例显示如何在 Dialog 中使用 Element Plus 的表格和表单。
 
 :::demo
 
@@ -39,9 +39,9 @@ dialog/customization-content
 
 :::
 
-## Customized Header
+## 自定义头部
 
-The `header` slot can be used to customize the area where the title is displayed. In order to maintain accessibility, use the `title` attribute in addition to using this slot, or use the `titleId` slot property to specify which element should be read out as the dialog title.
+`header` 可用于自定义显示标题的区域。 为了保持可用性，除了使用此插槽外，使用 `title` 属性，或使用 `titleId` 插槽属性来指定哪些元素应该读取为对话框标题。
 
 :::demo
 
@@ -49,21 +49,21 @@ dialog/customization-header
 
 :::
 
-## Nested Dialog
+## 嵌套的对话框
 
-If a Dialog is nested in another Dialog, `append-to-body` is required.
+如果需要在一个 Dialog 内部嵌套另一个 Dialog，需要使用 `append-to-body` 属性。
 
-:::demo Normally we do not recommend using nested Dialog. If you need multiple Dialogs rendered on the page, you can simply flat them so that they're siblings to each other. If you must nest a Dialog inside another Dialog, set `append-to-body` of the nested Dialog to true, and it will append to body instead of its parent node, so both Dialogs can be correctly rendered.
+:::demo 通常我们不建议使用嵌套对话框。 如果你需要在页面上呈现多个对话框，你可以简单地打平它们，以便它们彼此之间是平级关系。 如果必须要在一个对话框内展示另一个对话框，可以将内部嵌套的对话框属性 `append-to-body` 设置为 true，嵌套的对话框将附加到 body 而不是其父节点，这样两个对话框都可以被正确地渲染。
 
 dialog/nested-dialog
 
 :::
 
-## Centered content
+## 内容居中
 
-Dialog's content can be centered.
+对话框的内容可以居中。
 
-:::demo Setting `center` to `true` will center dialog's header and footer horizontally. `center` only affects Dialog's header and footer. The body of Dialog can be anything, so sometimes it may not look good when centered. You need to write some CSS if you wish to center the body as well.
+:::demo 将`center`设置为`true`即可使标题和底部居中。 `center`仅影响标题和底部区域。 Dialog 的内容是任意的，在一些情况下，内容并不适合居中布局。 如果需要内容也水平居中，请自行为其添加 CSS 样式。
 
 dialog/centered-content
 
@@ -71,35 +71,35 @@ dialog/centered-content
 
 :::tip
 
-The content of Dialog is lazily rendered, which means the default slot is not rendered onto the DOM until it is firstly opened. Therefore, if you need to perform a DOM manipulation or access a component using `ref`, do it in the `open` event callback.
+Dialog 的内容是懒渲染的——在被第一次打开之前，传入的默认 slot 不会被立即渲染到 DOM 上。 因此，如果需要执行 DOM 操作，或通过 `ref` 获取相应组件，请在 `open` 事件回调中进行。
 
 :::
 
-## Align Center dialog
+## 居中对话框
 
-Open dialog from the center of the screen.
+从屏幕中心打开对话框。
 
-:::demo Setting `align-center` to `true` will center the dialog both horizontally and vertically. The prop `top` will not work at the same time because the dialog is vertically centered in a flexbox.
+:::demo 设置 `align-center` 为 `true` 使对话框水平垂直居中。 由于对话框垂直居中在弹性盒子中，所以`top`属性将不起作用。
 
 dialog/align-center
 
 :::
 
-## Destroy on Close
+## 关闭时销毁
 
-When this is feature is enabled, the content under default slot will be destroyed with a `v-if` directive. Enable this when you have perf concerns.
+启用此功能时，默认栏位下的内容将使用 `v-if` 指令销毁。 当出现性能问题时，可以启用此功能。
 
-:::demo Note that by enabling this feature, the content will not be rendered before `transition.beforeEnter` dispatched, there will only be `overlay` `header(if any)` `footer(if any)`.
+:::demo 需要注意的是，当这个属性被启用时，在 `transition.beforeEnter` 事件卸载前，除了 `overlay`、`header (可选)`与`footer(可选)` ，Dialog 内不会有其它任何其它的 DOM 节点存在。
 
 dialog/destroy-on-close
 
 :::
 
-## Draggable Dialog
+## 可拖拽对话框
 
-Try to drag the `header` part.
+试着拖动一下`header`部分吧
 
-:::demo Set `draggable` to `true` to drag.
+:::demo 设置`draggable`属性为`true`以做到拖拽
 
 dialog/draggable-dialog
 
@@ -107,70 +107,70 @@ dialog/draggable-dialog
 
 :::tip
 
-When using `modal` = false, please make sure that `append-to-body` was set to **true**, because `Dialog` was positioned by `position: relative`, when `modal` gets removed, `Dialog` will position itself based on the current position in the DOM, instead of `Document.Body`, thus the style will be messed up.
+当 `modal` 的值为 false 时，请一定要确保 `append-to-body` 属性为 **true**，由于 `Dialog` 使用 `position: relative` 定位，当外层的遮罩层被移除时，`Dialog` 则会根据当前 DOM 上的祖先节点来定位，因此可能造成定位问题。
 
 :::
 
 ## Attributes
 
-| Name                          | Description                                                                                       | Type                                              | Accepted Values | Default |
-| ----------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------- | --------------- | ------- |
-| model-value / v-model         | visibility of Dialog                                                                              | boolean                                           | —               | —       |
-| title                         | title of Dialog. Can also be passed with a named slot (see the following table)                   | string                                            | —               | —       |
-| width                         | width of Dialog                                                                                   | string / number                                   | —               | 50%     |
-| fullscreen                    | whether the Dialog takes up full screen                                                           | boolean                                           | —               | false   |
-| top                           | value for `margin-top` of Dialog CSS                                                              | string                                            | —               | 15vh    |
-| modal                         | whether a mask is displayed                                                                       | boolean                                           | —               | true    |
-| append-to-body                | whether to append Dialog itself to body. A nested Dialog should have this attribute set to `true` | boolean                                           | —               | false   |
-| lock-scroll                   | whether scroll of body is disabled while Dialog is displayed                                      | boolean                                           | —               | true    |
-| custom-class<DeprecatedTag /> | custom class names for Dialog                                                                     | string                                            | —               | —       |
-| open-delay                    | Time(milliseconds) before open                                                                    | number                                            | —               | 0       |
-| close-delay                   | Time(milliseconds) before close                                                                   | number                                            | —               | 0       |
-| close-on-click-modal          | whether the Dialog can be closed by clicking the mask                                             | boolean                                           | —               | true    |
-| close-on-press-escape         | whether the Dialog can be closed by pressing ESC                                                  | boolean                                           | —               | true    |
-| show-close                    | whether to show a close button                                                                    | boolean                                           | —               | true    |
-| before-close                  | callback before Dialog closes, and it will prevent Dialog from closing                            | Function(done) (done is used to close the Dialog) | —               | —       |
-| draggable                     | enable dragging feature for Dialog                                                                | boolean                                           | —               | false   |
-| center                        | whether to align the header and footer in center                                                  | boolean                                           | —               | false   |
-| align-center                  | whether to align the dialog both horizontally and vertically                                      | boolean                                           | —               | false   |
-| destroy-on-close              | Destroy elements in Dialog when closed                                                            | boolean                                           | —               | false   |
+| 属性名                           | 说明                                                       | 类型                                | 可选值 | 默认值   |
+| ----------------------------- | -------------------------------------------------------- | --------------------------------- | --- | ----- |
+| model-value / v-model         | 是否显示 Dialog                                              | boolean                           | —   | —     |
+| title                         | Dialog 对话框 Dialog 的标题， 也可通过具名 slot （见下表）传入               | string                            | —   | —     |
+| width                         | Dialog 的宽度                                               | string / number                   | —   | 50%   |
+| fullscreen                    | 是否为全屏 Dialog                                             | boolean                           | —   | false |
+| top                           | Dialog CSS 中的 margin-top 值                               | string                            | —   | 15vh  |
+| modal                         | 是否需要遮罩层                                                  | boolean                           | —   | true  |
+| append-to-body                | Dialog 自身是否插入至 body 元素上。 嵌套的 Dialog 必须指定该属性并赋值为 true     | boolean                           | —   | false |
+| lock-scroll                   | 是否在 Dialog 出现时将 body 滚动锁定                                | boolean                           | —   | true  |
+| custom-class<DeprecatedTag /> | Dialog 的自定义类名                                            | string                            | —   | —     |
+| open-delay                    | Dialog 打开的延时时间，单位毫秒                                      | number                            | —   | 0     |
+| close-delay                   | Dialog 关闭的延时时间，单位毫秒                                      | number                            | —   | 0     |
+| close-on-click-modal          | 是否可以通过点击 modal 关闭 Dialog                                 | boolean                           | —   | true  |
+| close-on-press-escape         | 是否可以通过按下 ESC 关闭 Dialog                                   | boolean                           | —   | true  |
+| show-close                    | 是否显示关闭按钮                                                 | boolean                           | —   | true  |
+| before-close                  | 关闭前的回调，会暂停 Dialog 的关闭. 回调函数内执行 done 参数方法的时候才是真正关闭对话框的时候. | Function(done) (done 用来关闭 Dialog) | —   | —     |
+| draggable                     | 为 Dialog 启用可拖拽功能                                         | boolean                           | —   | false |
+| center                        | 是否让 Dialog 的 header 和 footer 部分居中排列                      | boolean                           | —   | false |
+| align-center                  | 是否水平垂直对齐对话框                                              | boolean                           | —   | false |
+| destroy-on-close              | 当关闭 Dialog 时，销毁其中的元素                                     | boolean                           | —   | false |
 
 :::warning
 
-`custom-class` has been **deprecated**, and **will be** removed in<VersionTag version="2.3.0" />, please use `class`.
+`custom-class` 已被 **弃用**, 之后 **将会被** 移除到 <VersionTag version="2.3.0" />, 请使用 `class`.
 
 :::
 
 ## Slots
 
-| Name                   | Description                                                                                           |
-| ---------------------- | ----------------------------------------------------------------------------------------------------- |
-| —                      | content of Dialog                                                                                     |
-| header                 | content of the Dialog header; Replacing this removes the title, but does not remove the close button. |
-| title<DeprecatedTag /> | Works the same as the header slot. Use that instead.                                                  |
-| footer                 | content of the Dialog footer                                                                          |
+| 插槽名                    | 说明                          |
+| ---------------------- | --------------------------- |
+| —                      | Dialog 的内容                  |
+| header                 | 对话框标题的内容；会替换标题部分，但不会移除关闭按钮。 |
+| title<DeprecatedTag /> | 与 header 作用相同 请使用 header    |
+| footer                 | Dialog 按钮操作区的内容             |
 
 ## Events
 
-| Name             | Description                                      | Parameters |
-| ---------------- | ------------------------------------------------ | ---------- |
-| open             | triggers when the Dialog opens                   | —          |
-| opened           | triggers when the Dialog opening animation ends  | —          |
-| close            | triggers when the Dialog closes                  | —          |
-| closed           | triggers when the Dialog closing animation ends  | —          |
-| open-auto-focus  | triggers after Dialog opens and content focused  | —          |
-| close-auto-focus | triggers after Dialog closed and content focused | —          |
+| 事件名              | 说明                    | 参数 |
+| ---------------- | --------------------- | -- |
+| open             | Dialog 打开的回调          | —  |
+| opened           | Dialog 打开动画结束时的回调     | —  |
+| close            | Dialog 关闭的回调          | —  |
+| closed           | Dialog 关闭动画结束时的回调     | —  |
+| open-auto-focus  | 输入焦点聚焦在 Dialog 内容时的回调 | —  |
+| close-auto-focus | 输入焦点从 Dialog 内容失焦时的回调 | —  |
 
-## FAQ
+## 常见问题解答（FAQ）
 
-#### Using dialog in SFC, the scope style does not take effect.
+#### 在 SFC 文件中使用对话框，scope 样式不会生效。
 
-Typical issue: [#10515](https://github.com/element-plus/element-plus/issues/10515)
+典型议题：[#10515](https://github.com/element-plus/element-plus/issues/10515)
 
-PS: Since the dialog is rendered using `Teleport`, the style of the root node is recommended to be written globally.
+PS：既然对话框是使用 `Teleport` 渲染的，建议在全局范围写入根节点的样式。
 
-#### When the dialog is displayed and hidden, there is a situation where the page elements are displaced back and forth.
+#### 当对话框被显示及隐藏时，页面元素会来回移动（抖动）。
 
-Typical issue: [#10481](https://github.com/element-plus/element-plus/issues/10481)
+典型议题：[#10481](https://github.com/element-plus/element-plus/issues/10481)
 
-PS: It is recommended to place the scroll area inside a vue mounted node, e.g. `<div id="app" />`, and use the `overflow: hidden` style for the body.
+PS：建议将滚动区域放置在一个挂载的 vue 节点，如 `<div id="app" />` 下，并对 body 使用 `overflow: hidden` 样式。

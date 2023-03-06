@@ -1,35 +1,35 @@
 ---
-title: Steps
-lang: en-US
+title: Steps 步骤条
+lang: zh-CN
 ---
 
-# Steps
+# Steps 步骤条
 
-Guide the user to complete tasks in accordance with the process. Its steps can be set according to the actual application scenario and the number of the steps can't be less than 2.
+引导用户按照流程完成任务的分步导航条， 可根据实际应用场景设定步骤，步骤不得少于 2 步。
 
-## Basic usage
+## 基础用法
 
-Simple step bar.
+简单的步骤条。
 
-:::demo Set `active` attribute with `Number` type, which indicates the index of steps and starts from 0. You can set `space` attribute when the width of the step needs to be fixed which accepts `Number` type. The unit of the `space` attribute is `px`. If not set, it is responsive. Setting the `finish-status` attribute can change the state of the steps that have been completed.
+:::demo 设置 `active` 属性，接受一个 `Number`，表明步骤的 index，从 0 开始。 需要定宽的步骤条时，设置 `space` 属性即可，它接受 `Number`， 单位为 `px`， 如果不设置，则为自适应。 设置 `finish-status` 属性可以改变已经完成的步骤的状态。
 
 steps/basic
 
 :::
 
-## Step bar that contains status
+## 含状态的步骤条
 
-Shows the status of the step for each step.
+每一步骤显示出该步骤的状态。
 
-:::demo Use `title` attribute to set the name of the step, or override the attribute by using a named `slot`. We have listed all the slot names for you at the end of this page.
+:::demo 也可以使用 `title` 具名插槽，可以用 `slot` 的方式来取代属性的设置， 在本文档最后的列表中有所有的插槽可供参考。
 
 steps/with-status
 
 :::
 
-## Center
+## 居中的步骤条
 
-Title and description can be centered.
+标题和描述可以居中。
 
 :::demo
 
@@ -37,9 +37,9 @@ steps/centered
 
 :::
 
-## Step bar with description
+## 带描述的步骤栏
 
-There is description for each step.
+每一步都有描述。
 
 :::demo
 
@@ -47,29 +47,29 @@ steps/with-description
 
 :::
 
-## Step bar with icon
+## 带图标的步骤条
 
-A variety of custom icons can be used in the step bar.
+可以在步骤栏中使用各种自定义图标。
 
-:::demo The icon is set by the `icon` property. The types of icons can be found in the document for the Icon component. In addition, you can customize the icon through a named `slot`.
+:::demo 通过 `icon` 属性来设置图标， 图标的类型可以参考 Icon 组件的文档， 除此以外，还能通过具名 `slot` 来使用自定义的图标。
 
 steps/with-icon
 
 :::
 
-## Vertical step bar
+## 垂直的步骤条
 
-Vertical step bars.
+垂直方向的步骤条。
 
-:::demo You only need to set the `direction` attribute to `vertical` in the `el-steps` element.
+:::demo 只需要在 `el-steps` 元素中设置 `direction` 属性为 `vertical` 即可。
 
 steps/vertical
 
 :::
 
-## Simple step bar
+## 简洁风格的步骤条
 
-Simple step bars, where `align-center`, `description`, `direction` and `space` will be ignored.
+设置 `simple` 可应用简洁风格，该条件下 `align-center` / `description` / `direction` / `space` 都将失效。
 
 :::demo
 
@@ -77,37 +77,37 @@ steps/simple
 
 :::
 
-## Steps Attributes
+## Steps 属性
 
-| Name           | Description                                                                   | Type            | Accepted Values                           | Default    |
-| -------------- | ----------------------------------------------------------------------------- | --------------- | ----------------------------------------- | ---------- |
-| space          | the spacing of each step, will be responsive if omitted. Supports percentage. | number / string | —                                         | —          |
-| direction      | display direction                                                             | string          | vertical/horizontal                       | horizontal |
-| active         | current activation step                                                       | number          | —                                         | 0          |
-| process-status | status of current step                                                        | string          | wait / process / finish / error / success | process    |
-| finish-status  | status of end step                                                            | string          | wait / process / finish / error / success | finish     |
-| align-center   | center title and description                                                  | boolean         | —                                         | false      |
-| simple         | whether to apply simple theme                                                 | boolean         | -                                         | false      |
+| 属性名            | 说明                            | 类型              | 可选值                                       | 默认值        |
+| -------------- | ----------------------------- | --------------- | ----------------------------------------- | ---------- |
+| space          | 每个 step 的间距，不填写将自适应间距。 支持百分比。 | number / string | —                                         | —          |
+| direction      | 显示方向                          | string          | vertical/horizontal                       | horizontal |
+| active         | 设置当前激活步骤                      | number          | —                                         | 0          |
+| process-status | 设置当前步骤的状态                     | string          | wait / process / finish / error / success | process    |
+| finish-status  | 设置结束步骤的状态                     | string          | wait / process / finish / error / success | finish     |
+| align-center   | 进行居中对齐                        | boolean         | —                                         | false      |
+| simple         | 是否应用简洁风格                      | boolean         | -                                         | false      |
 
-## Steps Slots
+## Steps 插槽
 
-| Name | Description               | Subtags |
-| ---- | ------------------------- | ------- |
-| -    | customize default content | Step    |
+| 插槽名 | 说明   | 子标签  |
+| --- | ---- | ---- |
+| -   | 默认插槽 | Step |
 
-## Step Attributes
+## Step 属性
 
-| Name        | Description                                                              | Type                  | Accepted Values                           | Default |
-| ----------- | ------------------------------------------------------------------------ | --------------------- | ----------------------------------------- | ------- |
-| title       | step title                                                               | string                | —                                         | —       |
-| description | step description                                                         | string                | —                                         | —       |
-| icon        | step custom icon. Icons can be passed via named slot as well             | `string \| Component` | —                                         | —       |
-| status      | current status. It will be automatically set by Steps if not configured. | string                | wait / process / finish / error / success | —       |
+| 属性名         | 说明                           | 类型                     | 可选值                                       | 默认值 |
+| ----------- | ---------------------------- | ---------------------- | ----------------------------------------- | --- |
+| title       | 标题                           | string                 | —                                         | —   |
+| description | 描述文案                         | string                 | —                                         | —   |
+| icon        | Step 组件的自定义图标。 也支持 slot 方式写入 | `string \| Component` | —                                         | —   |
+| status      | 设置当前步骤的状态， 不设置则根据 steps 确定状态 | string                 | wait / process / finish / error / success | —   |
 
-## Step Slots
+## Step 插槽
 
-| Name        | Description      |
-| ----------- | ---------------- |
-| icon        | custom icon      |
-| title       | step title       |
-| description | step description |
+| 插槽名         | 说明      |
+| ----------- | ------- |
+| icon        | 自定义图标   |
+| title       | 自定义标题   |
+| description | 自定义描述文案 |

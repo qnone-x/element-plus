@@ -1,13 +1,13 @@
 ---
-title: Empty
-lang: en-US
+title: Empty 空状态
+lang: zh-CN
 ---
 
-# Empty
+# Empty 空状态
 
-Placeholder hints for empty states.
+空状态时的占位提示。
 
-## Basic usage
+## 基础用法
 
 :::demo
 
@@ -15,9 +15,9 @@ empty/basic-usage
 
 :::
 
-## Custom image
+## 自定义图片
 
-Use `image` prop to set image URL.
+通过设置 `image` 属性传入图片 URL。
 
 :::demo
 
@@ -25,9 +25,9 @@ empty/custom-image
 
 :::
 
-## Image size
+## 图片尺寸
 
-Use `image-size` prop to control image size.
+通过使用 `image-size` 属性来控制图片大小。
 
 :::demo
 
@@ -35,9 +35,9 @@ empty/image-size
 
 :::
 
-## Bottom content
+## 底部内容
 
-Use the default slot to insert content at the bottom.
+使用默认插槽可在底部插入内容。
 
 :::demo
 
@@ -45,15 +45,13 @@ empty/bottom-content
 
 :::
 
-## Custom styles
+## 自定义样式
 
-Now you can set custom style for empty component.
-Use `css/scss` language to change the global or local color. We set some global color variables: `--el-empty-fill-color-0`, `--el-empty-fill-color-1`, `--el-empty-fill-color-2`, ......, `--el-empty-fill-color-9`. You can use like: `:root { --el-empty-fill-color-0: red; --el-empty-fill-color-1: blue; }`.
-But usually, if you want to change style, you need to change all color, because these colors are a combination.
+您可以为empty组件设置自定义样式。 使用 `css/scss` 语言来更改全局或局部颜色。 我们设置了一些全局颜色变量：`--el-empty-fill-color-0`、`--el-empty-fill-color-1`、`--el-empty-fill-color-2`、……、`--el-empty-fill-color-9`。 您可以使用类似 `:root { --el-empty-fill-color-0: red; --el-empty-fill-color-1: blue; }` 等变量。 但通常，如果你想要更改样式，你需要更改所有颜色，因为这些颜色是一个组合。
 
-### Default Variables
+### 默认变量
 
-| Variable                | Color                 |
+| 变量                      | 颜色                    |
 | ----------------------- | --------------------- |
 | --el-empty-fill-color-0 | var(--el-color-white) |
 | --el-empty-fill-color-1 | #fcfcfd               |
@@ -68,16 +66,16 @@ But usually, if you want to change style, you need to change all color, because 
 
 ## Empty Attributes
 
-| Name        | Description        | Type   | Acceptable Value | Default |
-| ----------- | ------------------ | ------ | ---------------- | ------- |
-| image       | image URL          | string | —                | —       |
-| image-size  | image size (width) | number | —                | —       |
-| description | description        | string | —                | —       |
+| 属性名         | 说明       | 类型     | 可选值 | 默认值 |
+| ----------- | -------- | ------ | --- | --- |
+| image       | 图片地址     | string | —   | —   |
+| image-size  | 图片大小（宽度） | number | —   | —   |
+| description | 描述       | string | —   | —   |
 
 ## Empty Slots
 
-| Name        | Description           |
-| ----------- | --------------------- |
-| default     | Custom bottom content |
-| image       | Custom image          |
-| description | Custom description    |
+| 插槽名         | 描述说明    |
+| ----------- | ------- |
+| default     | 自定义底部内容 |
+| image       | 自定义图片   |
+| description | 自定义描述   |

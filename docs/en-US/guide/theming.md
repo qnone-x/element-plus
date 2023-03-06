@@ -1,39 +1,36 @@
 ---
-title: Theming
-lang: en-US
+title: 主题
+lang: zh-CN
 ---
 
-# Custom theme
+# 自定义主题
 
-Element Plus uses BEM-styled CSS so that you can override styles easily. But if
-you need to replace styles at a large scale, e.g. change the theme color from
-blue to orange or green, maybe overriding them one by one is not a good idea.
+Element Plus 默认提供一套主题，CSS 命名采用 BEM 的风格，方便使用者覆盖样式。 但是如果需要大规模替换样式，例如： 将主题颜色从蓝色改为橙色或绿色，也许一个个将其覆盖起来不是一个好主意。
 
-We provide four ways to change the style variables.
+我们提供四种方法来改变样式变量。
 
-## Change theme color
+## 更换主题色
 
-These are examples about custom theme.
+以下是自定义主题的一些例子。
 
-- Full import: [element-plus-vite-starter](https://github.com/element-plus/element-plus-vite-starter)
-- On demand: [unplugin-element-plus/examples/vite](https://github.com/element-plus/unplugin-element-plus)
+- 全部导入：[element-plus-vite-starter](https://github.com/element-plus/element-plus-vite-starter)
+- 按需导入：[unplugin-element-plus/examples/vite](https://github.com/element-plus/unplugin-element-plus)
 
-### By SCSS variables
+### 通过 SCSS 变量
 
-`theme-chalk` is written in SCSS.
-You can find SCSS variables in [`packages/theme-chalk/src/common/var.scss`](https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/common/var.scss).
+`theme-chalk` 使用SCSS编写而成。 你可以在 [`packages/theme-chalk/src/common/var.scss`](https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/common/var.scss) 文件中查找SCSS变量。
 
 :::warning
 
-We use sass modules ([sass:map](https://sass-lang.com/documentation/values/maps)...) and `@use` to refactor all SCSS variables. And by using `@use` to all SCSS variables, it solves the duplicate output problem caused by `@import`.
+我们使用 sass 模块（[sass:map](https://sass-lang.com/documentation/values/maps)...）和 `@use` 来重构所有的 SCSS 变量。 通过对所有 SCSS 变量使用 `@use`，解决了由 `@import` 造成的重复输出问题。
 
-> [Introducing Sass Modules | CSS-TRICKS](https://css-tricks.com/introducing-sass-modules/)
+> [介绍Sass 模块 | CSS-TRICKS](https://css-tricks.com/introducing-sass-modules/)
 
-For example, We use `$colors` as a map to preserve different types of colors.
+例如，我们使用 `$colors` 作为 map 来保存不同类型的颜色。
 
-`$notification` is a map where all variables of the `notification` component at.
+`$notification` 是所有 `notification` 组件的变量的映射。
 
-In the future, we will write documentation for variables that can be customized for each component. You can also directly checkout the source [var.scss](https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/common/var.scss).
+今后，我们将为每个组件自定义的变量编写文档。 你也可以直接查看源代码 [var.scss](https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/common/var.scss)。
 
 :::
 
@@ -66,15 +63,15 @@ $colors: map.deep-merge(
 );
 ```
 
-### How to override it?
+### 如何覆盖它？
 
-If your project also uses SCSS, you can directly change Element Plus style variables. Create a new style file, e.g. `styles/element/index.scss`:
+如果您的项目也使用了 SCSS，可以直接修改 Element Plus 的样式变量。 新建一个样式文件，例如 `styles/element/index.scss`：
 
 :::warning
 
-You should use `@use 'xxx.scss' as *;` instead of `@import 'xxx.scss';`.
+您应该使用 `@use 'xxx.scss' as *;` 代替 `@import 'xxx.scss';`。
 
-Because the sass team said they will remove `@import` eventually.
+因为 sass 团队说他们最终会删除 `@import` 语法。
 
 > [Sass: @use](https://sass-lang.com/documentation/at-rules/use) vs [Sass: @import](https://sass-lang.com/documentation/at-rules/import)
 
@@ -82,34 +79,33 @@ Because the sass team said they will remove `@import` eventually.
 
 ```scss
 // styles/element/index.scss
-/* just override what you need */
+/* 只需要重写你需要的即可 */
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
   $colors: (
     'primary': (
       'base': green,
     ),
-  )
+  ),
 );
 
-// If you just import on demand, you can ignore the following content.
-// if you want to import all styles:
+// 如果只是按需导入，则可以忽略以下内容。
+// 如果你想导入所有样式:
 // @use "element-plus/theme-chalk/src/index.scss" as *;
 ```
 
-Then in the entry file of your project, import this style file instead of Element's built CSS:
+然后在你的项目入口文件中，导入这个样式文件以替换 Element Plus 内置的 CSS：
 
 :::tip
 
-Import `element/index.scss` before scss of element-plus to avoid the problem of sass mixed variables, because we need generate light-x by your custom variables.
+在 element-plus scss 文件之前导入`element/index.scss`以避免 sass 混合变量的问题，因为我们需要通过你的自定义变量生成 light-x。
 
 :::
 
-Create a `element/index.scss` to combine your variables and variables of element-plus. (If you import them in ts, they will not be combined.)
+创建一个 `element/index.scss` 文件来合并你的变量和 element-plus 的变量。 （如果你在 TypeScript 中导入了它们，他们将不会被合并）
 
 :::tip
 
-In addition, you should distinguish your scss from the element variable scss.
-If they are mixed together, each hot update of `element-plus` needs to compile a large number of scss files, resulting in slow speed.
+除此以外，你应该将你的 scss 文件与 element 变量的 scss 文件区分开来。 如果将它们混合在一起，`element-plus` 每次热更新都需要编译大量的 scss 文件，这将会导致编译速度变慢。
 
 :::
 
@@ -123,19 +119,19 @@ const app = createApp(App)
 app.use(ElementPlus)
 ```
 
-If you are using vite, and you want to custom theme when importing on demand.
+如果你正在使用vite，并且你想在按需导入时自定义主题。
 
-Use `scss.additionalData` to compile variables with scss of every component.
+使用 `scss.additionalData` 来编译所有应用 scss 变量的组件。
 
 ```ts
 import path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-// You can also use unplugin-vue-components
+// 你也可以使用 unplugin-vue-components
 // import Components from 'unplugin-vue-components/vite'
 // import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
-// or use unplugin-element-plus
+// 或者使用 unplugin-element-plus
 import ElementPlus from 'unplugin-element-plus/vite'
 
 // vite.config.ts
@@ -164,7 +160,7 @@ export default defineConfig({
     //     }),
     //   ],
     // }),
-    // or use unplugin-element-plus
+    // 或者使用 unplugin-element-plus
     ElementPlus({
       useSource: true,
     }),
@@ -172,11 +168,11 @@ export default defineConfig({
 })
 ```
 
-If you are using webpack, and you want to custom theme when importing on demand.
+如果您正在使用 webpack，并且需要在按需导入时自定义主题。
 
 ```ts
 // webpack.config.ts
-// use unplugin-element-plus
+// 使用 unplugin-element-plus
 
 import ElementPlus from 'unplugin-element-plus/webpack'
 
@@ -196,25 +192,25 @@ export default defineConfig({
 })
 ```
 
-### By CSS Variable
+### 通过 CSS 变量设置
 
-CSS Variables is a very useful feature, already supported by almost all browsers. (IE: Wait?)
+CSS 变量是一个非常有用的功能，几乎所有浏览器都支持。 （IE：啊这？)
 
-> Learn more from [Using CSS custom properties (variables) | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+> 从 [使用CSS自定义属性(变量) | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) 了解更多信息
 
-We have used css variables to reconstruct the style system of almost all components.
+我们用 css 变量来重构了几乎所有组件的样式系统。
 
 :::tip
 
-It is compatible with the SCSS variable system. We use the function of SCSS to automatically generate css variables for use.
+它兼容 SCSS 变量系统。 我们使用 SCSS 的函数自动生成需要用到的 css 变量。
 
 :::
 
-This means you can dynamically change individual variables inside the component to better customize it without having to modify scss and recompile it.
+这意味着你可以动态地改变组件内的个别变量，以便更好地自定义组件样式，而不需要修改 SCSS 文件重新编译一次。
 
-> In the future, the css variable names and role documentation for each component will be written to each component.
+> 之后，每个组件的 css 变量名称和作用将被写入到对应的组件文档中。
 
-Like this:
+就像这样：
 
 ```css
 :root {
@@ -222,13 +218,13 @@ Like this:
 }
 ```
 
-If you just want to customize a particular component, just add inline styles for certain components individually.
+如果你只想自定义一个特定的组件，只需为某些组件单独添加内联样式。
 
 ```html
 <el-tag style="--el-tag-bg-color: red">Tag</el-tag>
 ```
 
-For performance reasons, it is more recommended to custom css variables under a class rather than the global `:root`.
+出于性能原因，更加推荐你在类名下添加自定义 css 变量，而不是在全局的 `:root` 下。
 
 ```css
 .custom-class {
@@ -236,19 +232,18 @@ For performance reasons, it is more recommended to custom css variables under a 
 }
 ```
 
-If you want to control css var by script, try this:
+如果您想要通过 js 控制 css 变量，可以这样做：
 
 ```ts
-// document.documentElement is global
+// document.documentElement 是全局变量时
 const el = document.documentElement
 // const el = document.getElementById('xxx')
 
-// get css var
+// 获取 css 变量
 getComputedStyle(el).getPropertyValue(`--el-color-primary`)
 
-// set css var
-el.style['--el-color-primary'] = 'red'
+// 设置 css 变量
+el.style.setProperty('--el-color-primary', 'red')
 ```
 
-If you want a more elegant way, check this out.
-[useCssVar | VueUse](https://vueuse.org/core/usecssvar/)
+如果你想要更优雅的方式，请看这里。 [useCssVar | VueUse](https://vueuse.org/core/usecssvar/)

@@ -1,15 +1,15 @@
 ---
-title: Border
-lang: en-US
+title: Border 边框
+lang: zh-CN
 ---
 
-# Border
+# Border 边框
 
-We standardize the borders that can be used in buttons, cards, pop-ups and other components.
+我们对边框进行统一规范，可用于按钮、卡片、弹窗等组件里。
 
-## Border style
+## 边框样式
 
-There are few border styles to choose.
+我们提供了以下几种边框样式，以供选择。
 
 :::demo
 
@@ -17,9 +17,9 @@ border/border
 
 :::
 
-## Radius
+## 圆角
 
-There are few radius styles to choose.
+我们提供了以下几种圆角样式，以供选择。
 
 :::demo
 
@@ -27,9 +27,9 @@ border/radius
 
 :::
 
-## Shadow
+## 阴影
 
-There are few shadow styles to choose.
+我们提供了以下几种投影样式，以供选择。
 
 :::demo
 

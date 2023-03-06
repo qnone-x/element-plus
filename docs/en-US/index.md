@@ -1,7 +1,7 @@
 ---
-title: A Vue 3 UI Framework
+title: 一个 Vue 3 UI 框架
 page: true
-lang: en-US
+lang: zh-CN
 ---
 
 <ClientOnly>

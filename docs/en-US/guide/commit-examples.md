@@ -1,90 +1,90 @@
 ---
-title: Commit Examples
-lang: en-US
+title: 提交示例
+lang: zh-CN
 ---
 
-# Commit Examples
+# 提交示例
 
-## Why this chapter exists
+## 为什么存在这个章节?
 
-Please refer to [Conventional Commits](https://www.conventionalcommits.org/) for more information.
+详情请参阅 [通用惯例](https://www.conventionalcommits.org/)。
 
-A good commit message enables us:
+一个好的 Git 提交信息能够使我们：
 
-1. To understand what the contributor is trying to do
-2. Automatically generates change log
+1. 了解贡献者试图做什么
+2. 自动生成更改日志
 
-### Rule for writing commit message
+### 写入提交消息的规则
 
 ```md
-# (If applied, this commit will...) <subject> (Max 72 characters)
+# (如果通过, 当前提交会实现...) <subject> (最多 72 个字符)
 
-# |<---- Using a Maximum Of 72 Characters ---->|
+# |<---- 使用最多 72 个字符 ---->|
 
-# Explain why this change is being made
+# 解释清楚为什么要作出此修改
 
-# |<---- Try To Limit Each Line to a Maximum Of 72 Characters ---->|
+# |<---- 尝试将每一行控制在 72 个字符以内 ---->|
 
-# Provide links or keys to any relevant tickets, articles or other resources
+# 提供链接、相关标签关键词、文章或其他资源信息
 
-# Use issues and merge requests' full URLs instead of short references,
+# 使用issue和合并请求的全链接地址替代部分链接
 
-# as they are displayed as plain text outside of GitLab
+# 因为它们在GitLab之外显示为纯文本
 
-# --- COMMIT END ---
+# --- 提交结束 ---
 
 # --------------------
 
-# Remember to
+# 不要忘记
 
-# Capitalize the subject line
+# 将主题行大写(英文标题)
 
-# Use the imperative mood in the subject line
+# 主题行使用命令式语气
 
-# Do not end the subject line with a period
+# 不要在主题行末尾带有一段时间
 
-# Subject must contain at least 3 words
+# 主题行至少包含 3 个单词
 
-# Separate subject from body with a blank line
+# 主题和空行之间使用空行隔开
 
-# Commits that change 30 or more lines across at least 3 files should
+# 当提交的更改行数超过30行或至少3个文件需要发生修改时
 
-# describe these changes in the commit body
+# 应在提交的主体信息中说明修改的详情
 
-# Do not use Emojis
+# 不要使用 Emojis 表情符号
 
-# Use the body to explain what and why vs. how
+# 在主体信息中解释提交的是什么内容, 为什么提交, 如何实现
 
-# Can use multiple lines with "-" for bullet points in body
+# 每行以 "-" 开头, 写入多行可描述信息要点
 
-# For more information: https://chris.beams.io/posts/git-commit/
+# 详见: https://chris.beams.io/posts/git-commit/
 
 # --------------------
 ```
 
-### Template for commit messages
+### 提交消息的模板
 
-Below is a template commit message for your reference.
+下面是供参考的模板提交消息。
 
 ```md
-feat(components): [button] I did something with button
+feat(components): [button] 我用按钮实现了某些功能
 
-Blank between subject and body is expected.(period is expected)
-Describes your change in one line or multi-line.
-Capitalize your first letter when starting a new line
-Please do not exceeds 72 characters per line, because that would be harder to comprehend.
+主体行和主体内容之间用空白行隔开(可以有预期时间)
+通过一行或多行描述你的修改信息
+每一行的首字母大写
+且每一行的总字符数限制在72个以内最优, 超过了将不易于他人理解
 
-- You can also add bullet list symbol for better layout
+- 你也可以通过添加子项列表符号来为内容布局
 ```
 
-For the subject header, the format is:
+主题标题的格式是：
 
 ```
-[type](scope): [messages]
+[type](scope 域): [messages]
 ```
 
-You can checkout the allowed values for **type** and **scope** in [commitlint.config.js](https://github.com/element-plus/element-plus/blob/c2ee36a7fc72b17742d43ecdff4e2912c416141d/commitlint.config.js#L57),
+关于**type** 和 **scope**属性允许的值可以在 [commitlint.config.js](https://github.com/element-plus/element-plus/blob/c2ee36a7fc72b17742d43ecdff4e2912c416141d/commitlint.config.js#L57) 文件内查看
 
-### Useful links
+### 相关链接
 
-[Keeping git commit history clean](https://about.gitlab.com/blog/2018/06/07/keeping-git-commit-history-clean/)
+[保持 git 提交历史简洁](https://about.gitlab.com/blog/2018/06/07/keeping-git-commit-history-clean/)

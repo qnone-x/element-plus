@@ -1,25 +1,25 @@
 ---
-title: Card
-lang: en-US
+title: Card 卡片
+lang: zh-CN
 ---
 
-# Card
+# Card 卡片
 
-Integrate information in a card container.
+将信息聚合在卡片容器中展示。
 
-## Basic usage
+## 基础用法
 
-Card includes title, content and operations.
+卡片包含标题，内容以及操作区域。
 
-:::demo Card is made up of `header` and `body`. `header` is optional, and its content distribution depends on a named slot.
+:::demo Card 组件由 `header` 和 `body` 组成。 `header` 是可选的，其内容取决于一个具名的 slot。
 
 card/basic
 
 :::
 
-## Simple card
+## 简单卡片
 
-The header part can be omitted.
+卡片可以只有内容区域。
 
 :::demo
 
@@ -27,21 +27,21 @@ card/simple
 
 :::
 
-## With images
+## 有图片内容的卡片
 
-Display richer content by adding some configs.
+可配置定义更丰富的内容展示。
 
-:::demo The `body-style` attribute defines CSS style of custom `body`. This example also uses `el-col` for layout.
+:::demo 配置 `body-style` 属性来自定义 `body` 部分的样式。 在这个例子中我们还使用了 `el-col` 组件来布局。
 
 card/with-images
 
 :::
 
-## Shadow
+## 带有阴影效果的卡片
 
-You can define when to show the card shadows
+你可以定义什么时候展示卡片的阴影效果。
 
-:::demo The `shadow` attribute determines when the card shadows are displayed. It can be `always`, `hover` or `never`.
+:::demo 通过 `shadow` 属性设置卡片阴影出现的时机。 该属性的值可以是：`always`、`hover` 或 `never`。
 
 card/shadow
 
@@ -51,15 +51,15 @@ card/shadow
 
 ### Attributes
 
-| Name       | Description                                                   | Type                              | Default |
-| ---------- | ------------------------------------------------------------- | --------------------------------- | ------- |
-| header     | title of the card. Also accepts a DOM passed by `slot#header` | ^[string]                         | —       |
-| body-style | CSS style of card body                                        | ^[object]`CSSProperties`          | —       |
-| shadow     | when to show card shadows                                     | ^[enum]`always \| never \| hover` | always  |
+| 属性名        | 说明                                                        | 类型                                  | 默认值    |
+| ---------- | --------------------------------------------------------- | ----------------------------------- | ------ |
+| header     | 卡片的标题 你既可以通过设置 header 来修改标题，也可以通过 `slot#header` 传入 DOM 节点 | ^[string]                           | —      |
+| body-style | body 的 CSS 样式                                             | ^[object]`CSSProperties`            | —      |
+| shadow     | 设置阴影显示时机                                                  | ^[enum]`always \| never \| hover` | always |
 
 ### Slots
 
-| Name    | Description                |
-| ------- | -------------------------- |
-| default | customize default content  |
-| header  | content of the Card header |
+| 插槽名     | 说明      |
+| ------- | ------- |
+| default | 自定义默认内容 |
+| header  | 卡片标题内容  |

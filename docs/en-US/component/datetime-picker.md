@@ -1,43 +1,43 @@
 ---
-title: DateTimePicker
-lang: en-US
+title: DateTimePicker 日期时间选择器
+lang: zh-CN
 ---
 
-# DateTimePicker
+# DateTimePicker 日期时间选择器
 
-Select date and time in one picker.
+在同一个选择器里选择日期和时间
 
 :::tip
 
-DateTimePicker is derived from DatePicker and TimePicker. For a more detailed explanation on attributes, you can refer to DatePicker and TimePicker.
+日期时间选择器来自日期选择器和时间选择器的组合。 关于属性的更详细解释，请参阅日期选择器和时间选择器。
 
 :::
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+在 SSR 场景下，您需要将组件包裹在 `<client-only></client-only>` 之中 (如: [Nuxt](https://nuxt.com/v3)) 和 SSG (例如: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
-## Date and time
+## 日期和时间点
 
-:::demo You can select date and time in one picker at the same time by setting `type` to `datetime`. The way to use shortcuts is the same as Date Picker.
+:::demo 通过设置`type`属性为`datetime`，即可在同一个选择器里同时进行日期和时间的选择。 快捷方式的使用方法与 Date Picker 相同。
 
 datetime-picker/date-and-time
 
 :::
 
-## DateTime Formats
+## 日期时间格式
 
-Use `format` to control displayed text's format in the input box. Use `value-format` to control binding value's format.
+使用`format`指定输入框的格式。 使用`value-format`指定绑定值的格式。
 
-By default, the component accepts and emits a `Date` object.
+默认情况下，组件接受并返回`Date`对象。
 
-Check the list [here](https://day.js.org/docs/en/display/format#list-of-all-available-formats) of all available formats of Day.js.
+在 [这里](https://day.js.org/docs/en/display/format#list-of-all-available-formats) 查看 Day.js 支持的所有格式。
 
 :::warning
 
-Pay attention to capitalization
+请一定要注意传入参数的大小写是否正确
 
 :::
 
@@ -47,17 +47,17 @@ datetime-picker/date-and-time-formats
 
 :::
 
-## Date and time range
+## 日期和时间范围
 
-:::demo You can select date and time range by setting `type` to `datetimerange`.
+:::demo 设置`type`为`datetimerange`即可选择日期和时间范围
 
 datetime-picker/date-and-time-range
 
 :::
 
-## Default time value for start date and end date
+## 默认的起始与结束时刻
 
-:::demo When picking date range on the date panel with type `datetimerange`, `00:00:00` will be used as the default time value for start and end date. We can control it with the `default-time` attribute. `default-time` accepts an array of up to two Date objects. The first item controls time value of the start date and the second item controls time value of the end date.
+:::demo 使用`datetimerange`进行范围选择时，在日期选择面板中选定起始与结束的日期，默认会使用该日期的`00:00:00`作为起始与结束的时刻；通过选项`default-time`可以控制选中起始与结束日期时所使用的具体时刻。 我们可以使用 `default-time` 属性来控制它。 `default-time`接受一个数组，其中第一项控制起始日期的具体时刻，第二项控制结束日期的具体时刻。 第一项控制开始日期的时间值，第二项控制结束日期的时间值。
 
 datetime-picker/default-time
 
@@ -65,54 +65,54 @@ datetime-picker/default-time
 
 ## Attributes
 
-| Name                  | Description                                                                                           | Type                                             | Accepted Values                                               | Default             |
-| --------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------- | ------------------- |
-| model-value / v-model | binding value, if it is an array, the length should be 2                                              | Date / number / string / Array                   | —                                                             | —                   |
-| readonly              | whether DatePicker is read only                                                                       | boolean                                          | —                                                             | false               |
-| disabled              | whether DatePicker is disabled                                                                        | boolean                                          | —                                                             | false               |
-| editable              | whether the input is editable                                                                         | boolean                                          | —                                                             | true                |
-| clearable             | whether to show clear button                                                                          | boolean                                          | —                                                             | true                |
-| size                  | size of Input                                                                                         | string                                           | large/default/small                                           | default             |
-| placeholder           | placeholder in non-range mode                                                                         | string                                           | —                                                             | —                   |
-| start-placeholder     | placeholder for the start date in range mode                                                          | string                                           | —                                                             | —                   |
-| end-placeholder       | placeholder for the end date in range mode                                                            | string                                           | —                                                             | —                   |
-| time-arrow-control    | whether to pick time using arrow buttons                                                              | boolean                                          | —                                                             | false               |
-| type                  | type of the picker                                                                                    | string                                           | year/month/date/datetime/ week/datetimerange/daterange        | date                |
-| format                | format of the displayed value in the input box                                                        | string                                           | see [date formats](/en-US/component/date-picker#date-formats) | YYYY-MM-DD HH:mm:ss |
-| popper-class          | custom class name for DateTimePicker's dropdown                                                       | string                                           | —                                                             | —                   |
-| range-separator       | range separator                                                                                       | string                                           | —                                                             | '-'                 |
-| default-value         | optional, default date of the calendar                                                                | Date / [Date, Date]                              |                                                               | —                   |
-| default-time          | the default time value after picking a date. Time `00:00:00` will be used if not specified            | Date / [Date, Date]                              | —                                                             | —                   |
-| value-format          | optional, format of binding value. If not specified, the binding value will be a Date object          | string                                           | see [date formats](https://day.js.org/docs/en/display/format) | —                   |
-| id                    | same as `id` in native input                                                                          | string / [string, string]                        | —                                                             | —                   |
-| name                  | same as `name` in native input                                                                        | string                                           | —                                                             | —                   |
-| unlink-panels         | unlink two date-panels in range-picker                                                                | boolean                                          | —                                                             | false               |
-| prefix-icon           | Custom prefix icon component                                                                          | `string \| Component`                            | —                                                             | Date                |
-| clear-icon            | Custom clear icon component                                                                           | `string \| Component`                            | —                                                             | CircleClose         |
-| shortcuts             | an object array to set shortcut options                                                               | object[{ text: string, value: date / function }] | —                                                             | —                   |
-| disabled-date         | a function determining if a date is disabled with that date as its parameter. Should return a Boolean | function(Date)                                   | —                                                             | —                   |
-| cell-class-name       | set custom className                                                                                  | Function(Date)                                   | —                                                             | —                   |
-| teleported            | whether datetime-picker dropdown is teleported to the body                                            | boolean                                          | true / false                                                  | true                |
+| 属性名                   | 说明                                                    | 类型                                               | 可选值                                                           | 默认值                 |
+| --------------------- | ----------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------- | ------------------- |
+| model-value / v-model | 绑定值，如果它是数组，长度应该是 2                                    | Date / number / string / Array                   | —                                                             | —                   |
+| readonly              | 只读                                                    | boolean                                          | —                                                             | false               |
+| disabled              | 禁用                                                    | boolean                                          | —                                                             | false               |
+| editable              | 文本框可输入                                                | boolean                                          | —                                                             | true                |
+| clearable             | 是否显示清除按钮                                              | boolean                                          | —                                                             | true                |
+| size                  | 输入框尺寸                                                 | string                                           | large/default/small                                           | default             |
+| placeholder           | 非范围选择时的占位内容                                           | string                                           | —                                                             | —                   |
+| start-placeholder     | 范围选择时开始日期的占位内容                                        | string                                           | —                                                             | —                   |
+| end-placeholder       | 范围选择时结束日期的占位内容                                        | string                                           | —                                                             | —                   |
+| time-arrow-control    | whether to pick time using arrow buttons              | boolean                                          | —                                                             | false               |
+| type                  | 显示类型                                                  | string                                           | year/month/date/datetime/ week/datetimerange/daterange        | date                |
+| format                | 显示在输入框中的格式                                            | string                                           | see [date formats](/en-US/component/date-picker#date-formats) | YYYY-MM-DD HH:mm:ss |
+| popper-class          | DateTimePicker 下拉框的类名                                 | string                                           | —                                                             | —                   |
+| range-separator       | 选择范围时的分隔符                                             | string                                           | —                                                             | '-'                 |
+| default-value         | 可选，选择器打开时默认显示的时间                                      | Date / [Date, Date]                              |                                                               | —                   |
+| default-time          | 选择日期后的默认时间值。 如未指定则默认时间值为 `00:00:00`                   | Date / [Date, Date]                              | —                                                             | —                   |
+| value-format          | 可选，绑定值的格式。 不指定则绑定值为 Date 对象                           | string                                           | 查看 [日期格式](https://day.js.org/docs/en/display/format)          | —                   |
+| id                    | 等价于原生 input `id` 属性                                   | string / [string, string]                        | —                                                             | —                   |
+| name                  | 等价于原生 input `name` 属性                                 | string                                           | —                                                             | —                   |
+| unlink-panels         | 在范围选择器里取消两个日期面板之间的联动                                  | boolean                                          | —                                                             | false               |
+| prefix-icon           | 自定义前缀图标                                               | `string \| Component`                           | —                                                             | Date                |
+| clear-icon            | 自定义清除图标                                               | `string \| Component`                           | —                                                             | CircleClose         |
+| shortcuts             | 设置快捷选项，需要传入数组对象                                       | object[{ text: string, value: date / function }] | —                                                             | —                   |
+| disabled-date         | 一个用来判断该日期是否被禁用的函数，接受一个 Date 对象作为参数。 应该返回一个 Boolean 值。 | Function(Date)                                   | —                                                             | —                   |
+| cell-class-name       | 设置自定义类名                                               | Function(Date)                                   | —                                                             | —                   |
+| teleported            | 是否将 datetime-picker 的下拉列表插入至 body 元素                  | boolean                                          | true / false                                                  | true                |
 
 ## Events
 
-| Name            | Description                                                                   | Parameters                                |
-| --------------- | ----------------------------------------------------------------------------- | ----------------------------------------- |
-| change          | triggers when user confirms the value                                         | component's binding value                 |
-| blur            | triggers when Input blurs                                                     | `(e: FocusEvent)`                         |
-| focus           | triggers when Input focuses                                                   | `(e: FocusEvent)`                         |
-| calendar-change | triggers when the calendar selected date is changed. Only for `datetimerange` | [Date, Date]                              |
-| visible-change  | triggers when the DateTimePicker's dropdown appears/disappears                | true when it appears, and false otherwise |
+| 事件名             | 说明                                                            | 回调参数               |
+| --------------- | ------------------------------------------------------------- | ------------------ |
+| change          | 用户确认选定的值时触发                                                   | value              |
+| blur            | 在组件 Input 失去焦点时触发                                             | `(e: FocusEvent)`  |
+| focus           | 在组件 Input 获得焦点时触发                                             | `(e: FocusEvent)`  |
+| calendar-change | 如果用户没有选择日期，那默认展示当前日的月份。 选中日历日期后会执行的回调，只有当 `datetimerange` 才生效 | [Date, Date]       |
+| visible-change  | 当 DateTimePicker 的下拉列表出现/消失时触发                                | 出现时为true，隐藏时为false |
 
 ## Methods
 
-| Method | Description               | Parameters |
-| ------ | ------------------------- | ---------- |
-| focus  | focus the Input component | —          |
+| 方法名   | 说明           | 参数 |
+| ----- | ------------ | -- |
+| focus | 使 input 获取焦点 | —  |
 
 ## Slots
 
-| Name            | Description                    |
-| --------------- | ------------------------------ |
-| default         | custom cell content            |
-| range-separator | custom range separator content |
+| 插槽名             | 说明         |
+| --------------- | ---------- |
+| default         | 自定义单元格内容   |
+| range-separator | 自定义范围分割符内容 |

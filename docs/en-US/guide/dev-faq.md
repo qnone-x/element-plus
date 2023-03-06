@@ -1,23 +1,23 @@
 ---
-title: Development FAQ
-lang: en-US
+title: 开发常见问题
+lang: zh-CN
 ---
 
-# Development FAQ
+# 开发常见问题
 
-Here are the problems that are easy to encounter in development.
+这里是开发方面容易遇到的问题
 
-## If you encounter dependency related issues
+## 如果你遇到依赖相关问题
 
 ```shell
 rm -rf node_modules
 pnpm i
 ```
 
-## Link local dependencies
+## 链接本地依赖
 
 ```shell
-# get dist
+# 获取构建结果
 pnpm build
 cd dist/element-plus
 # set cur element-plus to global `node_modules`
@@ -25,17 +25,17 @@ pnpm link --global
 # for esm we also need link element-plus for dist
 pnpm link --global element-plus
 
-# go to your project, link to `element-plus`
+# 进入你的项目, 链接到 `element-plus`
 cd your-project
 pnpm link --global element-plus
 ```
 
-> More info see [pnpm link](https://pnpm.io/cli/link).
+> 更多信息查看 [pnpm link](https://pnpm.io/cli/link)
 
-## Theme
+## 主题
 
-We should not write Chinese comments in scss files.
+我们不应在scss文件中写入中文注释
 
-It will generate warning `@charset "UTF-8";` in the header of css file when built with vite.
+那将会在 vite 构建下的 css 文件开头生成警告信息 `@charset "UTF-8";`
 
-> More info see [#3219](https://github.com/element-plus/element-plus/issues/3219).
+> 更多信息见 [#3219](https://github.com/element-plus/element-plus/issues/3219)

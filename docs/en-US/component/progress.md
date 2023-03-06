@@ -1,33 +1,33 @@
 ---
-title: Progress
-lang: en-US
+title: Progress 进度条
+lang: zh-CN
 ---
 
-# Progress
+# Progress 进度条
 
-Progress is used to show the progress of current operation, and inform the user the current status.
+用于展示操作进度，告知用户当前状态和预期。
 
-## Linear progress bar
+## 直线进度条
 
-:::demo Use `percentage` attribute to set the percentage. It's **required** and must be between `0-100`. You can custom text format by setting `format`.
+:::demo Progress 组件设置 `percentage` 属性即可，表示进度条对应的百分比。 该属性**必填**，并且必须在 `0-100` 的范围内。 你可以通过设置 `format` 来自定义文字显示的格式。
 
 progress/linear-progress-bar
 
 :::
 
-## Internal percentage
+## 进度条内显示百分比标识
 
-In this case the percentage takes no additional space.
+百分比不占用额外控件，适用于文件上传等场景。
 
-:::demo `stroke-width` attribute decides the `width` of progress bar, and use `text-inside` attribute to put description inside the progress bar.
+:::demo Progress 组件可通过 `stroke-width` 属性更改进度条的高度，并可通过 `text-inside` 属性来改变进度条内部的文字。
 
 progress/internal-percentage
 
 :::
 
-## Custom color
+## 自定义进度条的颜色
 
-You can use `color` attr to set the progress bar color. it accepts color string, function, or array.
+可以通过 `color` 属性来设置进度条的颜色。 该属性可以接受十六进制颜色值，函数和数组。
 
 :::demo
 
@@ -35,17 +35,17 @@ progress/custom-color
 
 :::
 
-## Circular progress bar
+## 环形进度条
 
-:::demo You can specify `type` attribute to `circle` to use circular progress bar, and use `width` attribute to change the size of circle.
+:::demo Progress 组件可通过 `type` 属性来指定使用环形进度条，在环形进度条中，还可以通过 `width` 属性来设置其大小。
 
 progress/circular-progress-bar
 
 :::
 
-## Dashboard progress bar
+## 仪表盘形进度条
 
-You also can specify `type` attribute to `dashboard` to use dashboard progress bar.
+您也可以指定 `type` 属性到 `dashboard` 使用控制面板进度栏。
 
 :::demo
 
@@ -53,17 +53,17 @@ progress/dashboard-progress-bar
 
 :::
 
-## Customized content
+## 自定义内容
 
-:::demo Use default slot to add customized content.
+:::demo 通过默认插槽添加自定义内容。
 
 progress/customized-content
 
 :::
 
-## Indeterminate progress
+## 动画进度条
 
-:::demo Use `indeterminate` attribute to set indeterminate progress, with `duration` to control the animation duration.
+:::demo 使用 `intermediate` 属性来设置不确定的进度， `duration` 来控制动画持续时间。
 
 progress/indeterminate-progress
 
@@ -71,23 +71,23 @@ progress/indeterminate-progress
 
 ## Attributes
 
-| Name           | Description                                                                           | Type                  | Accepted Values           | Default |
-| -------------- | ------------------------------------------------------------------------------------- | --------------------- | ------------------------- | ------- |
-| percentage     | percentage, **required**                                                              | number                | (0-100)                   | 0       |
-| type           | the type of progress bar                                                              | string                | line/circle/dashboard     | line    |
-| stroke-width   | the width of progress bar                                                             | number                | —                         | 6       |
-| text-inside    | whether to place the percentage inside progress bar, only works when `type` is 'line' | boolean               | —                         | false   |
-| status         | the current status of progress bar                                                    | string                | success/exception/warning | —       |
-| indeterminate  | set indeterminate progress                                                            | boolean               | -                         | false   |
-| duration       | control the animation duration of indeterminate progress                              | number                | -                         | 3       |
-| color          | background color of progress bar. Overrides `status` prop                             | string/function/array | —                         | ''      |
-| width          | the canvas width of circle progress bar                                               | number                | —                         | 126     |
-| show-text      | whether to show percentage                                                            | boolean               | —                         | true    |
-| stroke-linecap | circle/dashboard type shape at the end path                                           | string                | butt/round/square         | round   |
-| format         | custom text format                                                                    | function(percentage)  | —                         | —       |
+| 属性名            | 说明                                          | 类型                    | 可选值                       | 默认值   |
+| -------------- | ------------------------------------------- | --------------------- | ------------------------- | ----- |
+| percentage     | 百分比，**必填**                                  | number                | (0-100)                   | 0     |
+| type           | 进度条类型                                       | string                | line/circle/dashboard     | line  |
+| stroke-width   | 进度条的宽度                                      | number                | —                         | 6     |
+| text-inside    | 进度条显示文字内置在进度条内（仅 `type` 为 'line' 时可用）       | boolean               | —                         | false |
+| status         | 进度条当前状态                                     | string                | success/exception/warning | —     |
+| indeterminate  | 是否为动画进度条                                    | boolean               | -                         | false |
+| duration       | 控制动画进度条速度                                   | number                | -                         | 3     |
+| color          | 进度条背景色 进度条背景色 （会覆盖 `status` 状态颜色）           | string/function/array | —                         | ''    |
+| width          | 环形进度条画布宽度（只在 type 为 circle 或 dashboard 时可用） | number                | —                         | 126   |
+| show-text      | 是否显示进度条文字内容                                 | boolean               | —                         | true  |
+| stroke-linecap | circle/dashboard 类型路径两端的形状                  | string                | butt/round/square         | round |
+| format         | 指定进度条文字内容                                   | function(percentage)  | —                         | —     |
 
 ## Slots
 
-| Name    | Description                                       |
-| ------- | ------------------------------------------------- |
-| default | Customized content, parameter is `{ percentage }` |
+| 名称      | 说明                         |
+| ------- | -------------------------- |
+| default | 自定义内容，参数为 `{ percentage }` |

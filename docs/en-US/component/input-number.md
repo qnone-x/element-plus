@@ -1,15 +1,15 @@
 ---
-title: Input
-lang: en-US
+title: Input Number 数字输入框
+lang: zh-CN
 ---
 
-# Input Number
+# Input Number 数字输入框
 
-Input numerical values with a customizable range.
+仅允许输入标准的数字值，可定义范围
 
-## Basic usage
+## 基础用法
 
-:::demo Bind a variable to `v-model` in `<el-input-number>` element and you are set.
+:::demo 要使用它，只需要在 `<el-input-number>` 元素中使用 `v-model` 绑定变量即可，变量的初始值即为默认值。
 
 input-number/basic
 
@@ -17,39 +17,39 @@ input-number/basic
 
 :::tip
 
-When inputting invalid string to the input box, input value will emit `NaN` to the upper layer as result of error
+当输入无效的字符串到输入框时，由于错误，输入值将把 `NaN` 导入到上层
 
 :::
 
-## Disabled
+## 禁用状态
 
-:::demo The `disabled` attribute accepts a `boolean`, and if the value is `true`, the component is disabled. If you just need to control the value within a range, you can add `min` attribute to set the minimum value and `max` to set the maximum value. By default, the minimum value is `0`.
+:::demo `disabled`属性接受一个 `Boolean`，设置为`true`即可禁用整个组件。 ，如果你只需要控制数值在某一范围内，可以设置 `min` 属性和 `max` 属性， 默认最小值为 `0`。
 
 input-number/disabled
 
 :::
 
-## Steps
+## 步进
 
-Allows you to define incremental steps.
+允许定义递增递减的步进控制
 
-:::demo Add `step` attribute to set the step.
+:::demo 设置 `step` 属性可以控制步长。
 
 input-number/steps
 
 :::
 
-## Step strictly
+## 严格步进
 
-:::demo The `step-strictly` attribute accepts a `boolean`. if this attribute is `true`, input value can only be multiple of step.
+:::demo `step-strictly`属性接受一个`Boolean`。 如果这个属性被设置为 `true`，则只能输入步进的倍数。
 
 input-number/step-strictly
 
 :::
 
-## Precision
+## 精度
 
-:::demo Add `precision` attribute to set the precision of input value.
+:::demo 设置 `precision` 属性可以控制数值精度，接收一个 `Number`。
 
 input-number/precision
 
@@ -57,13 +57,13 @@ input-number/precision
 
 :::tip
 
-The value of `precision` must be a non negative integer and should not be less than the decimal places of `step`.
+`precision` 的值必须是一个非负整数，并且不能小于 `step` 的小数位数。
 
 :::
 
-## Size
+## 不同的输入框尺寸
 
-Use attribute `size` to set additional sizes with `large` or `small`.
+使用 `size` 属性额外配置尺寸，可选的尺寸大小为：`large` 或 `small`
 
 :::demo
 
@@ -71,9 +71,9 @@ input-number/size
 
 :::
 
-## Controls Position
+## 按钮位置
 
-:::demo Set `controls-position` to decide the position of control buttons.
+:::demo 设置 `controls-position` 属性可以控制按钮位置。
 
 input-number/controlled
 
@@ -83,37 +83,37 @@ input-number/controlled
 
 ### Attributes
 
-| Name                                         | Description                                      | Type                                          | Default   |
-| -------------------------------------------- | ------------------------------------------------ | --------------------------------------------- | --------- |
-| model-value / v-model                        | binding value                                    | ^[number]                                     | —         |
-| min                                          | the minimum allowed value                        | ^[number]                                     | -Infinity |
-| max                                          | the maximum allowed value                        | ^[number]                                     | Infinity  |
-| step                                         | incremental step                                 | ^[number]                                     | 1         |
-| step-strictly                                | whether input value can only be multiple of step | ^[boolean]                                    | false     |
-| precision                                    | precision of input value                         | ^[number]                                     | —         |
-| size                                         | size of the component                            | ^[enum]`'large' \| 'default' \| 'small'`      | default   |
-| readonly                                     | same as `readonly` in native input               | ^[boolean]                                    | false     |
-| disabled                                     | whether the component is disabled                | ^[boolean]                                    | false     |
-| controls                                     | whether to enable the control buttons            | ^[boolean]                                    | true      |
-| controls-position                            | position of the control buttons                  | ^[enum]`'' \| 'right'`                        | —         |
-| name                                         | same as `name` in native input                   | ^[string]                                     | —         |
-| label                                        | same as `label` in native input                  | ^[string]                                     | —         |
-| placeholder                                  | same as `placeholder` in native input            | ^[string]                                     | —         |
-| id                                           | same as `id` in native input                     | ^[string]                                     | —         |
-| value-on-clear<VersionTag version="2.2.0" /> | value should be set when input box is cleared    | ^[number] / ^[null] / ^[enum]`'min' \| 'max'` | —         |
-| validate-event                               | whether to trigger form validation               | ^[boolean]                                    | true      |
+| 属性名                                          | 说明                           | 类型                                             | 默认值       |
+| -------------------------------------------- | ---------------------------- | ---------------------------------------------- | --------- |
+| model-value / v-model                        | 选中项绑定值                       | ^[number]                                      | —         |
+| min                                          | 设置计数器允许的最小值                  | ^[number]                                      | -Infinity |
+| max                                          | 设置计数器允许的最大值                  | ^[number]                                      | Infinity  |
+| step                                         | 计数器步长                        | ^[number]                                      | 1         |
+| step-strictly                                | 是否只能输入 step 的倍数              | ^[boolean]                                     | false     |
+| precision                                    | 数值精度                         | ^[number]                                      | —         |
+| size                                         | 计数器尺寸                        | ^[enum]`'large' \| 'default' \| 'small'`     | default   |
+| readonly                                     | 原生 ` readonly` 属性，是否只读       | ^[boolean]                                     | false     |
+| disabled                                     | 是否禁用状态                       | ^[boolean]                                     | false     |
+| controls                                     | 是否使用控制按钮                     | ^[boolean]                                     | true      |
+| controls-position                            | 控制按钮位置                       | ^[enum]`'' \| 'right'`                        | —         |
+| name                                         | 等价于原生 input `name` 属性        | ^[string]                                      | —         |
+| label                                        | 等价于原生 input `label` 属性       | ^[string]                                      | —         |
+| placeholder                                  | 等价于原生 input `placeholder` 属性 | ^[string]                                      | —         |
+| id                                           | 等价于原生 input `id` 属性          | ^[string]                                      | —         |
+| value-on-clear<VersionTag version="2.2.0" /> | 当输入框被清空时显示的值                 | ^[number] / ^[null] / ^[enum]`'min' \| 'max'` | —         |
+| validate-event                               | 是否触发表单验证                     | ^[boolean]                                     | true      |
 
 ### Events
 
-| Name   | Description                     | Type                                                                                    |
-| ------ | ------------------------------- | --------------------------------------------------------------------------------------- |
-| change | triggers when the value changes | ^[Function]`(currentValue: number \| undefined, oldValue: number \| undefined) => void` |
-| blur   | triggers when Input blurs       | ^[Function]`(event: FocusEvent) => void`                                                |
-| focus  | triggers when Input focuses     | ^[Function]`(event: FocusEvent) => void`                                                |
+| 事件名    | 说明                | 类型                                                                                           |
+| ------ | ----------------- | -------------------------------------------------------------------------------------------- |
+| change | 绑定值被改变时触发         | ^[Function]`(currentValue: number \| undefined, oldValue: number \| undefined) => void` |
+| blur   | 在组件 Input 失去焦点时触发 | ^[Function]`(event: FocusEvent) => void`                                                  |
+| focus  | 在组件 Input 获得焦点时触发 | ^[Function]`(event: FocusEvent) => void`                                                  |
 
 ### Exposes
 
-| Name  | Description                      | Type                    |
-| ----- | -------------------------------- | ----------------------- |
-| focus | get focus the input component    | ^[Function]`() => void` |
-| blur  | remove focus the input component | ^[Function]`() => void` |
+| 名称    | 说明             | 类型                         |
+| ----- | -------------- | -------------------------- |
+| focus | 使 input 组件获得焦点 | ^[Function]`() => void` |
+| blur  | 使 input 组件失去焦点 | ^[Function]`() => void` |

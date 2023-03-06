@@ -1,13 +1,13 @@
 ---
-title: Result
-lang: en-US
+title: Result 结果
+lang: zh-CN
 ---
 
-# Result
+# Result 结果
 
-Used to give feedback on the result of user's operation or access exception.
+用于对用户的操作结果或者异常状态做反馈。
 
-## Basic usage
+## 基础用法
 
 :::demo
 
@@ -15,7 +15,7 @@ result/basic-usage
 
 :::
 
-## Customized content
+## 自定义内容
 
 :::demo
 
@@ -25,17 +25,17 @@ result/customized-content
 
 ## Result Attributes
 
-| Name      | Description | Type   | Accepted Values                  | Default |
-| --------- | ----------- | ------ | -------------------------------- | ------- |
-| title     | title       | string | —                                | —       |
-| sub-title | sub title   | string | —                                | —       |
-| icon      | icon type   | string | success / warning / info / error | info    |
+| 属性名       | 说明   | 类型     | 可选值                              | 默认值  |
+| --------- | ---- | ------ | -------------------------------- | ---- |
+| title     | 标题   | string | —                                | —    |
+| sub-title | 二级标题 | string | —                                | —    |
+| icon      | 图标类型 | string | success / warning / info / error | info |
 
 ## Result Slots
 
-| Name      | Description       |
-| --------- | ----------------- |
-| icon      | custom icon       |
-| title     | custom title      |
-| sub-title | custom sub title  |
-| extra     | custom extra area |
+| 名称        | 说明        |
+| --------- | --------- |
+| icon      | 自定义图标     |
+| title     | 自定义标题     |
+| sub-title | 自定义二级标题   |
+| extra     | 自定义底部额外区域 |

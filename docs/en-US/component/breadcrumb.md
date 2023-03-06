@@ -1,23 +1,23 @@
 ---
-title: Breadcrumb
-lang: en-US
+title: Breadcrumb 面包屑
+lang: zh-CN
 ---
 
-# Breadcrumb
+# Breadcrumb 面包屑
 
-Displays the location of the current page, making it easier to browser back.
+显示当前页面的路径，快速返回之前的任意页面。
 
-## Basic usage
+## 基础用法
 
-:::demo In `el-breadcrumb`, each `el-breadcrumb-item` is a tag that stands for every level starting from homepage. This component has a `String` attribute `separator`, and it determines the separator. Its default value is '/'.
+:::demo 在 `el-breadcrumb` 中使用 `el-breadcrumb-item` 标签表示从首页开始的每一级。 该组件接受一个 `String` 类型的参数 `separator`来作为分隔符。 默认值为 '/'。
 
 breadcrumb/basic
 
 :::
 
-## Icon separator
+## 图标分隔符
 
-:::demo Set `separator-icon` to use `svg icon` as the separator，it will cover `separator`
+:::demo 通过设置 `separator-class` 可使用相应的 `iconfont` 作为分隔符，注意这将使 `separator` 失效。
 
 breadcrumb/icon
 
@@ -27,28 +27,28 @@ breadcrumb/icon
 
 ### Breadcrumb Attributes
 
-| Name           | Description                      | Type                     | Default |
-| -------------- | -------------------------------- | ------------------------ | ------- |
-| separator      | separator character              | ^[string]                | /       |
-| separator-icon | icon component of icon separator | ^[string] / ^[Component] | -       |
+| 属性名            | 说明           | 类型                       | 默认值 |
+| -------------- | ------------ | ------------------------ | --- |
+| separator      | 分隔符          | ^[string]                | /   |
+| separator-icon | 图标分隔符的组件或组件名 | ^[string] / ^[Component] | -   |
 
 ### Breadcrumb Slots
 
-| Name    | Description               | Subtags         |
-| ------- | ------------------------- | --------------- |
-| default | customize default content | Breadcrumb Item |
+| 插槽名     | 说明      | 子标签             |
+| ------- | ------- | --------------- |
+| default | 自定义默认内容 | Breadcrumb Item |
 
 ## BreadcrumbItem API
 
 ### BreadcrumbItem Attributes
 
-| Name    | Description                                               | Type                                    | Default |
-| ------- | --------------------------------------------------------- | --------------------------------------- | ------- |
-| to      | target route of the link, same as `to` of `vue-router`    | ^[string] / ^[object]`RouteLocationRaw` | ''      |
-| replace | if `true`, the navigation will not leave a history record | ^[boolean]                              | false   |
+| 属性名     | 说明                              | 类型                                      | 默认值   |
+| ------- | ------------------------------- | --------------------------------------- | ----- |
+| to      | 路由跳转目标，同 `vue-router` 的 `to` 属性 | ^[string] / ^[object]`RouteLocationRaw` | ''    |
+| replace | 如果设置该属性为 `true`, 导航将不会留下历史记录    | ^[boolean]                              | false |
 
 ### BreadcrumbItem Slots
 
-| Name    | Description               |
-| ------- | ------------------------- |
-| default | customize default content |
+| 插槽名     | 说明      |
+| ------- | ------- |
+| default | 自定义默认内容 |

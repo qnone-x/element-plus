@@ -1,15 +1,15 @@
 ---
-title: Virtualized Tree
-lang: en-US
+title: Tree V2 虚拟化树形控件
+lang: zh-CN
 ---
 
-# <ElBadge value="beta">Tree V2 virtualized tree</ElBadge>
+# <ElBadge value="beta">Tree V2 虚拟化树形控件</ElBadge>
 
-Tree view with blazing fast scrolling performance for any amount of data
+不论你的数据量多大，虚拟树都能毫无压力地处理。
 
-## Basic usage
+## 基础用法
 
-Basic tree structure.
+基础的树形结构展示
 
 :::demo
 
@@ -17,9 +17,9 @@ tree-v2/basic
 
 :::
 
-## Selectable
+## 可选择的虚拟树
 
-Used for node selection.
+适用于需要选择层级时使用。
 
 :::demo
 
@@ -27,29 +27,29 @@ tree-v2/selectable
 
 :::
 
-## Disabled checkbox
+## 禁用复选框
 
-The checkbox of a node can be set as disabled.
+节点的复选框可以设置为禁用。
 
-:::demo In the example, `disabled` property is declared in defaultProps, and some nodes are set as `disabled: true`. The corresponding checkboxes are disabled and can't be clicked.
+:::demo 在示例中，属性在 defaultProps 中声明了 `disabled`，一些节点被设置为 `disable：true`。 相应的复选框已禁用，不能点击。
 
 tree-v2/disabled
 
 :::
 
-## Default expanded and default checked
+## 默认扩展和默认检查
 
-Tree nodes can be initially expanded or checked
+树节点可以在初始化阶段被设置为展开或选中。
 
-:::demo Use `default-expanded-keys` and `default-checked-keys` to set initially expanded and initially checked nodes respectively.
+:::demo 分别通过 `default-expanded-keys` 和 `default-checked-keys` 设置默认展开和默认选中的节点。
 
 tree-v2/default-state
 
 :::
 
-## Custom node content
+## 自定义节点内容
 
-The content of tree nodes can be customized, so you can add icons or buttons as you will
+节点的内容支持自定义，可以在节点区添加按钮或图标等内容
 
 :::demo
 
@@ -57,80 +57,80 @@ tree-v2/custom-node
 
 :::
 
-## Tree node filtering
+## 节点过滤
 
-Tree nodes can be filtered
+树节点可以过滤
 
-:::demo Invoke the `filter` method of the Tree instance to filter tree nodes. Its parameter is the filtering keyword. Note that for it to work, `filter-node-method` is required, and its value is the filtering method.
+:::demo 在需要对节点进行过滤时，调用 Tree 实例的 `filter` 方法， 参数为关键字。 需要注意的是，此时需要设置 `filter-method`，值为过滤函数。
 
 tree-v2/filter
 
 :::
 
-## TreeV2 Attributes
+## TreeV2 属性
 
-| Name                  | Description                                                                                                                                  | Type                  | Default |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ------- |
-| data                  | tree data                                                                                                                                    | array                 | —       |
-| empty-text            | text displayed when data is void                                                                                                             | string                | —       |
-| props                 | configuration options, see the following table                                                                                               | object                | —       |
-| highlight-current     | whether current node is highlighted                                                                                                          | boolean               | false   |
-| expand-on-click-node  | whether to expand or collapse node when clicking on the node, if false, then expand or collapse node only when clicking on the arrow icon.   | boolean               | true    |
-| check-on-click-node   | whether to check or uncheck node when clicking on the node, if false, the node can only be checked or unchecked by clicking on the checkbox. | boolean               | false   |
-| default-expanded-keys | array of keys of initially expanded nodes                                                                                                    | array                 | —       |
-| show-checkbox         | whether node is selectable                                                                                                                   | boolean               | false   |
-| check-strictly        | whether checked state of a node not affects its father and child nodes when `show-checkbox` is `true`                                        | boolean               | false   |
-| default-checked-keys  | array of keys of initially checked nodes                                                                                                     | array                 | —       |
-| current-node-key      | key of initially selected node                                                                                                               | string / number       | —       |
-| filter-method         | this function will be executed on each node when use filter method. if return `false`, tree node will be hidden.                             | Function(value, data) | —       |
-| indent                | horizontal indentation of nodes in adjacent levels in pixels                                                                                 | number                | 16      |
-| icon                  | custom tree node icon                                                                                                                        | `string \| Component` | -       |
-| item-size             | custom tree node height                                                                                                                      | number                | 26      |
+| 属性名                   | 说明                                                            | 类型                     | 默认值   |
+| --------------------- | ------------------------------------------------------------- | ---------------------- | ----- |
+| data                  | 展示数据                                                          | array                  | —     |
+| empty-text            | 内容为空的时候展示的文本                                                  | string                 | —     |
+| props                 | 配置选项，具体看下表                                                    | object                 | —     |
+| highlight-current     | 是否高亮当前选中节点                                                    | boolean                | false |
+| expand-on-click-node  | 是否在点击节点的时候展开或者收缩节点， 默认值为 true，如果为 false，则只有点箭头图标的时候才会展开或者收缩节点 | boolean                | true  |
+| check-on-click-node   | 是否在点击节点的时候选中节点，默认值为 false，即只有在点击复选框时才会选中节点                    | boolean                | false |
+| default-expanded-keys | 默认展开的节点的 key 的数组                                              | array                  | —     |
+| show-checkbox         | 节点是否可被选择                                                      | boolean                | false |
+| check-strictly        | 在显示复选框的情况下，是否严格的遵循父子不互相关联的做法，默认为 false                        | boolean                | false |
+| default-checked-keys  | 默认勾选的节点的 key 的数组                                              | array                  | —     |
+| current-node-key      | 当前选中的节点                                                       | string / number        | —     |
+| filter-method         | 对树节点进行筛选时执行的方法，返回 true 表示这个节点可以显示， 返回 `false` 则表示这个节点会被隐藏     | Function(value, data)  | —     |
+| indent                | 相邻级节点间的水平缩进，单位为像素                                             | number                 | 16    |
+| icon                  | 自定义树节点的图标                                                     | `string \| Component` | -     |
+| item-size             | 自定义树节点的高度                                                     | number                 | 26    |
 
 ## props
 
-| Attribute | Description                                                                          | Type           | Default  |
-| --------- | ------------------------------------------------------------------------------------ | -------------- | -------- |
-| value     | unique identity key name for nodes, its value should be unique across the whole tree | string, number | id       |
-| label     | specify which key of node object is used as the node's label                         | string         | label    |
-| children  | specify which node object is used as the node's subtree                              | string         | children |
-| disabled  | specify which key of node object represents if node's checkbox is disabled           | string         | disabled |
+| 属性       | 说明                           | 类型             | 默认值      |
+| -------- | ---------------------------- | -------------- | -------- |
+| value    | 每个树节点用来作为唯一标识的属性，在整棵树中应该是唯一的 | string, number | id       |
+| label    | 指定节点标签为节点对象的某个属性值            | string         | label    |
+| children | 指定子树为节点对象的某个属性值              | string         | children |
+| disabled | 指定节点选择框是否禁用为节点对象的某个属性值       | string         | disabled |
 
-## TreeV2 Method
+## TreeV2 方法
 
-`Tree` has the following method, which returns the currently selected array of nodes.
-| Method | Description | Parameters |
-| --------------- | ---------------------------------------- | ---------------------------------------- |
-| filter | filter all tree nodes, filtered nodes will be hidden | `(query: string)` |
-| getCheckedNodes | If the node can be selected (`show-checkbox` is `true`), it returns the currently selected array of nodes | `(leafOnly: boolean)` |
-| getCheckedKeys | If the node can be selected (`show-checkbox` is `true`), it returns the currently selected array of node's keys | `(leafOnly: boolean)` |
-| setCheckedKeys | set certain nodes to be checked | `(keys: TreeKey[])` |
-| setChecked | set node to be checked or not | `(key: TreeKey, checked: boolean)` |
-| setExpandedKeys | set certain nodes to be expanded | `(keys: TreeKey[])` |
-| getHalfCheckedNodes | If the node can be selected (`show-checkbox` is `true`), it returns the currently half selected array of nodes | - |
-| getHalfCheckedKeys | If the node can be selected (`show-checkbox` is `true`), it returns the currently half selected array of node's keys | - |
-| getCurrentKey | return the highlight node's key (undefined if no node is highlighted) | - |
-| getCurrentNode | return the highlight node's data (undefined if no node is highlighted) | - |
-| setCurrentKey | set highlighted node by key | `(key: TreeKey)` |
-| getNode | get node by key or data | `(data: TreeKey \| TreeNodeData)` |
-| expandNode | expand specified node | `(node: TreeNode)` |
-| collapseNode | collapse specified node | `(node: TreeNode)` |
-| setData | When the data is very large, using reactive data will cause the poor performance, so we provide a way to avoid this situation | `(data: TreeData)` |
+Tree内部使用TreeNode类型的对象来包装用户传入的数据，用来构造树节点之间的关系。 `Tree` 暴露了以下方法：
+| 方法                  | 说明                                                          | 参数                                 |
+| ------------------- | ----------------------------------------------------------- | ---------------------------------- |
+| filter              | 对树节点进行筛选操作                                                  | `(query: string)`                  |
+| getCheckedNodes     | 若节点可被选择（即` show-checkbox `为 `true`），则返回目前被选中的节点所组成的数组       | `(leafOnly: boolean)`              |
+| getCheckedKeys      | 若节点可被选择（即 `show-checkbox` 为 `true`），则返回目前被选中的节点的 key 所组成的数组 | `(leafOnly: boolean)`              |
+| setCheckedKeys      | 通过 keys 设置目前勾选的节点                                           | `(keys: TreeKey[])`                |
+| setChecked          | 通过 key 设置某个节点的勾选状态                                          | `(key: TreeKey, checked: boolean)` |
+| setExpandedKeys     | 设置当前展开的节点                                                   | `(keys: TreeKey[])`                |
+| getHalfCheckedNodes | 如果节点可用被选中 (`show-checkbox` 为 `true`), 它将返回当前半选中的节点组成的数组     | -                                  |
+| getHalfCheckedKeys  | 若节点可被选中(`show-checkbox` 为 `true`)，则返回目前半选中的节点的 key 所组成的数组   | -                                  |
+| getCurrentKey       | 获取当前被选中节点的 key，若没有节点被选中则返回 `undefined`                      | -                                  |
+| getCurrentNode      | 获取当前被选中节点的 data，若没有节点被选中则返回 `undefined`                     | -                                  |
+| setCurrentKey       | 通过 key 设置某个节点的当前选中状态                                        | `(key: TreeKey)`                   |
+| getNode             | 通过 key 或 data 获取节点                                          | `(data: TreeKey \| TreeNodeData)` |
+| expandNode          | 展开指定节点                                                      | `(node: TreeNode)`                 |
+| collapseNode        | 折叠指定节点                                                      | `(node: TreeNode)`                 |
+| setData             | 当数据量非常庞大的时候，总是使用响应式数据将导致性能表现不佳，所以我们提供一种显式设置的方式来避免此种情况       | `(data: TreeData)`                 |
 
-## TreeV2 Events
+## TreeV2 事件
 
-| Name             | Description                                          | Parameters                                                                                                                              |
-| ---------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| node-click       | triggers when a node is clicked                      | `(data: TreeNodeData, node: TreeNode, e: MouseEvent)`                                                                                   |
-| node-contextmenu | triggers when a node is clicked by right button      | `(e: Event, data: TreeNodeData, node: TreeNode)`                                                                                        |
-| check-change     | triggers when the selected state of the node changes | `(data: TreeNodeData, checked: boolean)`                                                                                                |
-| check            | triggers after clicking the checkbox of a node       | `(data: TreeNodeData, info: { checkedKeys: TreeKey[],checkedNodes: TreeData, halfCheckedKeys: TreeKey[], halfCheckedNodes: TreeData,})` |
-| current-change   | triggers when current node changes                   | `(data: TreeNodeData, node: TreeNode)`                                                                                                  |
-| node-expand      | triggers when current node open                      | `(data: TreeNodeData, node: TreeNode)`                                                                                                  |
-| node-collapse    | triggers when current node close                     | `(data: TreeNodeData, node: TreeNode)`                                                                                                  |
+| 事件名              | 说明                | 参数                                                                                                                                      |
+| ---------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| node-click       | 当节点被点击的时候触发       | `(data: TreeNodeData, node: TreeNode, e: MouseEvent)`                                                                                   |
+| node-contextmenu | 当节点被鼠标右键点击时会触发该事件 | `(e: Event, data: TreeNodeData, node: TreeNode)`                                                                                        |
+| check-change     | 节点选中状态发生变化时的回调    | `(data: TreeNodeData, checked: boolean)`                                                                                                |
+| check            | 当复选框被点击的时候触发      | `(data: TreeNodeData, info: { checkedKeys: TreeKey[],checkedNodes: TreeData, halfCheckedKeys: TreeKey[], halfCheckedNodes: TreeData,})` |
+| current-change   | 当前选中节点变化时触发的事件    | `(data: TreeNodeData, node: TreeNode)`                                                                                                  |
+| node-expand      | 节点被展开时触发的事件       | `(data: TreeNodeData, node: TreeNode)`                                                                                                  |
+| node-collapse    | 节点被收起时触发的事件       | `(data: TreeNodeData, node: TreeNode)`                                                                                                  |
 
-## TreeV2 Slots
+## TreeV2 插槽
 
-| Name | Description                                                                                    |
-| ---- | ---------------------------------------------------------------------------------------------- |
-| -    | Custom content for tree nodes. The scope parameter is `{ node: TreeNode, data: TreeNodeData }` |
+| 名称 | 说明                                                         |
+| -- | ---------------------------------------------------------- |
+| -  | 自定义树节点的内容。 作用域参数为 `{ node: TreeNode, data: TreeNodeData }` |

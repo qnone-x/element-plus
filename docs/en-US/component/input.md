@@ -1,23 +1,23 @@
 ﻿---
-title: Input
-lang: en-US
+title: Input 输入框
+lang: zh-CN
 ---
 
-# Input
+# Input 输入框
 
-Input data using mouse or keyboard.
+通过鼠标或键盘输入字符
 
 :::warning
 
-Input is a controlled component, it **always shows Vue binding value**.
+Input 为受控组件，它 **总会显示 Vue 绑定值**。
 
-Under normal circumstances, `input` event should be handled. Its handler should update component's binding value (or use `v-model`). Otherwise, input box's value will not change.
+在正常情况下，`input` 的输入事件应该被正常响应。 它的处理程序应该更新组件的绑定值 (或使用 `v-model`)。 否则，输入框的值将不会改变。
 
-Do not support `v-model` modifiers.
+不支持 `v-model` 修饰符。
 
 :::
 
-## Basic usage
+## 基础用法
 
 :::demo
 
@@ -25,25 +25,25 @@ input/basic
 
 :::
 
-## Disabled
+## 禁用状态
 
-:::demo Disable the Input with the `disabled` attribute.
+:::demo 通过 `disabled` 属性指定是否禁用 input 组件
 
 input/disabled
 
 :::
 
-## Clearable
+## 一键清空
 
-:::demo Make the Input clearable with the `clearable` attribute.
+:::demo 使用`clearable`属性即可得到一个可一键清空的输入框
 
 input/clearable
 
 :::
 
-## Formatter
+## 格式化
 
-Display value within it's situation with `formatter`, and we usually use `parser` at the same time.
+在 `formatter`的情况下显示值，我们通常同时使用 `parser`
 
 :::demo
 
@@ -51,37 +51,37 @@ input/formatter
 
 :::
 
-## Password box
+## 密码框
 
-:::demo Make a toggle-able password Input with the `show-password` attribute.
+:::demo 使用 `show-password` 属性即可得到一个可切换显示隐藏的密码框
 
 input/password
 
 :::
 
-## Input with icon
+## 带图标的输入框
 
-Add an icon to indicate input type.
+带有图标标记输入类型
 
-:::demo To add icons in Input, you can simply use `prefix-icon` and `suffix-icon` attributes. Also, the `prefix` and `suffix` named slots works as well.
+:::demo 要在输入框中添加图标，你可以简单地使用 `prefix-icon` 和 `suffix-icon` 属性。 另外， `prefix` 和 `suffix` 命名的插槽也能正常工作。
 
 input/with-icon
 
 :::
 
-## Textarea
+## 文本域
 
-Resizable for entering multiple lines of text information. Add attribute `type="textarea"` to change `input` into native `textarea`.
+用于输入多行文本信息可缩放的输入框。 添加 `type="textarea"` 属性来将 `input` 元素转换为原生的 `textarea` 元素。
 
-:::demo Control the height by setting the `rows` prop.
+:::demo 文本域高度可通过 `rows` 属性控制
 
 input/textarea
 
 :::
 
-## Autosize Textarea
+## 自适应文本域
 
-Setting the `autosize` prop for a textarea type of Input makes the height to automatically adjust based on the content. An options object can be provided to `autosize` to specify the minimum and maximum number of lines the textarea can automatically adjust.
+设置文字输入类型的 `autosize` 属性使得根据内容自动调整的高度。 你可以给 `autosize` 提供一个包含有最大和最小高度的对象，让输入框自动调整。
 
 :::demo
 
@@ -89,27 +89,27 @@ input/auto-sizing-textarea
 
 :::
 
-## Mixed input
+## 复合型输入框
 
-Prepend or append an element, generally a label or a button.
+可以在输入框中前置或后置一个元素，通常是标签或按钮。
 
-:::demo Use `slot` to distribute elements that prepend or append to Input.
+:::demo 可通过 `slot` 来指定在 Input 中分发的前置或者后置的内容。
 
 input/mixed-input
 
 :::
 
-## Sizes
+## 尺寸
 
-:::demo Add `size` attribute to change the size of Input. In addition to the default size, there are two other options: `large`, `small`.
+:::demo 使用 `size` 属性改变输入框大小。 除了默认大小外，还有另外两个选项： `large`, `small`。
 
 input/various-size
 
 :::
 
-## Limit length
+## 输入长度限制
 
-:::demo `maxlength` and `minlength` attributes of input, they declare a limit on the number of characters a user can input. The "number of characters" is measured using JavaScript string length.Setting the `maxlength` prop for a text or textarea type of Input can limit the length of input value, allows you to show word count by setting `show-word-limit` to `true` at the same time.
+:::demo 使用 `maxlength` 和 `minlength` 属性, 来控制输入内容的最大字数和最小字数。 "字符数"使用JavaScript字符串长度来衡量。 为文本或文本输入类型设置 `maxlength` prop可以限制输入值的长度。 允许你通过设置 `show-word-limit` 到 `true` 来显示剩余字数。
 
 input/length-limiting
 
@@ -119,67 +119,67 @@ input/length-limiting
 
 ### Attributes
 
-| Name                  | Description                                                                                                                            | Type                                                                                                                                                | Default |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| type                  | type of input                                                                                                                          | ^[string]`'text' \| 'textarea' \| ...` [native input types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types) | text    |
-| model-value / v-model | binding value                                                                                                                          | ^[string] / ^[number]                                                                                                                               | —       |
-| maxlength             | the max length                                                                                                                         | ^[string] / ^[number]                                                                                                                               | —       |
-| minlength             | same as `minlength` in native input                                                                                                    | ^[number]                                                                                                                                           | —       |
-| show-word-limit       | whether show word count, only works when `type` is 'text' or 'textarea'                                                                | ^[boolean]                                                                                                                                          | false   |
-| placeholder           | placeholder of Input                                                                                                                   | ^[string]                                                                                                                                           | —       |
-| clearable             | whether to show clear button, only works when `type` is not 'textarea'                                                                 | ^[boolean]                                                                                                                                          | false   |
-| formatter             | specifies the format of the value presented input.(only works when `type` is 'text')                                                   | ^[Function]`(value: string \| number) => string`                                                                                                    | —       |
-| parser                | specifies the value extracted from formatter input.(only works when `type` is 'text')                                                  | ^[Function]`(value: string) => string`                                                                                                              | —       |
-| show-password         | whether to show toggleable password input                                                                                              | ^[boolean]                                                                                                                                          | false   |
-| disabled              | whether Input is disabled                                                                                                              | ^[boolean]                                                                                                                                          | false   |
-| size                  | size of Input, works when `type` is not 'textarea'                                                                                     | ^[enum]`'large' \| 'default' \| 'small'`                                                                                                            | —       |
-| prefix-icon           | prefix icon component                                                                                                                  | ^[string] / ^[Component]                                                                                                                            | —       |
-| suffix-icon           | suffix icon component                                                                                                                  | ^[string] / ^[Component]                                                                                                                            | —       |
-| rows                  | number of rows of textarea, only works when `type` is 'textarea'                                                                       | ^[number]                                                                                                                                           | 2       |
-| autosize              | whether textarea has an adaptive height, only works when `type` is 'textarea'. Can accept an object, e.g. `{ minRows: 2, maxRows: 6 }` | ^[boolean] / ^[object]`{ minRows?: number, maxRows?: number }`                                                                                      | false   |
-| autocomplete          | same as `autocomplete` in native input                                                                                                 | ^[string]                                                                                                                                           | off     |
-| name                  | same as `name` in native input                                                                                                         | ^[string]                                                                                                                                           | —       |
-| readonly              | same as `readonly` in native input                                                                                                     | ^[boolean]                                                                                                                                          | false   |
-| max                   | same as `max` in native input                                                                                                          | —                                                                                                                                                   | —       |
-| min                   | same as `min` in native input                                                                                                          | —                                                                                                                                                   | —       |
-| step                  | same as `step` in native input                                                                                                         | —                                                                                                                                                   | —       |
-| resize                | control the resizability                                                                                                               | ^[enum]`'none' \| 'both' \| 'horizontal' \| 'vertical'`                                                                                             | —       |
-| autofocus             | same as `autofocus` in native input                                                                                                    | ^[boolean]                                                                                                                                          | false   |
-| form                  | same as `form` in native input                                                                                                         | `string`                                                                                                                                            | —       |
-| label<A11yTag />      | same as `aria-label` in native input                                                                                                   | ^[string]                                                                                                                                           | —       |
-| tabindex              | input tabindex                                                                                                                         | ^[string] / ^[number]                                                                                                                               | —       |
-| validate-event        | whether to trigger form validation                                                                                                     | ^[boolean]                                                                                                                                          | true    |
-| input-style           | the style of the input element or textarea element                                                                                     | ^[string] / ^[object]`CSSProperties \| CSSProperties[] \| string[]`                                                                                 | {}      |
+| 属性名                   | 说明                                                                                    | 类型                                                                                                                                                    | 默认值        |
+| --------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| type                  | 类型                                                                                    | ^[string]`'text' \| 'textarea' \| ...` [native input types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types) | text       |
+| model-value / v-model | 绑定值                                                                                   | ^[string] / ^[number]                                                                                                                                 | —          |
+| maxlength             | 最大输入长度                                                                                | ^[string] / ^[number]                                                                                                                                 | —          |
+| minlength             | 原生属性，最小输入长度                                                                           | ^[number]                                                                                                                                             | —          |
+| show-word-limit       | 是否显示统计字数, 只在 `type` 为 'text' 或 'textarea' 的时候生效                                       | ^[boolean]                                                                                                                                            | ^[boolean] |
+| placeholder           | 输入框占位文本                                                                               | ^[string]                                                                                                                                             | —          |
+| clearable             | 是否显示清除按钮，只有当 `type` 不是 textarea时生效                                                    | ^[boolean]                                                                                                                                            | false      |
+| formatter             | 指定输入值的格式。(只有当 `type` 是"text"时才能工作)                                                    | ^[Function]`(value: string \| number) => string`                                                                                                  | —          |
+| parser                | 指定从格式化器输入中提取的值。(仅当 `type` 是"text"时才起作用)                                               | ^[Function]`(value: string) => string`                                                                                                             | —          |
+| show-password         | 是否显示切换密码图标                                                                            | ^[boolean]                                                                                                                                            | false      |
+| disabled              | 是否禁用                                                                                  | ^[boolean]                                                                                                                                            | false      |
+| size                  | 输入框尺寸，只在 `type` 不为 'textarea' 时有效                                                     | ^[enum]`'large' \| 'default' \| 'small'`                                                                                                            | —          |
+| prefix-icon           | 自定义前缀图标                                                                               | ^[string] / ^[Component]                                                                                                                              | —          |
+| suffix-icon           | 自定义后缀图标                                                                               | ^[string] / ^[Component]                                                                                                                              | —          |
+| rows                  | 输入框行数，仅 `type` 为 'textarea' 时有效                                                       | ^[number]                                                                                                                                             | ^[number]  |
+| autosize              | textarea 高度是否自适应，仅 `type` 为 'textarea' 时生效。 可以接受一个对象，比如: `{ minRows: 2, maxRows: 6 }` | ^[boolean] / ^[object]`Pows?: numer, maxRows?: number }`                                                                                              | false      |
+| autocomplete          | 原生 `autocomplete` 属性                                                                  | ^[string]                                                                                                                                             | off        |
+| name                  | 等价于原生 input `name` 属性                                                                 | ^[string]                                                                                                                                             | —          |
+| readonly              | 原生 ` readonly` 属性，是否只读                                                                | ^[boolean]                                                                                                                                            | false      |
+| max                   | 原生 `max` 属性，设置最大值                                                                     | —                                                                                                                                                     | —          |
+| min                   | 原生属性，设置最小值                                                                            | —                                                                                                                                                     | —          |
+| step                  | 原生属性，设置输入字段的合法数字间隔                                                                    | —                                                                                                                                                     | —          |
+| resize                | 控制是否能被用户缩放                                                                            | ^[enum]`'none' \| 'both' \| 'horizontal' \| 'vertical'`                                                                                            | —          |
+| autofocus             | 原生属性，自动获取焦点                                                                           | ^[boolean]                                                                                                                                            | false      |
+| form                  | 原生属性                                                                                  | `string`                                                                                                                                              | —          |
+| label<A11yTag />      | 等价于原生 input `aria-label` 属性                                                           | ^[string]                                                                                                                                             | —          |
+| tabindex              | 输入框的 tabindex                                                                         | ^[string] / ^[number]                                                                                                                                 | —          |
+| validate-event        | 输入时是否触发表单的校验                                                                          | ^[boolean]                                                                                                                                            | true       |
+| input-style           | input 元素或 textarea 元素的 style                                                          | ^[string] / ^[object]`CSSProperties \| CSSProperties[] \| string[]`                                                                                 | {}         |
 
 ### Events
 
-| Name   | Description                                                                                           | Type                                           |
-| ------ | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| blur   | triggers when Input blurs                                                                             | ^[Function]`(event: FocusEvent) => void`       |
-| focus  | triggers when Input focuses                                                                           | ^[Function]`(event: FocusEvent) => void`       |
-| change | triggers when the input box loses focus or the user presses Enter, only if the modelValue has changed | ^[Function]`(value: string \| number) => void` |
-| input  | triggers when the Input value change                                                                  | ^[Function]`(value: string \| number) => void` |
-| clear  | triggers when the Input is cleared by clicking the clear button                                       | ^[Function]`() => void`                        |
+| 事件名    | 说明                                     | 类型                                                 |
+| ------ | -------------------------------------- | -------------------------------------------------- |
+| blur   | 当选择器的输入框失去焦点时触发                        | ^[Function]`(event: FocusEvent) => void`        |
+| focus  | 当选择器的输入框获得焦点时触发                        | ^[Function]`(event: FocusEvent) => void`        |
+| change | 仅当 modelValue 改变时，当输入框失去焦点或用户按Enter时触发 | ^[Function]`(value: string \| number) => void` |
+| input  | 在 Input 值改变时触发                         | ^[Function]`(value: string \| number) => void` |
+| clear  | 在点击由 `clearable` 属性生成的清空按钮时触发          | ^[Function]`() => void`                         |
 
 ### Slots
 
-| Name    | Description                                                               |
-| ------- | ------------------------------------------------------------------------- |
-| prefix  | content as Input prefix, only works when `type` is not 'textarea'         |
-| suffix  | content as Input suffix, only works when `type` is not 'textarea'         |
-| prepend | content to prepend before Input, only works when `type` is not 'textarea' |
-| append  | content to append after Input, only works when `type` is not 'textarea'   |
+| 插槽名     | 说明                               |
+| ------- | -------------------------------- |
+| prefix  | 输入框头部内容，只对非 `type="textarea"` 有效 |
+| suffix  | 输入框尾部内容，只对非 `type="textarea"` 有效 |
+| prepend | 输入框前置内容，只对非 `type="textarea"` 有效 |
+| append  | 输入框后置内容，只对非 `type="textarea"` 有效 |
 
 ### Exposes
 
-| Name           | Description                      | Type                                                    |
-| -------------- | -------------------------------- | ------------------------------------------------------- |
-| blur           | blur the input element           | ^[Function]`() => void`                                 |
-| clear          | clear input value                | ^[Function]`() => void`                                 |
-| focus          | focus the input element          | ^[Function]`() => void`                                 |
-| input          | HTML input element               | ^[object]`Ref<HTMLInputElement>`                        |
-| ref            | HTML element, input or textarea  | ^[object]`Ref<HTMLInputElement \| HTMLTextAreaElement>` |
-| resizeTextarea | resize textarea                  | ^[Function]`() => void`                                 |
-| select         | select the text in input element | ^[Function]`() => void`                                 |
-| textarea       | HTML textarea element            | ^[object]`Ref<HTMLTextAreaElement>`                     |
-| textareaStyle  | style of textarea                | ^[object]`Ref<StyleValue>`                              |
+| 名称             | 说明                      | 类型                                                             |
+| -------------- | ----------------------- | -------------------------------------------------------------- |
+| blur           | 使 input 失去焦点            | ^[Function]`() => void`                                     |
+| clear          | 清除 input 值              | ^[Function]`() => void`                                     |
+| focus          | 使 input 获取焦点            | ^[Function]`() => void`                                     |
+| input          | Input HTML 元素           | ^[object]`Ref<HTMLInputElement>`                         |
+| ref            | HTML元素 input 或 textarea | ^[object]`Ref<HTMLInputElement \| HTMLTextAreaElement>` |
+| resizeTextarea | 改变 textarea 大小          | ^[Function]`() => void`                                     |
+| select         | 选中 input 中的文字           | ^[Function]`() => void`                                     |
+| textarea       | HTML textarea 元素        | ^[object]`Ref<HTMLTextAreaElement>`                      |
+| textareaStyle  | textarea 的样式            | ^[object]`Ref<StyleValue>`                               |

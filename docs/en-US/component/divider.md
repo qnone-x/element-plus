@@ -1,15 +1,15 @@
 ---
-title: Divider
-lang: en-US
+title: Divider 分割线
+lang: zh-CN
 ---
 
-# Divider
+# Divider 分割线
 
-The dividing line that separates the content.
+区隔内容的分割线。
 
-## Basic usage
+## 基础用法
 
-Divide the text of different paragraphs.
+对不同段落的文本进行分割。
 
 :::demo
 
@@ -17,9 +17,9 @@ divider/basic-usage
 
 :::
 
-## Custom content
+## 设置文案
 
-You can customize the content on the divider line.
+可以在分割线上自定义文本内容。
 
 :::demo
 
@@ -27,9 +27,9 @@ divider/custom-content
 
 :::
 
-## dashed line
+## 虚线
 
-You can set the style of divider.
+您可以设置分隔符的样式。
 
 :::demo
 
@@ -37,7 +37,7 @@ divider/line-dashed
 
 :::
 
-## Vertical divider
+## 垂直分隔线
 
 :::demo
 
@@ -49,14 +49,14 @@ divider/vertical-divider
 
 ### Attributes
 
-| Name             | Description                                                | Type                                                                                                                                        | Default    |
-| ---------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| direction        | Set divider's direction                                    | ^[enum]`'horizontal' \| 'vertical'`                                                                                                         | horizontal |
-| border-style     | Set the style of divider                                   | ^[enum]`'none' \| 'solid' \| 'hidden' \| 'dashed' \| ...` [css/border-style](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-style) | solid      |
-| content-position | the position of the customized content on the divider line | ^[enum]`'left' \| 'right' \| 'center' `                                                                                                     | center     |
+| 属性名              | 说明          | 类型                                                                                                                                              | 默认         |
+| ---------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| direction        | 设置分割线方向     | ^[enum]`'horizontal' \| 'vertical'`                                                                                                            | horizontal |
+| border-style     | 设置分隔符样式     | ^[enum]`'none' \| 'solid' \| 'hidden' \| 'dashed' \| ...` [css/border-style](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-style) | solid      |
+| content-position | 自定义分隔线内容的位置 | ^[enum]`'left' \| 'right' \| 'center'`                                                                                                        | center     |
 
 ### Slots
 
-| Name    | Description                            |
-| ------- | -------------------------------------- |
-| default | customized content on the divider line |
+| 事件名     | Description |
+| ------- | ----------- |
+| default | 设置分割线文案的位置  |

@@ -1,61 +1,61 @@
 ---
-title: Dropdown
-lang: en-US
+title: Dropdown 下拉菜单
+lang: zh-CN
 ---
 
-# Dropdown
+# Dropdown 下拉菜单
 
-Toggleable menu for displaying lists of links and actions.
+将动作或菜单折叠到下拉菜单中。
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+在 SSR 场景下，您需要将组件包裹在 `<client-only></client-only>` 之中 (如: [Nuxt](https://nuxt.com/v3)) 和 SSG (e.g: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
-## Basic usage
+## 基础用法
 
-Hover on the dropdown menu to unfold it for more actions.
+悬停在下拉菜单上以展开更多操作。
 
-:::demo The triggering element is rendered by the default `slot`, and the dropdown part is rendered by the `slot` named `dropdown`. By default, dropdown list shows when you hover on the triggering element without having to click it.
+:::demo 通过组件 `slot` 来设置下拉触发的元素以及需要通过具名 `slot` 为 `dropdown` 来设置下拉菜单。 默认情况下，只需要悬停在触发菜单的元素上即可，无需点击也会显示下拉菜单。
 
 dropdown/basic-usage
 
 :::
 
-## Triggering element
+## 触发对象
 
-Use the button to trigger the dropdown list.
+可使用按钮触发下拉菜单。
 
-:::demo Use `split-button` to split the triggering element into a button group with the left button being a normal button and right one the actual triggering target. If you wanna insert a separator line between item three and item four, just add a class `divider` to item four.
+:::demo 设置 `split-button` 属性来让触发下拉元素呈现为按钮组，左边是功能按钮，右边是触发下拉菜单的按钮，设置为 `true` 即可。 如果你想要在第三和第四个选项之间添加一个分隔符，你只需要为第四个选项添加一个 `divider` 的 CSS class。
 
 dropdown/triggering-element
 
 :::
 
-## How to trigger
+## 触发方式
 
-Click the triggering element or hover on it.
+可以配置点击激活或者悬停激活。
 
-:::demo Use the attribute `trigger`. By default, it is `hover`.
+:::demo 将 `trigger` 属性设置为 click 即可， 默认为 `hover`。
 
 dropdown/how-to-trigger
 
 :::
 
-## Menu hiding behavior
+## 菜单隐藏方式
 
-Use `hide-on-click` to define if menu closes on clicking.
+可以通过 `hide-on-click` 属性来配置。
 
-:::demo By default menu will close when you click on menu items, and it can be turned off by setting hide-on-click to false.
+:::demo 下拉菜单默认在点击菜单项后会被隐藏，将 hide-on-click 属性设置为 false 可以关闭此功能。
 
 dropdown/menu-hiding-behavior
 
 :::
 
-## Command event
+## 指令事件
 
-Clicking each dropdown item fires an event whose parameter is assigned by each item.
+点击菜单项后会触发事件，用户可以通过相应的菜单项 key 进行不同的操作。
 
 :::demo
 
@@ -63,9 +63,9 @@ dropdown/command-event
 
 :::
 
-## Dropdown methods
+## 下拉方法
 
-You can open or close the dropdown menu by manually use `handleOpen` or `handleClose`
+您可以手动使用 `手动打开` 或 `手动关闭下拉菜单以打开或关闭`
 
 :::demo
 
@@ -73,11 +73,11 @@ dropdown/dropdown-methods
 
 :::
 
-## Sizes
+## 尺寸
 
-Besides default size, Dropdown component provides three additional sizes for you to choose among different scenarios.
+Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的尺寸。
 
-:::demo Use attribute `size` to set additional sizes with `large`, `default` or `small`.
+:::demo 使用 `size` 属性配置尺寸，可选的尺寸大小有: `large`, `default` 或 `small`
 
 dropdown/sizes
 
@@ -85,63 +85,63 @@ dropdown/sizes
 
 ## Dropdown Attributes
 
-| Name           | Description                                                                                                           | Type            | Accepted Values                                          | Default                                                                    |
-| -------------- | --------------------------------------------------------------------------------------------------------------------- | --------------- | -------------------------------------------------------- | -------------------------------------------------------------------------- |
-| type           | menu button type, refer to `Button` Component, only works when `split-button` is true                                 | string          | —                                                        | —                                                                          |
-| size           | menu size, also works on the split button                                                                             | string          | large / default / small                                  | default                                                                    |
-| max-height     | the max height of menu                                                                                                | string / number | —                                                        | —                                                                          |
-| split-button   | whether a button group is displayed                                                                                   | boolean         | —                                                        | false                                                                      |
-| disabled       | Whether to disable                                                                                                    | boolean         | —                                                        | false                                                                      |
-| placement      | placement of pop menu                                                                                                 | string          | top/top-start/top-end/bottom/bottom-start/bottom-end     | bottom                                                                     |
-| trigger        | how to trigger                                                                                                        | string          | hover/click/contextmenu                                  | hover                                                                      |
-| hide-on-click  | whether to hide menu after clicking menu-item                                                                         | boolean         | —                                                        | true                                                                       |
-| show-timeout   | Delay time before show a dropdown (only works when trigger is `hover`)                                                | number          | —                                                        | 250                                                                        |
-| hide-timeout   | Delay time before hide a dropdown (only works when trigger is `hover`)                                                | number          | —                                                        | 150                                                                        |
-| role           | The ARIA role attribute for the dropdown menu. Depending on the use case, you may want to change this to 'navigation' | string          | —                                                        | 'menu'                                                                     |
-| tabindex       | [tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) of Dropdown                  | number          | —                                                        | 0                                                                          |
-| popper-class   | custom class name for Dropdown's dropdown                                                                             | string          | —                                                        | —                                                                          |
-| popper-options | [popper.js](https://popper.js.org/docs/v2/) parameters                                                                | Object          | refer to [popper.js](https://popper.js.org/docs/v2/) doc | `{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}` |
-| teleported     | whether the dropdown popup is teleported to the body                                                                  | boolean         | —                                                        | true                                                                       |
+| 属性名            | 说明                                                                                                    | 类型              | 可选值                                                  | 默认值                                                                        |
+| -------------- | ----------------------------------------------------------------------------------------------------- | --------------- | ---------------------------------------------------- | -------------------------------------------------------------------------- |
+| type           | 菜单按钮类型，同 `Button` 组件一样，仅在 `split-button` 为 true 的情况下有效。                                               | string          | —                                                    | —                                                                          |
+| size           | 菜单尺寸，在 split-button 为 true 的情况下也对触发按钮生效。                                                              | string          | large / default / small                              | default                                                                    |
+| max-height     | 菜单最大高度                                                                                                | string / number | —                                                    | —                                                                          |
+| split-button   | 下拉触发元素呈现为按钮组                                                                                          | boolean         | —                                                    | false                                                                      |
+| disabled       | 是否禁用                                                                                                  | boolean         | —                                                    | false                                                                      |
+| placement      | 菜单弹出位置                                                                                                | string          | top/top-start/top-end/bottom/bottom-start/bottom-end | bottom                                                                     |
+| trigger        | 触发下拉的行为                                                                                               | string          | hover/click/contextmenu                              | hover                                                                      |
+| hide-on-click  | 是否在点击菜单项后隐藏菜单                                                                                         | boolean         | —                                                    | true                                                                       |
+| show-timeout   | 展开下拉菜单的延时，仅在 trigger 为 hover 时有效                                                                      | number          | —                                                    | 250                                                                        |
+| hide-timeout   | 收起下拉菜单的延时（仅在 trigger 为 hover 时有效）                                                                     | number          | —                                                    | 150                                                                        |
+| role           | 下拉菜单的 ARIA 属性。 根据具体场景，您可能想要将此更改为“navigation”                                                          | string          | —                                                    | 'menu'                                                                     |
+| tabindex       | Dropdown 组件的 [tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) | number          | —                                                    | 0                                                                          |
+| popper-class   | 自定义浮层类名                                                                                               | string          | —                                                    | —                                                                          |
+| popper-options | [popper.js](https://popper.js.org/docs/v2/) 参数                                                        | Object          | 请参考 [popper.js](https://popper.js.org/docs/v2/) 文档   | `{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}` |
+| teleported     | 是否将下拉列表插入至 body 元素                                                                                    | boolean         | —                                                    | true                                                                       |
 
-## Dropdown Slots
+## Dropdown 插槽
 
-| Name     | Description                                                                                                                                   | Subtags       |
-| -------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| —        | content of Dropdown. Notice: Must be a valid html dom element (ex. `<span>, <button> etc.`) or `el-component`, to attach the trigger listener | —             |
-| dropdown | content of the Dropdown Menu, usually a `<el-dropdown-menu>` element                                                                          | Dropdown-Menu |
+| 插槽名      | 说明                                                                                          | 子标签           |
+| -------- | ------------------------------------------------------------------------------------------- | ------------- |
+| —        | 下拉菜单的内容。 注意：必须是有效的 html DOM 元素（例如 `<span>、<button>` 等）或 `el-component`，以附加监听触发器 | —             |
+| dropdown | 下拉列表，通常是 `<el-dropdown-menu>` 组件                                                      | Dropdown-Menu |
 
 ## Dropdown Events
 
-| Name           | Description                                                       | Parameters                                    |
-| -------------- | ----------------------------------------------------------------- | --------------------------------------------- |
-| click          | if `split-button` is `true`, triggers when left button is clicked | —                                             |
-| command        | triggers when a dropdown item is clicked                          | the command dispatched from the dropdown item |
-| visible-change | triggers when the dropdown appears/disappears                     | true when it appears, and false otherwise     |
+| 事件名            | 说明                                | 参数                   |
+| -------------- | --------------------------------- | -------------------- |
+| click          | `split-button` 为 true 时，点击左侧按钮的回调 | —                    |
+| command        | 点击菜单项触发的事件回调                      | dropdown-item 的指令    |
+| visible-change | 下拉框出现/隐藏时触发                       | 出现则为 true，隐藏则为 false |
 
 ## Dropdown Methods
 
-| Method      | Description             | Parameters |
-| ----------- | ----------------------- | ---------- |
-| handleOpen  | open the dropdown menu  | —          |
-| handleClose | close the dropdown menu | —          |
+| 方法名         | 说明     | 参数 |
+| ----------- | ------ | -- |
+| handleOpen  | 打开下拉菜单 | —  |
+| handleClose | 关闭下拉菜单 | —  |
 
 ## Dropdown-Menu Slots
 
-| Name | Description              | Subtags       |
-| ---- | ------------------------ | ------------- |
-| —    | content of Dropdown Menu | Dropdown-Item |
+| 插槽名 | 说明      | 子标签           |
+| --- | ------- | ------------- |
+| —   | 下拉菜单的内容 | Dropdown-Item |
 
 ## Dropdown-Item Attributes
 
-| Name     | Description                                                 | Type                  | Accepted Values | Default |
-| -------- | ----------------------------------------------------------- | --------------------- | --------------- | ------- |
-| command  | a command to be dispatched to Dropdown's `command` callback | string/number/object  | —               | —       |
-| disabled | whether the item is disabled                                | boolean               | —               | false   |
-| divided  | whether a divider is displayed                              | boolean               | —               | false   |
-| icon     | custom icon                                                 | `string \| Component` | —               | —       |
+| 属性名      | 说明                    | 类型                     | 可选值 | 默认值   |
+| -------- | --------------------- | ---------------------- | --- | ----- |
+| command  | 派发到`command`回调函数的指令参数 | string/number/object   | —   | —     |
+| disabled | 是否禁用                  | boolean                | —   | false |
+| divided  | 是否显示分隔符               | boolean                | —   | false |
+| icon     | 自定义图标                 | `string \| Component` | —   | —     |
 
 ## Dropdown-Item Slots
 
-| Name | Description                |
-| ---- | -------------------------- |
-| —    | customize of Dropdown Item |
+| 插槽名 | 说明                 |
+| --- | ------------------ |
+| —   | 自定义Dropdown-Item内容 |

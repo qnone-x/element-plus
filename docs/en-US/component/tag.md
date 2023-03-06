@@ -1,31 +1,31 @@
 ---
-title: Tag
-lang: en-US
+title: Tag 标签
+lang: zh-CN
 ---
 
-# Tag
+# Tag 标签
 
-Used for marking and selection.
+用于标记和选择。
 
-## Basic usage
+## 基础用法
 
-:::demo Use the `type` attribute to define Tag's type. In addition, the `color` attribute can be used to set the background color of the Tag.
+:::demo 由 `type` 属性来选择 tag 的类型。 也可以通过 `color` 属性来自定义背景色。
 
 tag/basic
 
 :::
 
-## Removable Tag
+## 可移除标签
 
-:::demo `closable` attribute can be used to define a removable tag. It accepts a `Boolean`. By default the removal of Tag has a fading animation. If you don't want to use it, you can set the `disable-transitions` attribute, which accepts a `Boolean`, to `true`. `close` event triggers when Tag is removed.
+:::demo 设置 `closable` 属性可以定义一个标签是否可移除。 它接受一个 `Boolean`。 默认的标签移除时会附带渐变动画。 如果不想使用，可以设置 `disable-transitions` 属性，它接受一个 `Boolean`，`true` 为关闭。 当 Tag 被移除时会触发 `close` 事件。
 
 tag/removable
 
 :::
 
-## Edit Dynamically
+## 动态编辑标签
 
-You can use the `close` event to add and remove tag dynamically.
+动态编辑标签可以通过点击标签关闭按钮后触发的 `close` 事件来实现。
 
 :::demo
 
@@ -33,29 +33,29 @@ tag/editable
 
 :::
 
-## Sizes
+## 不同尺寸
 
-Besides default size, Tag component provides three additional sizes for you to choose among different scenarios.
+Tag 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。
 
-:::demo Use attribute `size` to set additional sizes with `large`, `default` or `small`.
+:::demo 使用 `size` 属性来设置额外尺寸, 可选值包括 `large`, `default` 或 `small`.
 
 tag/sizes
 
 :::
 
-## Theme
+## 主题
 
-Tag provide three different themes: `dark`、`light` and `plain`
+Tag 组件提供了三个不同的主题：`dark`、`light` 和 `plain`。
 
-:::demo Using `effect` to change, default is `light`
+:::demo 通过设置 `effect` 属性来改变主题，默认为 `light`。
 
 tag/theme
 
 :::
 
-## Rounded <el-tag>> 2.1.7</el-tag>
+## 圆形标签 <el-tag>> 2.1.7</el-tag>
 
-Tag can also be rounded like button.
+Tag 可以向按钮组件一样变为完全圆形。
 
 :::demo
 
@@ -63,56 +63,56 @@ tag/rounded
 
 :::
 
-## Checkable tag
+## 可选中的标签
 
-Sometimes because of the business needs, we might need checkbox like tag, but **button like checkbox** cannot meet our needs, here comes `check-tag`
+有时候因为业务需求，我们可能会需要用到类似复选框的标签，但是**按钮式的复选框**的样式又不满足需求，此时我们就可以用到 `check-tag`组件。
 
-:::demo basic check-tag usage, the API is rather simple.
+:::demo check-tag 的基础使用方法，check-tag 提供的 API 非常简单。
 
 tag/checkable
 
 :::
 
-## Attributes
+## Tag 属性
 
-| Name                | Description                          | Type    | Accepted Values             | Default |
-| ------------------- | ------------------------------------ | ------- | --------------------------- | ------- |
-| type                | component type                       | string  | success/info/warning/danger | —       |
-| closable            | whether Tag can be removed           | boolean | —                           | false   |
-| disable-transitions | whether to disable animations        | boolean | —                           | false   |
-| hit                 | whether Tag has a highlighted border | boolean | —                           | false   |
-| color               | background color of the Tag          | string  | —                           | —       |
-| size                | tag size                             | string  | large / default /small      | default |
-| effect              | component theme                      | string  | dark / light / plain        | light   |
-| round               | whether Tag is rounded               | boolean | —                           | false   |
+| 属性名                 | 说明        | 类型      | 可选值                         | 默认值     |
+| ------------------- | --------- | ------- | --------------------------- | ------- |
+| type                | 类型        | string  | success/info/warning/danger | —       |
+| closable            | 是否可关闭     | boolean | —                           | false   |
+| disable-transitions | 是否禁用渐变动画  | boolean | —                           | false   |
+| hit                 | 是否有边框描边   | boolean | —                           | false   |
+| color               | 背景色       | string  | —                           | —       |
+| size                | 尺寸        | string  | large / default /small      | default |
+| effect              | 主题        | string  | dark / light / plain        | light   |
+| round               | Tag 是否为圆形 | boolean | —                           | false   |
 
-## Events
+## Tag 事件
 
-| Name  | Description                  | Parameters |
-| ----- | ---------------------------- | ---------- |
-| click | triggers when Tag is clicked | —          |
-| close | triggers when Tag is removed | —          |
+| 事件名   | 说明            | 参数 |
+| ----- | ------------- | -- |
+| click | 点击 Tag 时触发的事件 | —  |
+| close | 关闭 Tag 时触发的事件 | —  |
 
-## Slots
+## Tag 插槽
 
-| Name | Description               |
-| ---- | ------------------------- |
-| —    | customize default content |
+| 名称 | 说明      |
+| -- | ------- |
+| —  | 自定义默认内容 |
 
-## CheckTag Attributes
+## CheckTag 属性
 
-| Name    | Description | Type    | Accepted Values | Default |
-| ------- | ----------- | ------- | --------------- | ------- |
-| checked | is checked  | boolean | true/false      | —       |
+| 属性名     | 说明   | 类型      | 可选值        | 默认值 |
+| ------- | ---- | ------- | ---------- | --- |
+| checked | 是否选中 | boolean | true/false | —   |
 
-## CheckTag Events
+## CheckTag 事件
 
-| Name   | Description                        | Parameters |
-| ------ | ---------------------------------- | ---------- |
-| change | triggers when Check Tag is clicked | checked    |
+| 事件名    | 说明                  | 参数      |
+| ------ | ------------------- | ------- |
+| change | 点击 Check Tag 时触发的事件 | checked |
 
-## CheckTag Slots
+## CheckTag 插槽
 
-| Name | Description               |
-| ---- | ------------------------- |
-| —    | customize default content |
+| 名称 | 说明      |
+| -- | ------- |
+| —  | 自定义默认内容 |

@@ -1,13 +1,13 @@
 ---
-title: Typography
-lang: en-US
+title: Typography 排版
+lang: zh-CN
 ---
 
-# Typography
+# Typography 排版
 
-We create a font convention to ensure the best presentation across different platforms.
+我们对字体进行统一规范，力求在各个操作系统下都有最佳展示效果。
 
-## Font
+## 字体
 
 :::demo
 
@@ -15,7 +15,7 @@ typography/font
 
 :::
 
-## Font Convention
+## 字号
 
 :::demo
 
@@ -23,7 +23,7 @@ typography/convention
 
 :::
 
-## Font Line Height
+## 行高
 
 :::demo
 

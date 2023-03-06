@@ -1,43 +1,43 @@
 ---
-title: ColorPicker
-lang: en-US
+title: ColorPicker 颜色选择器
+lang: zh-CN
 ---
 
-# ColorPicker
+# ColorPicker 颜色选择器
 
-ColorPicker is a color selector supporting multiple color formats.
+用于颜色选择，支持多种格式。
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+在 SSR 场景下，您需要将组件包裹在 `<client-only></client-only>` 之中 (如: [Nuxt](https://nuxt.com/v3)) 和 SSG (e.g: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
-## Basic usage
+## 基础用法
 
-:::demo ColorPicker requires a string typed variable to be bound to v-model.
+:::demo 使用 v-model 与 Vue 实例中的一个变量进行双向绑定，绑定的变量需要是字符串类型。
 
 color-picker/basic
 
 :::
 
-## Alpha
+## 选择透明度
 
-:::demo ColorPicker supports alpha channel selecting. To activate alpha selecting, just add the `show-alpha` attribute.
+:::demo ColorPicker 支持普通颜色，也支持带 Alpha 通道的颜色，通过`show-alpha`属性即可控制是否支持透明度的选择。 要启用 Alpha 选择，只需添加 `show-alpha` 属性。
 
 color-picker/alpha
 
 :::
 
-## Predefined colors
+## 预定义颜色
 
-:::demo ColorPicker supports predefined color options
+:::demo ColorPicker 支持预定义颜色
 
 color-picker/predefined-color
 
 :::
 
-## Sizes
+## 不同尺寸
 
 :::demo
 
@@ -49,29 +49,29 @@ color-picker/sizes
 
 ### Attributes
 
-| Name                  | Description                                  | Type                                                                                                             | Default |
-| --------------------- | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------- |
-| model-value / v-model | binding value                                | ^[string]                                                                                                        | —       |
-| disabled              | whether to disable the ColorPicker           | ^[boolean]                                                                                                       | false   |
-| size                  | size of ColorPicker                          | ^[enum]`'large' \| 'default' \| 'small'`                                                                         | —       |
-| show-alpha            | whether to display the alpha slider          | ^[boolean]                                                                                                       | false   |
-| color-format          | color format of v-model                      | ^[enum]`'hsl' \| 'hsv' \| 'hex' \| 'rgb' \| 'hex' (when show-alpha is false) \| 'rgb' (when show-alpha is true)` | —       |
-| popper-class          | custom class name for ColorPicker's dropdown | ^[string]                                                                                                        | —       |
-| predefine             | predefined color options                     | ^[object]`string[]`                                                                                              | —       |
-| validate-event        | whether to trigger form validation           | ^[boolean]                                                                                                       | true    |
-| tabindex              | ColorPicker tabindex                         | ^[string] / ^[number]                                                                                            | 0       |
-| label<A11yTag/>       | ColorPicker aria-label                       | ^[string]                                                                                                        | —       |
-| id                    | ColorPicker id                               | ^[string]                                                                                                        | —       |
+| 属性名                   | 说明                       | 类型                                                                                                                    | 默认值   |
+| --------------------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------- | ----- |
+| model-value / v-model | 选中项绑定值                   | ^[string]                                                                                                             | —     |
+| disabled              | 是否禁用                     | ^[boolean]                                                                                                            | false |
+| size                  | 尺寸                       | ^[enum]`'large' \| 'default' \| 'small'`                                                                            | —     |
+| show-alpha            | 是否支持透明度选择                | ^[boolean]                                                                                                            | false |
+| color-format          | 写入 v-model 的颜色的格式        | ^[enum]`'hsl' \| 'hsv' \| 'hex' \| 'rgb' \| 'hex' (when show-alpha is false) \| 'rgb' (when show-alpha is true)` | —     |
+| popper-class          | ColorPicker 下拉框的类名       | ^[string]                                                                                                             | —     |
+| predefine             | 预定义颜色                    | ^[object]`string[]`                                                                                                   | —     |
+| validate-event        | 输入时是否触发表单的校验             | ^[boolean]                                                                                                            | true  |
+| tabindex              | ColorPicker 的 tabindex   | ^[string] / ^[number]                                                                                                 | 0     |
+| label<A11yTag/>       | ColorPicker 的 aria-label | ^[string]                                                                                                             | —     |
+| id                    | ColorPicker 的 id         | ^[string]                                                                                                             | —     |
 
 ### Events
 
-| Name          | Description                                    | Type                                 |
-| ------------- | ---------------------------------------------- | ------------------------------------ |
-| change        | triggers when input value changes              | ^[Function]`(value: string) => void` |
-| active-change | triggers when the current active color changes | ^[Function]`(value: string) => void` |
+| 事件名           | 说明                | 类型                                      |
+| ------------- | ----------------- | --------------------------------------- |
+| change        | 当绑定值变化时触发         | ^[Function]`(value: string) => void` |
+| active-change | 面板中当前显示的颜色发生改变时触发 | ^[Function]`(value: string) => void` |
 
 ### Exposes
 
-| Name  | Description          | Type             |
-| ----- | -------------------- | ---------------- |
-| color | current color object | ^[object]`Color` |
+| 名称    | 说明     | 类型               |
+| ----- | ------ | ---------------- |
+| color | 当前色彩对象 | ^[object]`Color` |

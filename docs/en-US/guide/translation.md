@@ -1,39 +1,35 @@
 ---
-title: Translation
-lang: en-US
+title: 翻译
+lang: zh-CN
 ---
 
-# Translation
+# 翻译
 
-## Documentation
+## 文档
 
-In this chapter, we will discuss how to help translating the documentation of Element Plus.
+在本章中，我们将讨论如何帮助翻译 Element Plus 开发文档。
 
-### Background
+### 背景
 
-Before we did the upgrade of the documentation architecture, each documentation update needs 5 languages,
-which most of the contributors use online translator for their non-native languages,
-sometimes it would be not only inaccurate but also stressful to them.
+在给文档站做升级之前，每一次文档改动都需要改五种语言，大部分的贡献者都只会自己的母语和一门外语，大部分的贡献者也会寻求翻译器来翻译其它自己不熟悉的外语，而翻译器翻译的内容对母语者可能造成误解，并且对贡献者来说也是一件麻烦的事情。
 
-So we decided to give the documentation site an upgrade.
+所以我们决定把文档站做升级。
 
-- From webpack to Vite
-- From manually maintained to automated
+- 从 Webpack 升级到了 Vite
+- 从手动维护的到自动化
 
-We took [Crowdin](https://crowdin.com) as our first step to make the documentation site more automated.
+我们采用了 [Crowdin](https://crowdin.com) 作为自动化的第一步来升级文档站。
 
-### How do I translate the documentation?
+### 我怎么才能帮忙贡献翻译的内容？
 
-1. Create an account on [Crowdin](https://crowdin.com), it is recommended that you use your GitHub account to authorize Crowdin.
-2. Go to [Element Plus](https://crowdin.com/project/element-plus) project.
-3. Choose the language you want to contribute to.
-4. Find the file you want to translate.
-5. Do the translation.
+1. 在 [Crowdin](https://crowdin.com) 上创建一个账号，推荐使用你的 GitHub 账号第三方登录。
+2. 进入 [Element Plus](https://crowdin.com/project/element-plus) 项目
+3. 选择你想要贡献翻译的语言；
+4. 选择你想要贡献翻译的具体文件；
+5. 开始翻译。
 
-That simple, and the UI is very intuitive to use, you should have no trouble using it.
-After you submit your work, it would be online once the translation is approved by proofreader.
+这个过程很简单，Crowin 的用户界面也非常直观，还可以选择中文模式，你应该很容易就可以学会如何使用它。 当你提交完你的翻译之后，它会在翻译审核通过之后上线。
 
-### How can I become a proofreader?
+### 我怎么样能帮助翻译审核？
 
-You can [raise an issue](https://crowdin.com/project/element-plus/discussions) on Crowdin to us for
-becoming a proofreader of the language you wish to be.
+你可以通过在 Crowdin [发起 issue](https://crowdin.com/project/element-plus/discussions) 的方式通知我们，issue 内请告知你希望成为哪个语言的校对官。

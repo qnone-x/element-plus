@@ -1,33 +1,33 @@
 ---
-title: Popover
-lang: en-US
+title: Popover 气泡卡片
+lang: zh-CN
 ---
 
-# Popover
+# Popover 气泡卡片
 
 :::tip
 
-This component requires the `<client-only></client-only>` wrap when used in SSR (eg: [Nuxt](https://nuxt.com/v3)) and SSG (eg: [VitePress](https://vitepress.vuejs.org/)).
+在 SSR 场景下，您需要将组件包裹在 `<client-only></client-only>` 之中 (如: [Nuxt](https://nuxt.com/v3)) 和 SSG (例如: [VitePress](https://vitepress.vuejs.org/)).
 
 :::
 
-## Basic usage
+## 基础用法
 
-Similar to Tooltip, Popover is also built with `ElPopper`. So for some duplicated attributes, please refer to the documentation of Tooltip.
+与Tooltip相似，Popover也是基于`ElPopper`的构建。 因此对于重复属性，请参考 Tooltip 的文档，在此文档中不做详尽解释。
 
-:::demo The `trigger` attribute is used to define how popover is triggered: `hover`, `click`, `focus` or `contextmenu` . If you want to manually control it, you can set `:visible`.
+:::demo `trigger` 属性被用来决定 popover 的触发方式，支持的触发方式： `hover`、`click`、`focus` 或 `contextmenu`。 如果你想手动控制它，可以设置 `:visible` 属性。
 
 popover/basic-usage
 
 :::
 
-## Virtual triggering
+## 虚拟触发
 
-Like Tooltip, Popover can be triggered by virtual elements, if your use case includes separate the triggering element and the content element, you should definitely use the mechanism, normally we use `#reference` to place our triggering element, with `triggering-element` API you can set your triggering element anywhere you like, but notice that the triggering element should be an element that accepts `mouse` and `keyboard` event.
+像 Tooltip一样，Popover 可以由虚拟元素触发，这个功能就很适合使用在触发元素和展示内容元素是分开的场景。通常我们使用 `#reference` 来放置我们的触发元素， 用 `triggering-element` API，您可以任意设置您的触发元素 但注意到触发元素应该是接受 `mouse` 和 `keyboard` 事件的元素。
 
 :::warning
 
-`v-popover` is about to be deprecated, please use `virtual-ref` as alternative.
+`v-popover` 将被废弃，请使用 `virtual-ref` 作为替代。
 
 :::
 
@@ -37,19 +37,19 @@ popover/virtual-triggering
 
 :::
 
-## Rich content
+## 内容可扩展
 
-Other components/elements can be nested in popover. Following is an example of nested table.
+可以在 Popover 中嵌套其它组件， 以下为嵌套表格的例子。
 
-:::demo replace the `content` attribute with a default `slot`.
+:::demo 利用插槽取代 `content` 属性
 
 popover/nested-information
 
 :::
 
-## Nested operation
+## 嵌套操作
 
-Of course, you can nest other operations. It's more light-weight than using a dialog.
+当然，你还可以嵌套操作， 它比使用dialog更加轻量。
 
 :::demo
 
@@ -57,10 +57,9 @@ popover/nested-operation
 
 :::
 
-## Directive
+## 指令
 
-You can still using popover in directive way but this is **not recommended** anymore since this makes your application
-complicated, you may refer to the virtual triggering for more information.
+您可以使用指令性方式弹出窗口，但这种方法**不再推荐** ，因为这使得应用程序变得复杂， 您可以参考虚拟触发来实现一样的效果。
 
 :::demo
 
@@ -70,43 +69,43 @@ popover/directive-usage
 
 ## Attributes
 
-| Name                      | Description                                                                                                                                                              | Type            | Accepted Values                                                                                           | Default                                                                    |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| trigger                   | how the popover is triggered                                                                                                                                             | string          | click/focus/hover/contextmenu                                                                             | click                                                                      |
-| title                     | popover title                                                                                                                                                            | string          | —                                                                                                         | —                                                                          |
-| effect                    | Tooltip theme, built-in theme: `dark` / `light`                                                                                                                          | string          | string                                                                                                    | light                                                                      |
-| content                   | popover content, can be replaced with a default `slot`                                                                                                                   | string          | —                                                                                                         | —                                                                          |
-| width                     | popover width                                                                                                                                                            | string / number | —                                                                                                         | Min width 150px                                                            |
-| placement                 | popover placement                                                                                                                                                        | string          | top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end | bottom                                                                     |
-| disabled                  | whether Popover is disabled                                                                                                                                              | boolean         | —                                                                                                         | false                                                                      |
-| visible / v-model:visible | whether popover is visible                                                                                                                                               | Boolean         | —                                                                                                         | false                                                                      |
-| offset                    | popover offset                                                                                                                                                           | number          | —                                                                                                         | 0                                                                          |
-| transition                | popover transition animation                                                                                                                                             | string          | —                                                                                                         | el-fade-in-linear                                                          |
-| show-arrow                | whether a tooltip arrow is displayed or not. For more info, please refer to [ElPopper](https://github.com/element-plus/element-plus/tree/dev/packages/components/popper) | boolean         | —                                                                                                         | true                                                                       |
-| popper-options            | parameters for [popper.js](https://popper.js.org/docs/v2/)                                                                                                               | object          | please refer to [popper.js](https://popper.js.org/docs/v2/)                                               | `{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}` |
-| popper-class              | custom class name for popover                                                                                                                                            | string          | —                                                                                                         | —                                                                          |
-| popper-style              | custom style for popover                                                                                                                                                 | string / object | —                                                                                                         | —                                                                          |
-| show-after                | delay of appearance, in millisecond                                                                                                                                      | number          | —                                                                                                         | 0                                                                          |
-| hide-after                | delay of disappear, in millisecond                                                                                                                                       | number          | —                                                                                                         | 200                                                                        |
-| auto-close                | timeout in milliseconds to hide tooltip                                                                                                                                  | number          | —                                                                                                         | 0                                                                          |
-| tabindex                  | [tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) of Popover                                                                      | number          | —                                                                                                         | —                                                                          |
-| teleported                | whether popover dropdown is teleported to the body                                                                                                                       | boolean         | true / false                                                                                              | true                                                                       |
-| persistent                | when popover inactive and `persistent` is `false` , popover will be destroyed                                                                                            | boolean         | —                                                                                                         | true                                                                       |
+| 属性名                       | 说明                                                                                                                        | 类型              | 可选值                                                                                                       | 默认值                                                                        |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| trigger                   | 触发方式                                                                                                                      | string          | click/focus/hover/contextmenu                                                                             | click                                                                      |
+| title                     | 标题                                                                                                                        | string          | —                                                                                                         | —                                                                          |
+| effect                    | Tooltip 主题，Element Plus 内置了 `dark` / `light` 两种主题                                                                         | string          | string                                                                                                    | light                                                                      |
+| content                   | 显示的内容，也可以通过写入默认 `slot` 修改显示内容                                                                                             | string          | —                                                                                                         | —                                                                          |
+| width                     | 宽度                                                                                                                        | string / number | —                                                                                                         | 最小宽度 150px                                                                 |
+| placement                 | 出现位置                                                                                                                      | string          | top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end | bottom                                                                     |
+| disabled                  | Popover 是否可用                                                                                                              | boolean         | —                                                                                                         | false                                                                      |
+| visible / v-model:visible | Popover 是否显示                                                                                                              | Boolean         | —                                                                                                         | false                                                                      |
+| offset                    | 出现位置的偏移量                                                                                                                  | number          | —                                                                                                         | 0                                                                          |
+| transition                | 定义渐变动画                                                                                                                    | string          | —                                                                                                         | el-fade-in-linear                                                          |
+| show-arrow                | 是否显示 Tooltip 箭头， 欲了解更多信息，请参考 [ElPopper](https://github.com/element-plus/element-plus/tree/dev/packages/components/popper) | boolean         | —                                                                                                         | true                                                                       |
+| popper-options            | [popper.js](https://popper.js.org/docs/v2/) 的参数                                                                           | object          | 详情参考 [popper.js](https://popper.js.org/docs/v2/)                                                          | `{modifiers: [{name: 'computeStyles',options: {gpuAcceleration: false}}]}` |
+| popper-class              | 为 popper 添加类名                                                                                                             | string          | —                                                                                                         | —                                                                          |
+| propper-style             | 为 popper 自定义样式                                                                                                            | string / object | —                                                                                                         | —                                                                          |
+| show-after                | 在触发后多久显示内容，单位毫秒                                                                                                           | number          | —                                                                                                         | 0                                                                          |
+| hide-after                | 延迟关闭，单位毫秒                                                                                                                 | number          | —                                                                                                         | 200                                                                        |
+| auto-close                | tooltip 出现后自动隐藏延时，单位毫秒                                                                                                    | number          | —                                                                                                         | 0                                                                          |
+| tabindex                  | Popover 组件的 [tabindex](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/tabindex)                      | number          | —                                                                                                         | —                                                                          |
+| teleported                | 是否将 popover 的下拉列表插入至 body 元素                                                                                              | boolean         | true / false                                                                                              | true                                                                       |
+| persistent                | 当 popover 组件长时间不触发且 `persistent` 属性设置为 `false` 时, popover 将会被删除                                                           | boolean         | —                                                                                                         | true                                                                       |
 
 ## Slots
 
-| Name      | Description                        |
-| --------- | ---------------------------------- |
-| —         | text content of popover            |
-| reference | HTML element that triggers popover |
+| 插槽名       | 说明                     |
+| --------- | ---------------------- |
+| —         | Popover 内嵌 HTML 文本     |
+| reference | 触发 Popover 显示的 HTML 元素 |
 
 ## Events
 
-| Name         | Description                                  | Parameters |
-| ------------ | -------------------------------------------- | ---------- |
-| show         | triggers when popover shows                  | —          |
-| before-enter | triggers when the entering transition before | —          |
-| after-enter  | triggers when the entering transition ends   | —          |
-| hide         | triggers when popover hides                  | —          |
-| before-leave | triggers when the leaving transition before  | —          |
-| after-leave  | triggers when the leaving transition ends    | —          |
+| 事件名          | 说明          | 回调参数 |
+| ------------ | ----------- | ---- |
+| show         | 显示时触发       | —    |
+| before-enter | 显示动画播放前触发   | —    |
+| after-enter  | 显示动画播放完毕后触发 | —    |
+| hide         | 隐藏时触发       | —    |
+| before-leave | 隐藏动画播放前触发   | —    |
+| after-leave  | 隐藏动画播放完毕后触发 | —    |
