@@ -317,6 +317,10 @@ export default defineComponent({
   props: {
     name: String,
     id: String,
+    item: {
+      type: Boolean,
+      default: false,
+    },
     modelValue: {
       type: [Array, String, Number, Boolean, Object],
       default: undefined,

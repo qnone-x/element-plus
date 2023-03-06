@@ -578,10 +578,10 @@ export const useSelect = (props, states: States, ctx) => {
   const debouncedQueryChange = lodashDebounce((e) => {
     handleQueryChange(e.target.value)
   }, debounce.value)
-
-  const emitChange = (val) => {
+  //change事件 select有item属性就返回objs
+  const emitChange = (val, objs) => {
     if (!isEqual(props.modelValue, val)) {
-      ctx.emit(CHANGE_EVENT, val)
+      ctx.emit(CHANGE_EVENT, val, props.item ? objs : null)
     }
   }
 
@@ -624,7 +624,7 @@ export const useSelect = (props, states: States, ctx) => {
     states.visible = false
     ctx.emit('clear')
   }
-
+  //确定选择option
   const handleOptionSelect = (option, byClick) => {
     if (props.multiple) {
       const value = (props.modelValue || []).slice()
@@ -647,7 +647,7 @@ export const useSelect = (props, states: States, ctx) => {
       if (props.filterable) input.value?.focus()
     } else {
       ctx.emit(UPDATE_MODEL_EVENT, option.value)
-      emitChange(option.value)
+      emitChange(option.value, option)
       states.visible = false
     }
     states.isSilentBlur = byClick
@@ -704,8 +704,12 @@ export const useSelect = (props, states: States, ctx) => {
     }
     scrollbar.value?.handleScroll()
   }
-
+  //初始化options
   const onOptionCreate = (vm: SelectOptionProxy) => {
+    console.log(vm, 'vm')
+    console.log(vm.label, 'vm')
+    // const objs={label:vm.label,value:vm.value}
+    // itemObjs
     states.optionsCount++
     states.filteredOptionsCount++
     states.options.set(vm.value, vm)
@@ -829,7 +833,7 @@ export const useSelect = (props, states: States, ctx) => {
       }
     }
   }
-
+  const itemObjs = ref({})
   const getValueKey = (item) => {
     return isObject(item.value) ? get(item.value, props.valueKey) : item.value
   }
